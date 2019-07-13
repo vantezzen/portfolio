@@ -43,8 +43,11 @@ export const ProjectContainer = styled.div`
 `
 export const ProjectImage = styled.div`
   width: 100%;
-  border-radius: .3rem;
   margin-bottom: .5rem;
+
+  img {
+    border-radius: .6rem;
+  }
 `
 export const ProjectHeading = styled.h3`
   margin-bottom: .8rem;
