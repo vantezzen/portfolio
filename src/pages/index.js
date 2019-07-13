@@ -134,17 +134,17 @@ const IndexPage = () => (
       <SkillsContainer>
         <h2>Technologies I've used.</h2>
 
-        <ul class="skills">
+        <ul className="skills">
 						<li><b>JavaScript</b></li>
 						<li>NodeJS</li>
-						<li class="slim">Express</li>
-						<li class="slim">socket.io</li>
-						<li class="slim">AdonisJS</li>
+						<li className="slim">Express</li>
+						<li className="slim">socket.io</li>
+						<li className="slim">AdonisJS</li>
 						<li>React</li>
-						<li class="slim">GatsbyJS</li>
-						<li class="slim">react-router</li>
-						<li class="slim">Redux</li>
-						<li class="slim">styled-components</li>
+						<li className="slim">GatsbyJS</li>
+						<li className="slim">react-router</li>
+						<li className="slim">Redux</li>
+						<li className="slim">styled-components</li>
 						<li>vueJS</li>
 						<li>AngularJS</li>
 						<li>jQuery</li>
@@ -175,16 +175,16 @@ const IndexPage = () => (
 
         <form name="contact" method="POST">
           <input type="hidden" name="form-name" value="contact" />
-					<div class="form-group">
-						<label for="name">Name</label>
+					<div className="form-group">
+						<label htmlFor="name">Name</label>
 						<input type="text" name="name" id="name" placeholder="Jon Doe" />
 					</div>
-					<div class="form-group">
-						<label for="mail">Mail</label>
+					<div className="form-group">
+						<label htmlFor="mail">Mail</label>
 						<input type="email" name="mail" id="mail" placeholder="jon@example.com" />
 					</div>
-					<div class="form-group">
-						<label for="message">Message</label>
+					<div className="form-group">
+						<label htmlFor="message">Message</label>
 						<textarea name="message" id="message" placeholder="Hello,..."></textarea>
 					</div>
           <SubmitButton type="submit">
