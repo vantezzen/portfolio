@@ -11,6 +11,7 @@ import {
   HeroName,
   LightButton
 } from '../../styles/index.js'
+import '../../styles/global.css'
 
 import SEO from "../../components/seo"
 import Footer from "../../components/footer"
@@ -23,7 +24,7 @@ const BrowserPrivacy = () => (
       <HeroContainer>
         <img alt="Bennett Hollstein's Logo" src={ Logo } height={ 50 } />
         <HeroName>Privacy policies for browser extensions</HeroName>
-        <p>Please select a browser extensions</p>
+        <p>Please select a browser extension</p>
         <Link to="/browserprivacy/dontbugme" style={{ textDecoration: 'none' }}>
           <LightButton>
             DontBugMe
