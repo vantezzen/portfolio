@@ -18,7 +18,7 @@ import Footer from "../../components/footer"
 
 const BrowserPrivacy = () => (
   <>
-    <SEO title="privacy policies for browser extensions" />
+    <SEO title="Privacy policies for browser extensions" />
 
     <Container>
       <HeroContainer>
