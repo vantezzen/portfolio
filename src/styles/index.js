@@ -98,17 +98,19 @@ export const SkillsContainer = styled.div`
       display: inline-block;
       margin: 10px;
       padding: 5px 10px;
-      color: #FFFFFF;
+      color: #d7d7d7;
       background: #5A5A5A;
       list-style: none;
       font-weight: 600;
   
       b {
+        color: #FFFFFF;
         font-weight: 900;
       }
   
       &.slim {
         font-weight: 100;
+        color: #b3b3b3;
       }
     }
   }
