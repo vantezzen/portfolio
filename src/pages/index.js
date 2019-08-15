@@ -80,6 +80,21 @@ const IndexPage = () => (
             </Link>
           </ProjectContainer>
 
+          <ProjectContainer>
+            <ProjectImage>
+              <Image src="screenshots/lokki_1.png" />
+            </ProjectImage>
+
+            <ProjectHeading>lokki.cloud</ProjectHeading>
+            <ProjectDescription>Easily transfer files between any device.</ProjectDescription>
+            <ProjectTechStack>WebRTC, socket.io, Blobs</ProjectTechStack>
+
+            <Link to="/lokki" style={{ textDecoration: 'none' }}>
+              <LightButton>
+                View
+              </LightButton>
+            </Link>
+          </ProjectContainer>
 
           <ProjectContainer>
             <ProjectImage>
@@ -88,9 +103,25 @@ const IndexPage = () => (
 
             <ProjectHeading>Sprous</ProjectHeading>
             <ProjectDescription>Helping small teams help their customers.</ProjectDescription>
-            <ProjectTechStack>ReactJS, tailwindcss, wikijs</ProjectTechStack>
+            <ProjectTechStack>GatsbyJS, styled-components, js-search</ProjectTechStack>
 
             <Link to="/sprous" style={{ textDecoration: 'none' }}>
+              <LightButton>
+                View
+              </LightButton>
+            </Link>
+          </ProjectContainer>
+
+          <ProjectContainer>
+            <ProjectImage>
+              <Image src="screenshots/cauldron_1.png" />
+            </ProjectImage>
+
+            <ProjectHeading>Cauldron.js</ProjectHeading>
+            <ProjectDescription>Running a Minecraft Server in your browser.</ProjectDescription>
+            <ProjectTechStack>JavaScript, socket.io, ExpressJS</ProjectTechStack>
+
+            <Link to="/cauldron" style={{ textDecoration: 'none' }}>
               <LightButton>
                 View
               </LightButton>
