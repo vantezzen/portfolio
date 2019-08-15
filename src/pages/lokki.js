@@ -83,19 +83,11 @@ const lokkiCloud = () => (
         </ProjectDescription>
       </TwoOneGrid>
 
-      <EqualGrid style={{ marginBottom: '.5rem' }}>
-        <a href="https://lokki.cloud/" rel="noopener" style={{ textDecoration: 'none' }}>
-          <LightButton>
-            Open lokki.cloud
-          </LightButton>
-        </a>
-        <a rel="noopener" style={{ textDecoration: 'none' }}>
-          <LightButton style={{ backgroundColor: '#777777' }}>
-            View source on GitHub*
-          </LightButton>
-        </a>
-      </EqualGrid>
-      <LightFont>*lokki.cloud will be made open-source in the future.</LightFont>
+      <a href="https://lokki.cloud/" rel="noopener" style={{ textDecoration: 'none' }}>
+        <LightButton>
+          Open lokki.cloud
+        </LightButton>
+      </a>
 
       <Footer />
     </Container>
