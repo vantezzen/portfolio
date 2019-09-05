@@ -42,11 +42,11 @@ const Datenschutz = () => (
         </p>
         <h3 id="dsg-general-controller">Verantwortlicher</h3>
         <p><span class="tsmcontroller">Bennett Hollstein<br />
-                Burgweg 8<br />
-                79112 Freiburg<br />
+                Reinbeckstr. 4-8, Apartement 322<br />
+                12459 Berlin<br />
                 Deutschland<br />
                 <br />
-                E-Mailadresse: properly+datenschutz@pm.me
+                E-Mail Addresse: properly+datenschutz@pm.me
             </span></p>
         <h3 id="dsg-general-datatype">Arten der verarbeiteten Daten</h3>
         <p>- Bestandsdaten (z.B., Personen-Stammdaten, Namen oder Adressen).<br />
