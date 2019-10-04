@@ -176,6 +176,9 @@ const IndexPage = () => (
 						<li className="slim">react-router</li>
 						<li className="slim">Redux</li>
 						<li className="slim">styled-components</li>
+						<li className="slim">mobx-react</li>
+						<li>mobx</li>
+						<li>ElectronJS</li>
 						<li>vueJS</li>
 						<li>AngularJS</li>
 						<li>jQuery</li>
