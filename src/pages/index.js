@@ -155,7 +155,7 @@ const IndexPage = () => (
           Hello, I am Bennett.
         </p>
         <p>
-          I love web development and enjoy building websites that help my in my everyday life.
+          I love web development and enjoy building websites that help me in my everyday life.
         </p>
         <p>
           I have a passion of challenging myself to learn new things to build better and more modern websites.
