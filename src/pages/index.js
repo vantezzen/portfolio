@@ -8,6 +8,11 @@ import SEO from "../components/seo"
 import Footer from "../components/footer"
 
 import {
+  GitHub,
+  Linkedin,
+} from 'react-feather'
+
+import {
   Container,
   HeroContainer,
   HeroName,
@@ -20,6 +25,8 @@ import {
   ProjectTechStack,
   LightButton,
   AboutMeContainer,
+  AboutMeLinkContainer,
+  AboutMeLink,
   SkillsContainer,
   ContactContainer,
   SubmitButton
@@ -162,6 +169,15 @@ const IndexPage = () => (
         <p>
           I have a passion of challenging myself to learn new things and build better websites.
         </p>
+
+        <AboutMeLinkContainer>
+          <AboutMeLink href="https://github.com/vantezzen">
+            <GitHub />
+          </AboutMeLink>
+          <AboutMeLink href="https://www.linkedin.com/in/bennett-h/">
+            <Linkedin />
+          </AboutMeLink>
+        </AboutMeLinkContainer>
       </AboutMeContainer>
 
       <SkillsContainer>

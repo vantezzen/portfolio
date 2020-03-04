@@ -82,6 +82,18 @@ export const AboutMeContainer = styled.div`
     margin-bottom: 0.6rem;
   }
 `
+export const AboutMeLinkContainer = styled.div`
+  margin-top: 2rem;
+`;
+export const AboutMeLink = styled.a`
+  color: #FFFFFF;
+  transition: .5s;
+  padding: 1rem;
+
+  &:hover {
+    color: #e83e8c;
+  }
+`;
 
 export const SkillsContainer = styled.div`
   margin-top: 2rem;

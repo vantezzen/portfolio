@@ -25,7 +25,8 @@ export const LinkBack = styled.div`
     transition: .5s;
 
     &:hover {
-    color: #e83e8c;
+      color: #e83e8c;
+    }
   }
 `
 export const TwoOneGrid = styled.div`
