@@ -30,9 +30,9 @@ import {
 } from '../styles/index'
 import '../styles/global.css'
 
-const Cauldron = () => (
+const ferdi = () => (
   <>
-    <SEO title="Cauldron.js" />
+    <SEO title="Ferdi" />
 
     <Container>
       <LinkBack>
@@ -41,56 +41,57 @@ const Cauldron = () => (
         </Link>
       </LinkBack>
 
-      <h1>Running a Minecraft Server in your browser.</h1>
+      <h1>All your messages in one place.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
-            Traditionally, a Minecraft Server is a Java application, being run inside the terminal. The server owner has to open ports on their networks to allow others to join.<br />
-            Cauldron.js moves all computing and disk space intensive work into the browser, while keeping all communication with the Minecraft clients on a centralised server.<br />
-            This allows possibly hundreds of Minecraft Servers to be run on a single networking server.
+          Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application.<br />
+          It is based on Franz - a software already used by thousands of people - but with many added features. 
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>
             Tech stack:
           </LightFont>
-          JavaScript, socket.io, ExpressJS, minecraft-protocol
+          ElectronJS, ReactJS, mobx, webpack
         </ProjectTechStack>
       </TwoOneGrid>
 
       <OneTwoGrid>
         <ProjectDescription>
           <ProjectHeading>
-            Run a server on any device
+            Increase productivity
           </ProjectHeading>
-          As Cauldron.js is a normal website, it can be run on almost any device.
+          Ferdi increases your productivity by bringing all your messages and tools into a single application.<br />
+          Profit from advanced features like Workspaces and Quick Switch to keep you up-to-date.
         </ProjectDescription>
 
         <ProjectImage>
-          <Image src="screenshots/cauldron_1.png" alt="cauldron: website running on different devices" />
+          <Image src="screenshots/ferdi_2.png" alt="Ferdi with Workspace drawer opened" />
         </ProjectImage>
       </OneTwoGrid>
 
       <TwoOneGrid>
         <ProjectImage>
-          <Image src="screenshots/cauldron_2.png" alt="cauldron: server starting page" />
+          <Image src="screenshots/ferdi_1.png" alt="Ferdi with GitHub opened" />
         </ProjectImage>
         
         <ProjectDescription>
           <ProjectHeading>
-            Start a server in seconds
+            20.000+ downloads on the latest release alone
           </ProjectHeading>
-          After opening Cauldron.js, a new Minecraft Server will be ready in seconds.
+          Ferdi already receives over 20.000 downloads on every new release - just 6 months after its first release.
         </ProjectDescription>
       </TwoOneGrid>
 
-      <a href="https://github.com/vantezzen/cauldron-js" rel="noopener" style={{ textDecoration: 'none' }}>
+      <a href="https://getferdi.com/" rel="noopener" style={{ textDecoration: 'none' }}>
         <LightButton>
-          View on GitHub
+          Learn more
         </LightButton>
       </a>
+
       <Footer />
     </Container>
   </>
 )
 
-export default Cauldron
+export default ferdi

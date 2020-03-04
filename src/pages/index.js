@@ -31,6 +31,8 @@ import Image from '../components/image'
 
 import '../styles/global.css'
 
+const age = new Date(new Date() - new Date('2001-01-26')).getFullYear() - 1970;
+
 const IndexPage = () => (
   <>
     <SEO title="Home" />
@@ -39,13 +41,29 @@ const IndexPage = () => (
       <HeroContainer>
         <img src={ Logo } alt="Bennett Hollstein's Logo (Fox)" height={ 50 } />
         <HeroName>Bennett Hollstein</HeroName>
-        <p>18-year-old web developer from Germany</p>
+        <p>{age}-year-old web developer from Germany</p>
       </HeroContainer>
 
       <ProjectsContainer>
         <h2>Featured projects.</h2>
 
         <ProjectsListContainer>
+
+          <ProjectContainer>
+            <ProjectImage>
+              <Image src="screenshots/ferdi.png" />
+            </ProjectImage>
+
+            <ProjectHeading>Ferdi</ProjectHeading>
+            <ProjectDescription>All your messages in one place.</ProjectDescription>
+            <ProjectTechStack>ElectronJS, ReactJS</ProjectTechStack>
+
+            <Link to="/ferdi" style={{ textDecoration: 'none' }}>
+              <LightButton>
+                View
+              </LightButton>
+            </Link>
+          </ProjectContainer>
 
           <ProjectContainer>
             <ProjectImage>
@@ -74,22 +92,6 @@ const IndexPage = () => (
             <ProjectTechStack>ReactJS, tailwindcss, wikijs</ProjectTechStack>
 
             <Link to="/minimalpedia" style={{ textDecoration: 'none' }}>
-              <LightButton>
-                View
-              </LightButton>
-            </Link>
-          </ProjectContainer>
-
-          <ProjectContainer>
-            <ProjectImage>
-              <Image src="screenshots/lokki_1.png" />
-            </ProjectImage>
-
-            <ProjectHeading>lokki.cloud</ProjectHeading>
-            <ProjectDescription>Easily transfer files between any device.</ProjectDescription>
-            <ProjectTechStack>WebRTC, socket.io, Blobs</ProjectTechStack>
-
-            <Link to="/lokki" style={{ textDecoration: 'none' }}>
               <LightButton>
                 View
               </LightButton>
@@ -158,7 +160,7 @@ const IndexPage = () => (
           I love web development and enjoy building websites that help me in my everyday life.
         </p>
         <p>
-          I have a passion of challenging myself to learn new things to build better and more modern websites.
+          I have a passion of challenging myself to learn new things and build better websites.
         </p>
       </AboutMeContainer>
 
@@ -176,8 +178,8 @@ const IndexPage = () => (
 						<li className="slim">react-router</li>
 						<li className="slim">Redux</li>
 						<li className="slim">styled-components</li>
+						<li className="slim">mobx</li>
 						<li className="slim">mobx-react</li>
-						<li>mobx</li>
 						<li>ElectronJS</li>
 						<li>vueJS</li>
 						<li>AngularJS</li>
@@ -211,15 +213,15 @@ const IndexPage = () => (
           <input type="hidden" name="form-name" value="contact" />
 					<div className="form-group">
 						<label htmlFor="name">Name</label>
-						<input type="text" name="name" id="name" placeholder="Jon Doe" />
+						<input type="text" name="name" id="name" placeholder="Jon Doe" required />
 					</div>
 					<div className="form-group">
 						<label htmlFor="mail">Mail</label>
-						<input type="email" name="mail" id="mail" placeholder="jon@example.com" />
+						<input type="email" name="mail" id="mail" placeholder="jon@example.com" required />
 					</div>
 					<div className="form-group">
 						<label htmlFor="message">Message</label>
-						<textarea name="message" id="message" placeholder="Hello,..."></textarea>
+						<textarea name="message" id="message" placeholder="Hello,..." required></textarea>
 					</div>
           <SubmitButton type="submit">
             <LightButton>

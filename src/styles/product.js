@@ -17,7 +17,8 @@ export const Container = styled.div`
 
 `
 export const LinkBack = styled.div`
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 
   a {
     color: #FFFFFF;

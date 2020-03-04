@@ -109,7 +109,7 @@ export const SkillsContainer = styled.div`
       }
   
       &.slim {
-        font-weight: 100;
+        font-weight: 300;
         color: #b3b3b3;
       }
     }
