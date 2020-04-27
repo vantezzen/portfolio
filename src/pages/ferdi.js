@@ -2,27 +2,21 @@
  * Cauldron.js project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
-  EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
-  DirectProjectImage,
   ProjectHeading
 } from '../styles/product'
 import {
@@ -35,18 +29,18 @@ const ferdi = () => (
     <SEO title="Ferdi" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>All your messages in one place.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
-          Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application.<br />
-          It is based on Franz - a software already used by thousands of people - but with many added features. 
+          <ProjectParagraph>
+            Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application.<br />
+          </ProjectParagraph>
+          <ProjectParagraph>
+            It is based on Franz - a software already used by thousands of people - but with many added features. 
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>
@@ -77,9 +71,9 @@ const ferdi = () => (
         
         <ProjectDescription>
           <ProjectHeading>
-            20.000+ downloads on the latest release alone
+            50k+ downloads on the latest release alone
           </ProjectHeading>
-          Ferdi already receives over 20.000 downloads on every new release - just 6 months after its first release.
+          Ferdi already receives over 50k downloads on every new release - just 6 months after its first release.
         </ProjectDescription>
       </TwoOneGrid>
 

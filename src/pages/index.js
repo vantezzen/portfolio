@@ -46,7 +46,7 @@ const IndexPage = () => (
 
     <Container>
       <HeroContainer>
-        <img src={ Logo } alt="Bennett Hollstein's Logo (Fox)" height={ 50 } />
+        <img src={ Logo } alt="Bennett Hollstein's Logo (Fox)" height={ 50 } aria-hidden />
         <HeroName>Bennett Hollstein</HeroName>
         <p>{age}-year-old web developer from Germany</p>
       </HeroContainer>
@@ -61,9 +61,9 @@ const IndexPage = () => (
               <Image src="screenshots/ferdi.png" />
             </ProjectImage>
 
-            <ProjectHeading>Ferdi</ProjectHeading>
+            <ProjectHeading aria-label="Project name: Ferdi">Ferdi</ProjectHeading>
             <ProjectDescription>All your messages in one place.</ProjectDescription>
-            <ProjectTechStack>ElectronJS, ReactJS</ProjectTechStack>
+            <ProjectTechStack aria-label="Technologies used">ElectronJS, ReactJS</ProjectTechStack>
 
             <Link to="/ferdi" style={{ textDecoration: 'none' }}>
               <LightButton>
@@ -77,9 +77,9 @@ const IndexPage = () => (
               <Image src="screenshots/vowserDB_1.png" />
             </ProjectImage>
 
-            <ProjectHeading>vowserDB</ProjectHeading>
+            <ProjectHeading aria-label="Project name: vowserDB">vowserDB</ProjectHeading>
             <ProjectDescription>A minimal standalone database for host-it-yourself projects.</ProjectDescription>
-            <ProjectTechStack>PHP, composer</ProjectTechStack>
+            <ProjectTechStack aria-label="Technologies used">PHP, composer</ProjectTechStack>
 
             <Link to="/vowserdb" style={{ textDecoration: 'none' }}>
               <LightButton>
@@ -94,9 +94,9 @@ const IndexPage = () => (
               <Image src="screenshots/minimalpedia_1.png" />
             </ProjectImage>
 
-            <ProjectHeading>minimalpedia</ProjectHeading>
+            <ProjectHeading aria-label="Project name: minimalpedia">minimalpedia</ProjectHeading>
             <ProjectDescription>Reimagening the design and user experience of wikipedia.</ProjectDescription>
-            <ProjectTechStack>ReactJS, tailwindcss, wikijs</ProjectTechStack>
+            <ProjectTechStack aria-label="Technologies used">ReactJS, tailwind.css, wiki.js</ProjectTechStack>
 
             <Link to="/minimalpedia" style={{ textDecoration: 'none' }}>
               <LightButton>
@@ -110,9 +110,9 @@ const IndexPage = () => (
               <Image src="screenshots/sprous_3.png" />
             </ProjectImage>
 
-            <ProjectHeading>Sprous</ProjectHeading>
+            <ProjectHeading aria-label="Project name: Sprous">Sprous</ProjectHeading>
             <ProjectDescription>Helping small teams help their customers.</ProjectDescription>
-            <ProjectTechStack>GatsbyJS, styled-components, js-search</ProjectTechStack>
+            <ProjectTechStack aria-label="Technologies used">GatsbyJS, styled-components, js-search</ProjectTechStack>
 
             <Link to="/sprous" style={{ textDecoration: 'none' }}>
               <LightButton>
@@ -126,9 +126,9 @@ const IndexPage = () => (
               <Image src="screenshots/cauldron_1.png" />
             </ProjectImage>
 
-            <ProjectHeading>Cauldron.js</ProjectHeading>
+            <ProjectHeading aria-label="Project name: Cauldron.js">Cauldron.js</ProjectHeading>
             <ProjectDescription>Running a Minecraft Server in your browser.</ProjectDescription>
-            <ProjectTechStack>JavaScript, socket.io, ExpressJS</ProjectTechStack>
+            <ProjectTechStack aria-label="Technologies used">JavaScript, socket.io, ExpressJS</ProjectTechStack>
 
             <Link to="/cauldron" style={{ textDecoration: 'none' }}>
               <LightButton>
@@ -147,7 +147,7 @@ const IndexPage = () => (
             <ProjectDescription>All open-source projects are availible on GitHub.</ProjectDescription>
             {/* <ProjectTechStack>.</ProjectTechStack> */}
 
-            <a href="https://github.com/vantezzen" rel="noopener noreferrer" target="_blank" style={{ textDecoration: 'none' }}>
+            <a href="https://github.com/vantezzen" rel="noopener noreferrer" target="_blank" style={{ textDecoration: 'none' }} aria-label="GitHub profile">
               <LightButton>
                 View
               </LightButton>
@@ -171,10 +171,10 @@ const IndexPage = () => (
         </p>
 
         <AboutMeLinkContainer>
-          <AboutMeLink href="https://github.com/vantezzen">
+          <AboutMeLink href="https://github.com/vantezzen" aria-label="My GitHub profile">
             <GitHub />
           </AboutMeLink>
-          <AboutMeLink href="https://www.linkedin.com/in/bennett-h/">
+          <AboutMeLink href="https://www.linkedin.com/in/bennett-h/" aria-label="My LinkedIn profile">
             <Linkedin />
           </AboutMeLink>
         </AboutMeLinkContainer>

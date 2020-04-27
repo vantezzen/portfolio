@@ -2,27 +2,21 @@
  * Cauldron.js project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
-  EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
-  DirectProjectImage,
   ProjectHeading
 } from '../styles/product'
 import {
@@ -35,18 +29,18 @@ const lokkiCloud = () => (
     <SEO title="lokki.cloud" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>Easily transfer files between any device.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
+          <ProjectParagraph>
             lokki.cloud aims to be the simplest and fastest method when transferring files between devices.<br />
+          </ProjectParagraph>
+          <ProjectParagraph>
             It uses a direct WebRTC connection to allow fast transfer speeds. Should one of the devices not support WebRTC or should the connection fail, lokki.cloud will fallback to file transfer over WebSockets, allowing for better compatability.
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>

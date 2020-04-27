@@ -63,10 +63,13 @@ export const EqualGrid = styled.div`
 export const ProjectDescription = styled.div`
   color: #bbbbbb;
 `
+export const ProjectParagraph = styled.p`
+  margin-bottom: 0.4em;
+`
 export const ProjectTechStack = styled.div`
   font-weight: 700
 `
-export const ProjectHeading = styled.h4`
+export const ProjectHeading = styled.h2`
   margin: 1.414em 0 .5em;
   line-height: 1.35;
   font-size: 1.2em;

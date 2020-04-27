@@ -2,23 +2,19 @@
  * Minimalpedia project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
   EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
@@ -37,18 +33,18 @@ const Minimalpedia = () => (
     <SEO title="minimalpedia" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>minimalpedia reimagines the design and user experience of wikipedia.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
-        minimalpedia is an alternative, minimalistic frontend for wikipedia.<br />
-        Its design is based on Dmitriy Kozhevnikov's Wikipedia Imagination and uses ReactJS and the wikipedia API to transform wikipedia into a single-page webapp.
+          <ProjectParagraph>
+            minimalpedia is an alternative, minimalistic frontend for wikipedia.<br />
+          </ProjectParagraph>
+          <ProjectParagraph>
+            Its design is based on <span lang="ru">Dmitriy Kozhevnikov</span>'s Wikipedia Imagination and uses ReactJS and the wikipedia API to transform wikipedia into a single-page webapp.
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>

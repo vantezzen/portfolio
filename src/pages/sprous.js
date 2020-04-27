@@ -2,23 +2,19 @@
  * Sprous project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
   EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
@@ -37,17 +33,15 @@ const Sprous = () => (
     <SEO title="🌱 Sprous" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>Helping small teams help their customers.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
-        Sprous is a minimalistic knowledge base, helping customers find answers to their most common questions.
+          <ProjectParagraph>
+            Sprous is a minimalistic knowledge base, helping customers find answers to their most common questions.
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>
@@ -62,7 +56,7 @@ const Sprous = () => (
           <ProjectHeading>
             Easy hosting
           </ProjectHeading>
-          Sprous is built with GatsbyJS and thus can be complied into static files, allowing it to be hosted anywhere.
+          Sprous is built with GatsbyJS and thus can be compiled into static files, allowing it to be hosted anywhere.
         </ProjectDescription>
 
         <ProjectImage>

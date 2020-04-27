@@ -2,23 +2,19 @@
  * vowserDB project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
   EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
@@ -35,19 +31,21 @@ const VowserDB = () => (
     <SEO title="vowserDB" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>A minimal database for host-it-yourself projects.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
-        vowserDB is a database designed to be used in smaller host-it-yourself projects.<br />
-        It requires minimal setup and doesn't need a background service - eliminating the need to host a seperate database server, e.g. MySQL.<br />
-        Tables created with vowserDB are compatible with other database software as they are stored in CSV or JSON files.
+          <ProjectParagraph>
+            vowserDB is a database designed to be used in smaller host-it-yourself projects.
+          </ProjectParagraph>
+          <ProjectParagraph>
+            It requires minimal setup and doesn't need a background service - eliminating the need to host a separate database server, e.g. MySQL.
+          </ProjectParagraph>
+          <ProjectParagraph>
+            Tables created with vowserDB are compatible with other database software as they are stored in CSV or JSON files.
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>

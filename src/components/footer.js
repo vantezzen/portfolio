@@ -20,12 +20,12 @@ const LinkContent = styled.div`
 const Footer = () => {
   return (
     <Container>
-      <Link to="/impressum" style={{ textDecoration: 'none' }}>
+      <Link to="/impressum" style={{ textDecoration: 'none' }} lang="de">
         <LinkContent>
           Impressum
         </LinkContent>
       </Link>
-      <Link to="/datenschutz" style={{ textDecoration: 'none' }}>
+      <Link to="/datenschutz" style={{ textDecoration: 'none' }} lang="de">
         <LinkContent>
           Datenschutzerklärung
         </LinkContent>

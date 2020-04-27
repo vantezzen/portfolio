@@ -2,27 +2,21 @@
  * Cauldron.js project page
  */
 import React from "react"
-import { Link } from "gatsby"
-
-import {
-  ChevronLeft
-} from 'react-feather'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Image from '../components/image'
+import BackBtn from '../components/back-btn'
 
 import {
   Container,
-  LinkBack,
   TwoOneGrid,
   OneTwoGrid,
-  EqualGrid,
   ProjectDescription,
+  ProjectParagraph,
   ProjectTechStack,
   LightFont,
   ProjectImage,
-  DirectProjectImage,
   ProjectHeading
 } from '../styles/product'
 import {
@@ -35,19 +29,21 @@ const Cauldron = () => (
     <SEO title="Cauldron.js" />
 
     <Container>
-      <LinkBack>
-        <Link to="/">
-          <ChevronLeft width="30" height="30" />
-        </Link>
-      </LinkBack>
+      <BackBtn />
 
       <h1>Running a Minecraft Server in your browser.</h1>
 
       <TwoOneGrid>
         <ProjectDescription>
+          <ProjectParagraph>
             Traditionally, a Minecraft Server is a Java application, being run inside the terminal. The server owner has to open ports on their networks to allow others to join.<br />
+          </ProjectParagraph>
+          <ProjectParagraph>
             Cauldron.js moves all computing and disk space intensive work into the browser, while keeping all communication with the Minecraft clients on a centralised server.<br />
+          </ProjectParagraph>
+          <ProjectParagraph>
             This allows possibly hundreds of Minecraft Servers to be run on a single networking server.
+          </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>

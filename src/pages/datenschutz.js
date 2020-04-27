@@ -22,9 +22,9 @@ const Datenschutz = () => (
   <>
     <SEO title="Datenschutzerlärung" />
 
-    <Container>
+    <Container lang="de">
       <LinkBack>
-        <Link to="/">
+        <Link to="/" aria-label="Go back to homepage" lang="en">
           <ChevronLeft width="30" height="30" />
         </Link>
       </LinkBack>
