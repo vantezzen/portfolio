@@ -35,6 +35,11 @@ const BrowserPrivacy = () => (
             "Did you mean...?" for GitHub
           </LightButton>
         </Link>
+        <Link to="/browserprivacy/skip-silence" style={{ textDecoration: 'none' }}>
+          <LightButton>
+            Skip Silence
+          </LightButton>
+        </Link>
       </HeroContainer>
 
       <Footer />
