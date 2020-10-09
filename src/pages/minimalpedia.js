@@ -19,7 +19,8 @@ import {
   LightFont,
   ProjectImage,
   DirectProjectImage,
-  ProjectHeading
+  ProjectHeading,
+  ProductTitle
 } from '../styles/product'
 import {
   LightButton
@@ -35,15 +36,15 @@ const Minimalpedia = () => (
     <Container>
       <BackBtn />
 
-      <h1>minimalpedia reimagines the design and user experience of wikipedia.</h1>
+      <ProductTitle>minimalpedia reimagines the design and user experience of wikipedia.</ProductTitle>
 
       <TwoOneGrid>
         <ProjectDescription>
           <ProjectParagraph>
-            minimalpedia is an alternative, minimalistic frontend for wikipedia.<br />
+            minimalpedia is an alternative, minimalistic, SPA frontend for wikipedia.<br />
           </ProjectParagraph>
           <ProjectParagraph>
-            Its design is based on <span lang="ru">Dmitriy Kozhevnikov</span>'s Wikipedia Imagination and uses ReactJS and the wikipedia API to transform wikipedia into a single-page webapp.
+            Its design is based on <a href="https://www.behance.net/gallery/75870375/Wikipedia-Imagination">a Wikipedia redesign I saw on Behance</a> and it uses ReactJS and the wikipedia API to transform wikipedia into a single-page website.
           </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
@@ -57,9 +58,9 @@ const Minimalpedia = () => (
       <OneTwoGrid>
         <ProjectDescription>
           <ProjectHeading>
-            Instant results
+            Fast responds and actions
           </ProjectHeading>
-          minimapedia directly queries the wikipedia API to get relevant articles as you type.
+          minimapedia is build with React and the wikipedia API. Using these technologies, the webapp can provide very fast feedback to actions searching or clicking on articles without the need to reload any part of the page.
         </ProjectDescription>
 
         <ProjectImage>
@@ -67,7 +68,7 @@ const Minimalpedia = () => (
         </ProjectImage>
       </OneTwoGrid>
 
-      <TwoOneGrid>
+      {/* <TwoOneGrid>
         <ProjectImage>
           <Image src="screenshots/minimalpedia_3.png" alt="minimalpedia: demo of dark mode" />
         </ProjectImage>
@@ -78,9 +79,18 @@ const Minimalpedia = () => (
           </ProjectHeading>
           Experience the dark side of minimalpedia by clicking the moon in the bottom left corner.
         </ProjectDescription>
-      </TwoOneGrid>
+      </TwoOneGrid> */}
 
       <DirectProjectImage src={ ImageTwo } alt="Homepage of minimalpedia" />
+
+      <div>
+        <h2>What I've learned</h2>
+        <p>
+          With minimalpedia I first learned to implement the application's API interaction in a way that provides the fastest response to user actions.<br />
+          For instance, if you search for articles, minimalpedia will first query wikipedia for the most necessary information like titles to provide fast results. Only after that, minimalpedia will start loading details like article previews and images.<br />
+          minimalpedia is also my first project, where the design is based on an existing mockup. Due to this, I learned a lot about how to transfer the mockups ideas onto the real product.
+        </p>
+      </div>
 
       <EqualGrid>
         <a href="https://minimalpedia.vantezzen.io/" rel="noopener" style={{ textDecoration: 'none' }}>

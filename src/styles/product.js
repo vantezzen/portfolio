@@ -1,8 +1,31 @@
 /**
  * Styles used on product pages
  */
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import Animate from "react-awesome-reveal";
+import { keyframes } from "@emotion/core";
 import tw from 'tailwind.macro'
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+export const ProductTitle = ({ children }) => (
+  <Animate triggerOnce keyframes={fadeInUp}>
+    <h1>
+      {children}
+    </h1>
+  </Animate>
+);
 
 export const Container = styled.div`
   ${tw`mx-auto text-white`}
@@ -63,6 +86,7 @@ export const EqualGrid = styled.div`
 export const ProjectDescription = styled.div`
   color: #bbbbbb;
 `
+
 export const ProjectParagraph = styled.p`
   margin-bottom: 0.4em;
 `

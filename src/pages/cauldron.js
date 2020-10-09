@@ -5,24 +5,24 @@ import React from "react"
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
-import Image from '../components/image'
 import BackBtn from '../components/back-btn'
 
 import {
   Container,
   TwoOneGrid,
-  OneTwoGrid,
   ProjectDescription,
   ProjectParagraph,
   ProjectTechStack,
   LightFont,
-  ProjectImage,
-  ProjectHeading
+  DirectProjectImage,
+  ProductTitle
 } from '../styles/product'
 import {
   LightButton
 } from '../styles/index'
 import '../styles/global.css'
+
+import image from '../images/screenshots/cauldron_1.png';
 
 const Cauldron = () => (
   <>
@@ -31,29 +31,29 @@ const Cauldron = () => (
     <Container>
       <BackBtn />
 
-      <h1>Running a Minecraft Server in your browser.</h1>
+      <ProductTitle>Running a Minecraft Server in your browser.</ProductTitle>
 
       <TwoOneGrid>
         <ProjectDescription>
           <ProjectParagraph>
-            Traditionally, a Minecraft Server is a Java application, being run inside the terminal. The server owner has to open ports on their networks to allow others to join.<br />
+            Traditionally a Minecraft Server is a Java application, being run inside the terminal. Due to this, opening a server to play with friends can be compicated or expensice for new users.<br />
           </ProjectParagraph>
           <ProjectParagraph>
-            Cauldron.js moves all computing and disk space intensive work into the browser, while keeping all communication with the Minecraft clients on a centralised server.<br />
+            Cauldron.js instead moves all computing and disk space intensive work into the browser, while keeping all communication with the Minecraft clients on a centralised server.<br />
           </ProjectParagraph>
           <ProjectParagraph>
-            This allows possibly hundreds of Minecraft Servers to be run on a single networking server.
+            This allows possibly hundreds of Minecraft Servers to be run on a single, inexpensive server while players can simply open a webpage to start a Minecraft server.
           </ProjectParagraph>
         </ProjectDescription>
         <ProjectTechStack>
           <LightFont>
             Tech stack:
           </LightFont>
-          JavaScript, socket.io, ExpressJS, minecraft-protocol
+          JavaScript, socket.io, ExpressJS, Minecraft-protocol
         </ProjectTechStack>
       </TwoOneGrid>
 
-      <OneTwoGrid>
+      {/* <OneTwoGrid>
         <ProjectDescription>
           <ProjectHeading>
             Run a server on any device
@@ -64,9 +64,11 @@ const Cauldron = () => (
         <ProjectImage>
           <Image src="screenshots/cauldron_1.png" alt="cauldron: website running on different devices" />
         </ProjectImage>
-      </OneTwoGrid>
+      </OneTwoGrid> */}
 
-      <TwoOneGrid>
+      <DirectProjectImage src={image} alt="Homepage of minimalpedia" />
+
+      {/* <TwoOneGrid>
         <ProjectImage>
           <Image src="screenshots/cauldron_2.png" alt="cauldron: server starting page" />
         </ProjectImage>
@@ -77,7 +79,15 @@ const Cauldron = () => (
           </ProjectHeading>
           After opening Cauldron.js, a new Minecraft Server will be ready in seconds.
         </ProjectDescription>
-      </TwoOneGrid>
+      </TwoOneGrid> */}
+
+      <div>
+        <h2>What I've learned</h2>
+        <p>
+          Cauldron.js is project that intensively uses modern JavaScript features like IndexedDB and websockets.<br />
+          Besides learning those technologies, I also learned about optimizing the server-client connection in order to make the Minecraft server perform as best as possible.
+        </p>
+      </div>
 
       <a href="https://github.com/vantezzen/cauldron-js" rel="noopener" style={{ textDecoration: 'none' }}>
         <LightButton>

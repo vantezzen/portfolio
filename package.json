@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Bennett Hollstein <hello@vantezzen.io>",
   "dependencies": {
+    "@emotion/core": "^10.0.35",
     "babel-plugin-macros": "^2.6.1",
     "babel-plugin-styled-components": "^1.10.1",
     "gatsby": "^2.9.11",
@@ -17,6 +18,7 @@
     "gatsby-transformer-sharp": "^2.1.21",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-awesome-reveal": "^3.3.1",
     "react-dom": "^16.8.6",
     "react-feather": "^1.1.6",
     "react-helmet": "^5.2.1",
