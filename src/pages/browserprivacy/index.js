@@ -40,6 +40,11 @@ const BrowserPrivacy = () => (
             Skip Silence
           </LightButton>
         </Link>
+        <Link to="/browserprivacy/bangs" style={{ textDecoration: 'none' }}>
+          <LightButton>
+            Bangs for Google
+          </LightButton>
+        </Link>
       </HeroContainer>
 
       <Footer />
