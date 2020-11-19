@@ -51,8 +51,8 @@ class TiltedByMouse extends Component {
       const maxTilt = 3;
       const perspective = 300;
 
-      const tiltX = ((maxTilt / 2) - ((horizontalTiltAmount) * maxTilt)).toFixed(2);
-      const tiltY = (((verticalTiltAmount) * maxTilt) - (maxTilt / 2)).toFixed(2);
+      const tiltX = -((maxTilt / 2) - ((horizontalTiltAmount) * maxTilt)).toFixed(2);
+      const tiltY = -(((verticalTiltAmount) * maxTilt) - (maxTilt / 2)).toFixed(2);
 
       this.setState({
         transform: `perspective(${perspective}px) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`,
