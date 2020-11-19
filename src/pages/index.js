@@ -59,6 +59,20 @@ const IndexPage = () => {
     ];
 
     // HEADER
+    lax.addElements('body', {
+      scrollY: {
+        'background-color': [
+          [0, 200],
+          [235, 33],
+          {
+            cssFn: (val) => `rgb(${val}, ${val}, ${val})`
+          }
+        ],
+      }
+    }, {
+      easing: 'easeInOutQuint'
+    });
+
     lax.addElements('.logo', {
       scrollY: {
         translateY: [
@@ -72,9 +86,19 @@ const IndexPage = () => {
         scale: [
           [0, 200],
           [2, 1]
-        ]
+        ],
+        filter: [
+          [0, 200],
+          [100, 0],
+          {
+            cssFn: (val) => `invert(${val}%)`
+          }
+        ],
       }
+    }, {
+      easing: 'easeInOutQuint'
     });
+
     lax.addElements('.name', {
       scrollY: {
         translateY: [
@@ -176,10 +200,13 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Home" />
-  
+
       <Container>
         <HeroContainer>
           <img src={ Logo } alt="Bennett Hollstein's Logo" className="lax logo" height={ 50 } aria-hidden />
+          <ScrollDownInfo className="scroll-down-info">
+            Scroll down
+          </ScrollDownInfo>
           <HeroName className="name">
             Hi there, I'm Bennett!<br />
             Student, Web-Developer and working at Smarketer.
@@ -206,10 +233,6 @@ const IndexPage = () => {
               </AboutMeLink>
             </AboutMeLinkContainer>
           </AboutMeContainer>
-
-          <ScrollDownInfo className="scroll-down-info">
-            Scroll down
-          </ScrollDownInfo>
         </HeroContainer>
 
         {/* PROJECTS */}

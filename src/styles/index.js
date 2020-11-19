@@ -27,15 +27,18 @@ export const HeroName = styled.h1`
   font-size: 3rem;
   margin-top: 150px;
 `
-export const ScrollDownInfo = styled.h1`
+export const ScrollDownInfo = styled.div`
   font-size: 0.9rem;
-  color: #AAAAAA;
+  color: #212121;
   font-weight: 500;
   position: absolute;
   bottom: 1rem;
   left: 0;
   text-align: center;
   width: 100%;
+
+  animation: animateScrollDown 8s ease-in-out;
+  animation-iteration-count: infinite;
 `
 
 export const ProjectsContainer = styled.div`

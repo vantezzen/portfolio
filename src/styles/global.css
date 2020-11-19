@@ -14,6 +14,7 @@ body {
   font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Roboto","Helvetica Neue","Helvetica","Arial",sans-serif;
 
   background-color: #212121;
+  transform: none !important;
 }
 article,
 aside,
@@ -626,5 +627,17 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+@keyframes animateScrollDown {
+  from {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }
