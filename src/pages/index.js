@@ -199,10 +199,10 @@ const IndexPage = () => {
     });
 
     // CONTACT FORM
-    lax.addElements('#contact *', {
+    lax.addElements('#contact .form-group', {
       scrollY: {
         translateY: [
-          ['elInY', 'elCenterY - screenHeight / 2'],
+          ['elInY', 'elInY + 100'],
           [100, 0]
         ],
         opacity: inOutAnimation
