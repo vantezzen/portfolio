@@ -39,7 +39,7 @@ const blymp = () => {
         <TwoOneGrid>
           <ProjectDescription>
             <ProjectParagraph>
-              I always enjoyed the ease-of-use of Apple's AirDrop, however, most of the time, I am not transferring files between Apple devices.
+              I always enjoyed the ease-of-use of Apple&trade;'s AirDrop®, however, most of the time, I am not transferring files between Apple devices.
             </ProjectParagraph>
             <ProjectParagraph>
               That was my motivation to create blymp.<br />
@@ -103,6 +103,10 @@ const blymp = () => {
             </LightButton>
           </a>
         </EqualGrid>
+
+        <p>
+          Apple and AirDrop are trademarks of Apple Inc., registered in the U.S. and other countries. blymp is not associated with Apple or Apple's AirDrop service.
+        </p>
   
         <Footer />
       </Container>
