@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Animate from "react-awesome-reveal";
 import { keyframes } from "@emotion/core";
 import tw from 'tailwind.macro'
+import TiltedByMouse from '../components/TiltedByMouse'
 
 const fadeInUp = keyframes`
   from {
@@ -100,11 +101,20 @@ export const ProjectHeading = styled.h2`
   color: #fff;
   font-weight: 400;
 `
-export const ProjectImage = styled.div`
-  img {
-    border-radius: 2rem;
-  }
+
+export const ProjectImageInner = styled.div`
+img {
+  border-radius: 2rem;
+}
 `
+export const ProjectImage = ({ children }) => (
+  <TiltedByMouse>
+    <ProjectImageInner>
+      {children}
+    </ProjectImageInner>
+  </TiltedByMouse>
+)
+
 export const DirectProjectImage = styled.img`
   border-radius: 2rem;
 `

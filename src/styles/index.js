@@ -144,6 +144,7 @@ export const SkillsContainer = styled.div`
 
 export const ContactContainer = styled.div`
   margin-top: 5rem;
+  margin-bottom: 5rem;
   padding-top: 5rem;
 
   border-top-color: rgba(100, 100, 100, 0.5);

@@ -152,7 +152,20 @@ const IndexPage = () => {
     });
 
     // PROJECTS
-    lax.addElements('.project', {
+    lax.addElements('.project:nth-child(odd)', {
+      scrollY: {
+        opacity: inOutAnimation,
+        translateX: [
+          ['elInY - ( screenHeight / 4)', 'elCenterY - ( screenHeight / 4)'],
+          ['-1 * screenWidth / 4', 0]
+        ],
+        translateY: [
+          ['elInY - ( screenHeight / 4)', 'elCenterY - ( screenHeight / 4)'],
+          [100, 0]
+        ],
+      }
+    });
+    lax.addElements('.project:nth-child(even)', {
       scrollY: {
         opacity: inOutAnimation,
         translateX: [
@@ -189,12 +202,16 @@ const IndexPage = () => {
     lax.addElements('#contact *', {
       scrollY: {
         translateY: [
-          ['elInY', 'elInY + (screenHeight / 4)'],
+          ['elInY', 'elCenterY - screenHeight / 2'],
           [100, 0]
         ],
         opacity: inOutAnimation
       }
     });
+
+    return () => {
+      lax.removeElements('body');
+    };
   }, []);
 
   return (
@@ -263,21 +280,60 @@ const IndexPage = () => {
             <ProjectContainer className="project">
               <TiltedByMouse>
                 <ProjectImage className="project-img">
-                  <Image src="screenshots/ferdi.png" />
+                  <Image src="screenshots/skipsilence_1.png" />
                 </ProjectImage>
               </TiltedByMouse>
 
-              <ProjectHeading aria-label="Project name: Ferdi">Skip Silence</ProjectHeading>
+              <ProjectHeading aria-label="Project name: Skip Silence">Skip Silence</ProjectHeading>
               <ProjectDescription>
                 Skip Silence is a browser extension that allows you to skip silence parts of videos.
               </ProjectDescription>
-              <ProjectTechStack aria-label="Technologies used">ReactJS, JavaScript Media API</ProjectTechStack>
+              <ProjectTechStack aria-label="Technologies used">TypeScript, ReactJS, JavaScript Media API</ProjectTechStack>
 
-              <Link to="/ferdi" style={{ textDecoration: 'none' }} className="view-project-btn">
+              <Link to="/skipsilence" style={{ textDecoration: 'none' }} className="view-project-btn">
                 <LightButton>
                   View
                 </LightButton>
               </Link>
+            </ProjectContainer>
+
+
+            <ProjectContainer className="project">
+              <TiltedByMouse>
+                <ProjectImage className="project-img">
+                  <Image src="screenshots/blymp_1.png" />
+                </ProjectImage>
+              </TiltedByMouse>
+
+              <ProjectHeading aria-label="Project name: blymp">blymp</ProjectHeading>
+              <ProjectDescription>
+                Easily send files between devices.
+              </ProjectDescription>
+              <ProjectTechStack aria-label="Technologies used">WebSockets, WebRTC</ProjectTechStack>
+
+              <Link to="/blymp" style={{ textDecoration: 'none' }} className="view-project-btn">
+                <LightButton>
+                  View
+                </LightButton>
+              </Link>
+            </ProjectContainer>
+
+            <ProjectContainer className="project">
+              <TiltedByMouse>
+                <ProjectImage className="project-img">
+                  <Image src="screenshots/github_1.png" />
+                </ProjectImage>
+              </TiltedByMouse>
+
+              <ProjectHeading>More projects on GitHub</ProjectHeading>
+              <ProjectDescription>You can find all of my open-source projects on GitHub.</ProjectDescription>
+              {/* <ProjectTechStack>.</ProjectTechStack> */}
+
+              <a href="https://github.com/vantezzen" rel="noopener noreferrer" target="_blank" style={{ textDecoration: 'none' }} aria-label="GitHub profile">
+                <LightButton className="view-project-btn">
+                  View
+                </LightButton>
+              </a>
             </ProjectContainer>
 
           </ProjectsListContainer>
