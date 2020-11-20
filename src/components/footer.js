@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  margin-top: 2rem;
+  margin-top: 8rem;
   margin-bottom: 1rem;
   display: flex;
 `

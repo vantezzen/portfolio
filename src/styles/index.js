@@ -21,10 +21,24 @@ export const Container = styled.div`
   }
 `
 export const HeroContainer = styled.div`
-  margin-top: 20vh;
+  margin-top: 40vh;
 `
 export const HeroName = styled.h1`
   font-size: 3rem;
+  margin-top: 150px;
+`
+export const ScrollDownInfo = styled.div`
+  font-size: 0.9rem;
+  color: #212121;
+  font-weight: 500;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  text-align: center;
+  width: 100%;
+
+  animation: animateScrollDown 8s ease-in-out;
+  animation-iteration-count: infinite;
 `
 
 export const ProjectsContainer = styled.div`
@@ -71,8 +85,8 @@ export const LightButton = styled.div`
   font-size: 1rem;
 `
 export const AboutMeContainer = styled.div`
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 5rem;
+  padding-top: 5rem;
 
   border-top-color: rgba(100, 100, 100, 0.5);
   border-top-style: solid;
@@ -96,8 +110,8 @@ export const AboutMeLink = styled.a`
 `;
 
 export const SkillsContainer = styled.div`
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 5rem;
+  padding-top: 5rem;
 
   border-top-color: rgba(100, 100, 100, 0.5);
   border-top-style: solid;
@@ -129,8 +143,9 @@ export const SkillsContainer = styled.div`
 `
 
 export const ContactContainer = styled.div`
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding-top: 5rem;
 
   border-top-color: rgba(100, 100, 100, 0.5);
   border-top-style: solid;
