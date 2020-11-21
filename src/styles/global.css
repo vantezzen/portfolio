@@ -15,6 +15,7 @@ body {
 
   background-color: #212121;
   transform: none !important;
+  overflow-x: hidden;
 }
 article,
 aside,
