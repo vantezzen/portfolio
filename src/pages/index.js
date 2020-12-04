@@ -1,7 +1,7 @@
 /**
  *  Index page
  */
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import lax from "lax.js"
 
@@ -38,12 +38,15 @@ import Logo from "../images/logo.svg"
 
 import Image from '../components/image'
 import TiltedByMouse from '../components/TiltedByMouse';
+import Loading from "../components/Loading"
 
 import '../styles/global.css'
 
 const age = new Date(new Date() - new Date('2001-01-26')).getFullYear() - 1970;
 
 const IndexPage = () => {
+  const [showLoading, setLoading] = useState(true);
+
   useEffect(() => {
     // Setup lax
     window.lax = lax;
@@ -209,6 +212,10 @@ const IndexPage = () => {
       }
     });
 
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
+
     return () => {
       lax.removeElements('body');
     };
@@ -216,6 +223,8 @@ const IndexPage = () => {
 
   return (
     <>
+      {showLoading && <Loading />} 
+
       <SEO title="Home" />
 
       <Container>
