@@ -1,5 +1,16 @@
-import React, { useState } from "react";
-import Sketch from "react-p5";
+/**
+ * Hero Background with a random p5 Sketch
+ */
+
+// react-p5 uses "window." which is not available during the build-step
+// Due to this we need to only import the real library when in the browser and can
+// use a dummy function when in SSR
+const React = require('react');
+const {useState} = React;
+let Sketch = () => (<div></div>);
+if (typeof window !== `undefined`) {
+  Sketch = require('react-p5');
+}
  
 // Colorful Waves
 let curves = [];
