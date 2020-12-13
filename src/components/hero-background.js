@@ -7,7 +7,7 @@ import colorfulWaves from "./heroGames/colorfulWaves";
 const Sketch = loadable(() => import('./p5'));
 
 const backgrounds = [
-  // colorfulWaves,
+  colorfulWaves,
   gameOfLife
 ];
 
