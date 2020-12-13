@@ -7,6 +7,7 @@ import gameOfLife from './heroGames/gameOfLife';
 import colorfulWaves from "./heroGames/colorfulWaves";
 import breathingColor from "./heroGames/breathingColor";
 import randomColorCycling from "./heroGames/randomColorCycling";
+import circles from "./heroGames/circles";
 
 const Sketch = loadable(() => import('./p5'));
 
@@ -14,6 +15,7 @@ const backgrounds = [
   colorfulWaves,
   gameOfLife,
   randomColorCycling,
+  circles,
   // breathingColor
 ];
 
@@ -45,6 +47,7 @@ const HeroBackground = (props) => {
           setBackground(newBackground);
         }}
         title="Get new background"
+        id="hero-background-btn"
       >
         <RotateCw />
       </button>

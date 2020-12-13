@@ -37,6 +37,10 @@ const colorfulWaves = {
     }
   },
   draw: (p5) => {
+    // We only need to update the board when the board is actually in the view
+    // Otherwise just skip drawing
+    if (window.scrollY > 300) return;
+    
     p5.background('#ffc800');
 
     for(let curve of curves) {

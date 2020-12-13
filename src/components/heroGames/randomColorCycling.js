@@ -21,6 +21,10 @@ const randomColorCycling = {
     newColors(p5);
   },
   draw: (p5) => {
+    // We only need to update the board when the board is actually in the view
+    // Otherwise just skip drawing
+    if (window.scrollY > 300) return;
+    
     try {
       p5.background(
         p5.lerpColor(startColor, endColor, status)
