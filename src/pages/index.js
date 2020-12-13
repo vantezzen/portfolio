@@ -47,8 +47,28 @@ const age = new Date(new Date() - new Date('2001-01-26')).getFullYear() - 1970;
 
 const IndexPage = () => {
   const [showLoading, setLoading] = useState(true);
+  const [loadState, setLoadState] = useState(0);
+
+  // We have two loading items (Lax and P5 Sketch), so we use a load state
+  // as to keep track of when both items finish loading
+  const increaseLoadState = () => {
+    setLoadState(loadState + 1);
+
+    // Both items are done - hide the loading screen
+    if ((loadState + 1) >= 2) {
+      setTimeout(() => {
+          setLoading(false);
+      }, 100);
+    }
+  }
 
   useEffect(() => {
+    // Hide the loading screen after 2s - even if we haven't finished loading yet
+    // We don't want to keep the user waiting
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
     // Setup lax
     window.lax = lax;
     lax.init();
@@ -223,9 +243,7 @@ const IndexPage = () => {
       }
     });
 
-    setTimeout(() => {
-      setLoading(false);
-    }, 100);
+    increaseLoadState();
 
     return () => {
       lax.removeElements('body');
@@ -240,7 +258,7 @@ const IndexPage = () => {
 
       <Container>
 
-        <HeroBackground />
+        <HeroBackground onLoad={increaseLoadState} />
 
         <HeroContainer>
           <img src={ Logo } alt="Bennett Hollstein's Logo" className="lax logo" height={ 50 } aria-hidden />
