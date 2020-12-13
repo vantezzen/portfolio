@@ -3,12 +3,16 @@ import loadable from '@loadable/component';
 
 import gameOfLife from './heroGames/gameOfLife';
 import colorfulWaves from "./heroGames/colorfulWaves";
+import breathingColor from "./heroGames/breathingColor";
+import randomColorCycling from "./heroGames/randomColorCycling";
 
 const Sketch = loadable(() => import('./p5'));
 
 const backgrounds = [
   colorfulWaves,
-  gameOfLife
+  gameOfLife,
+  randomColorCycling,
+  // breathingColor
 ];
 
 const HeroBackground = (props) => {
