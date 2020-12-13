@@ -76,7 +76,7 @@ const IndexPage = () => {
     }, {
       easing: 'easeInOutQuint'
     });
-    lax.addElements('#hero-background', {
+    lax.addElements('#hero-background, #hero-background-btn', {
       scrollY: {
         'opacity': [
           [0, 200],
