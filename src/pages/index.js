@@ -41,6 +41,7 @@ import TiltedByMouse from '../components/TiltedByMouse';
 import Loading from "../components/Loading"
 
 import '../styles/global.css'
+import HeroBackground from "../components/hero-background"
 
 const age = new Date(new Date() - new Date('2001-01-26')).getFullYear() - 1970;
 
@@ -70,6 +71,16 @@ const IndexPage = () => {
           {
             cssFn: (val) => `rgb(${val}, ${val}, ${val})`
           }
+        ],
+      }
+    }, {
+      easing: 'easeInOutQuint'
+    });
+    lax.addElements('#hero-background', {
+      scrollY: {
+        'opacity': [
+          [0, 200],
+          [1, 0]
         ],
       }
     }, {
@@ -228,6 +239,9 @@ const IndexPage = () => {
       <SEO title="Home" />
 
       <Container>
+
+        <HeroBackground />
+
         <HeroContainer>
           <img src={ Logo } alt="Bennett Hollstein's Logo" className="lax logo" height={ 50 } aria-hidden />
           <ScrollDownInfo className="scroll-down-info">
