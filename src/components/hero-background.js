@@ -5,7 +5,7 @@ import { RotateCw } from 'react-feather';
 
 import gameOfLife from './heroGames/gameOfLife';
 import colorfulWaves from "./heroGames/colorfulWaves";
-import breathingColor from "./heroGames/breathingColor";
+// import breathingColor from "./heroGames/breathingColor";
 import randomColorCycling from "./heroGames/randomColorCycling";
 import circles from "./heroGames/circles";
 
@@ -30,7 +30,16 @@ const HeroBackground = (props) => {
         top: 0,
         left: 0,
       }}>
-        <Sketch {...background} key={currentBackground} />
+        <Sketch
+          {...background}
+          key={currentBackground}
+          setup={(...args) => {
+            background.setup(...args);
+            if (props.onLoad) {
+              props.onLoad();
+            }
+          }}
+        />
       </div>
       <button 
         style={{

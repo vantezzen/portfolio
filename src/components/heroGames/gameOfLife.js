@@ -41,7 +41,7 @@ function step() {
         next[x][y] = 0;
       } else if (grid[x][y] && neighbors >  3) {
         next[x][y] = 0;
-      } else if (!grid[x][y] && neighbors == 3) {
+      } else if (!grid[x][y] && neighbors === 3) {
         next[x][y] = 1;
       } else {
         next[x][y] = grid[x][y];
@@ -86,7 +86,7 @@ function changeValue(p5) {
     p5.rect(xGrid, yGrid, GRID_SIZE);
 
     // Add the change to the queue if it is not already in the queue
-    if (!changesQueue.find((val) => (val.x == x && val.y == y))) {
+    if (!changesQueue.find((val) => (val.x === x && val.y === y))) {
       changesQueue.push({
         x,
         y,

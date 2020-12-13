@@ -1,7 +1,7 @@
 /**
  * Cauldron.js project page
  */
-import React, { useEffect } from "react"
+import React from "react"
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
