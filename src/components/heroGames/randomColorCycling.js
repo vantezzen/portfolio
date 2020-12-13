@@ -30,7 +30,7 @@ const randomColorCycling = {
       newColors(p5);
     }
     
-    status += 0.002;
+    status += 0.004;
     if (status >= 1) {
       newColors(p5);
     }

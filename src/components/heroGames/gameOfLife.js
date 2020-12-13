@@ -57,7 +57,9 @@ function step() {
   }
   for (let i = -3; i <= 3; i++) {
     for (let j = -3; j <= 3; j++) {
-      next[centerX + i][centerY + j] = 0;
+      if (next[centerX + i] && next[centerX + i][centerY + j]) {
+        next[centerX + i][centerY + j] = 0;
+      }
     }
   }
 
@@ -103,8 +105,8 @@ function initGrid(p5) {
     emptyGrid[i] = [];
     
     for(let j = 0; j < GRID_ROWS; j++) {
-      // Fill the cells randomly with a chance of 15% of being alive
-      grid[i][j] = Math.round(Math.random() - 0.35);
+      // Fill the cells randomly with a chance of 20% of being alive
+      grid[i][j] = Math.round(Math.random() - 0.30);
 
       emptyGrid[i][j] = 0;
     }
@@ -129,9 +131,12 @@ const gameOfLife = {
 
     try {
       step();
-    } catch(e) {}
+    } catch(e) {
+      console.log(e)
+    }
     
     // Draw the grid
+    let numAlive = 0;
     for(let i = 0; i < GRID_COLUMNS; i++) {
       for(let j = 0; j < GRID_ROWS; j++) {
         const x = i * GRID_SIZE;
@@ -140,6 +145,22 @@ const gameOfLife = {
         p5.fill(grid[i][j] ? 0x21 : 0xEB);
         
         p5.rect(x, y, GRID_SIZE);
+
+        if (grid[i][j]) {
+          numAlive++;
+        }
+      }
+    }
+
+    // Reinitialize our grid if there are only a few alive cells left
+    if (numAlive < 8) {
+      // Add some random cells
+      console.log("Pushing some new alive cells");
+      for(let i = 0; i < (GRID_COLUMNS * GRID_ROWS * 0.3); i++) {
+        const x = Math.floor(Math.random() * GRID_COLUMNS);
+        const y = Math.floor(Math.random() * GRID_ROWS);
+
+        changesQueue.push({ x, y });
       }
     }
   },
