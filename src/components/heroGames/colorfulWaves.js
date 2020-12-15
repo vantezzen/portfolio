@@ -49,7 +49,7 @@ const colorfulWaves = {
       p5.noStroke();
       
       for(let i = 0; i < p5.width; i++) {
-        const timeFactor = (p5.millis() / curve.speed_divident) - (p5.mouseX * (curve.sin_width / 100));
+        const timeFactor = (p5.millis() / curve.speed_divident) - (p5.mouseX * ((100 - curve.sin_width) / 100));
         const sinCurve = p5.sin((i + timeFactor) / curve.sin_width);
         const shiftedSin = sinCurve + curve.shift_up;
         const heightStrechedSin = curve.height * shiftedSin;
