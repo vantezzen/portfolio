@@ -25,9 +25,11 @@ const circles = {
     
     for(let i = 0; i < GRID_COLUMNS; i++) {
       for(let j = 0; j < GRID_ROWS; j++) {
-        // Don't draw the center circles as to keep the logo visible
         if (
-          p5.dist(i, j, CENTER_X, CENTER_Y) < 3
+          // Don't draw the center circles as to keep the logo visible
+          p5.dist(i, j, CENTER_X, CENTER_Y) < 3 ||
+          // Don't draw the last circle as to keep the new background button visible
+          (i === (GRID_COLUMNS - 2) && j === (GRID_ROWS - 2))
         ) continue;
 
         // The circles use a sinus wave to smoothly grow and shrink in waves
