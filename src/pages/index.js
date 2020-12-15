@@ -107,31 +107,36 @@ const IndexPage = () => {
       easing: 'easeInOutQuint'
     });
 
-    lax.addElements('.logo', {
-      scrollY: {
-        translateY: [
-          [0, 200],
-          [50, 150],
-        ],
-        translateX: [
-          [0, 200],
-          ['-1*elCenterX', 0],
-        ],
-        scale: [
-          [0, 200],
-          [2, 1]
-        ],
-        filter: [
-          [0, 200],
-          [100, 0],
-          {
-            cssFn: (val) => `invert(${val}%)`
-          }
-        ],
-      }
-    }, {
-      easing: 'easeInOutQuint'
-    });
+    // Lax seems to have problems calculating the correct position for the logo
+    // when the background isn't positioned yet. This is why we need to wait 10ms
+    // for the background to position before we can set the animations for the logo
+    setTimeout(() => {
+      lax.addElements('.logo', {
+        scrollY: {
+          translateY: [
+            [0, 200],
+            [50, 150],
+          ],
+          translateX: [
+            [0, 200],
+            ['-1*elCenterX', 0],
+          ],
+          scale: [
+            [0, 200],
+            [2, 1]
+          ],
+          filter: [
+            [0, 200],
+            [100, 0],
+            {
+              cssFn: (val) => `invert(${val}%)`
+            }
+          ],
+        }
+      }, {
+        easing: 'easeInOutQuint'
+      });
+    }, 10);
 
     lax.addElements('.name', {
       scrollY: {
