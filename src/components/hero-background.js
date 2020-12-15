@@ -8,6 +8,9 @@ import colorfulWaves from "./heroGames/colorfulWaves";
 // import breathingColor from "./heroGames/breathingColor";
 import randomColorCycling from "./heroGames/randomColorCycling";
 import circles from "./heroGames/circles";
+import drops from "./heroGames/drops";
+
+import "./hero-background.css";
 
 const Sketch = loadable(() => import('./p5'));
 
@@ -16,6 +19,7 @@ const backgrounds = [
   gameOfLife,
   randomColorCycling,
   circles,
+  drops,
   // breathingColor
 ];
 
@@ -80,27 +84,42 @@ class HeroBackground extends Component {
             }}
           />
         </div>
-        <button 
+        <div 
           style={{
             bottom: '1rem',
             right: '1rem',
-            ...tw`bg-transparent fixed z-10 border-none outline-none cursor-pointer`
+            ...tw`fixed z-10 flex align-center`
           }}
-          onClick={() => {
-            let newBackground = currentBackground + 1;
-            if (newBackground >= backgrounds.length) {
-              newBackground = 0;
-            }
-
-            this.setState({
-              currentBackground: newBackground,
-            });
-          }}
-          title="Get new background"
           id="hero-background-btn"
         >
-          <RotateCw />
-        </button>
+          <i style={{
+            color: '#444444',
+            fontWeight: 400,
+            marginRight: 10,
+            fontSize: '0.8rem',
+            ...tw`md:hidden`
+          }} className="background-info-text">
+            {background.info}
+          </i>
+          <button 
+            style={{
+              ...tw`bg-transparent z-10 border-none outline-none cursor-pointer`
+            }}
+            onClick={() => {
+              let newBackground = currentBackground + 1;
+              if (newBackground >= backgrounds.length) {
+                newBackground = 0;
+              }
+
+              this.setState({
+                currentBackground: newBackground,
+              });
+            }}
+            title="Get new background"
+          >
+            <RotateCw />
+          </button>
+        </div>
       </>
     );
   }

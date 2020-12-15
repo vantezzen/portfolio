@@ -3,6 +3,7 @@
  */
 
 const breathingColor = {
+  info: 'Breathing Color',
   setup: (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
   },

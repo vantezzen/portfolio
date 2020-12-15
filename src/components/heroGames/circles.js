@@ -4,6 +4,7 @@
 const CIRCLES = 20;
  
 const circles = {
+  info: 'Circles',
   setup: (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
   },
@@ -29,7 +30,9 @@ const circles = {
           // Don't draw the center circles as to keep the logo visible
           p5.dist(i, j, CENTER_X, CENTER_Y) < 3 ||
           // Don't draw the last circle as to keep the new background button visible
-          (i === (GRID_COLUMNS - 2) && j === (GRID_ROWS - 2))
+          (i >= (GRID_COLUMNS - 3) && j >= (GRID_ROWS - 2)) ||
+          // Don't draw circles bottom center as to keep the "Scroll down" Text visible
+          (j >= (GRID_ROWS - 2) && i >= ((CENTER_X) - 2) && i <= ((CENTER_X) + 2))
         ) continue;
 
         // The circles use a sinus wave to smoothly grow and shrink in waves

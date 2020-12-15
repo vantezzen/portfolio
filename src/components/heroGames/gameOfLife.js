@@ -55,8 +55,8 @@ function step() {
   if(grid.length > 0) {
     centerY = Math.floor((grid[0].length - 2) / 2);
   }
-  for (let i = -3; i <= 3; i++) {
-    for (let j = -3; j <= 3; j++) {
+  for (let i = -2; i <= 4; i++) {
+    for (let j = -2; j <= 4; j++) {
       if (next[centerX + i] && next[centerX + i][centerY + j]) {
         next[centerX + i][centerY + j] = 0;
       }
@@ -76,8 +76,13 @@ function changeValue(p5) {
   // Make sure the value is inside of our boundaries
   if (
     grid.length > 0 &&
-    x >= 0 && x < grid.length &&
-    y >= 0 && y < grid[0].length
+    x >= 0 && x < (grid.length - 1) &&
+    y >= 0 && y < (grid[0].length - 1) &&
+    // Not in the center
+    !(
+      x >= ((GRID_COLUMNS / 2) - 3) && x <= ((GRID_COLUMNS / 2) + 3) &&
+      y >= ((GRID_ROWS / 2) - 3) && y <= ((GRID_ROWS / 2) + 3)
+    )
   ) {
     // Update the canvas immediately so we get a feedback
     const xGrid = x * GRID_SIZE;
@@ -97,7 +102,7 @@ function changeValue(p5) {
 
 function initGrid(p5) {
   GRID_COLUMNS = Math.ceil(p5.windowWidth / GRID_SIZE) + 1;
-  GRID_ROWS = Math.ceil(p5.windowHeight / GRID_SIZE) + 1;
+  GRID_ROWS = Math.floor(p5.windowHeight / GRID_SIZE) - 1;
   
   // Initialize the grid
   for(let i = 0; i < GRID_COLUMNS; i++) {
@@ -114,6 +119,7 @@ function initGrid(p5) {
 }
 
 const gameOfLife = {
+  info: 'Game Of Life',
   setup: (p5, canvasParentRef) => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     

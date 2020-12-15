@@ -5,6 +5,7 @@ let curves = [];
 let ctx;
 
 const colorfulWaves = {
+  info: 'Colorful Waves',
   setup: (p5, canvasParentRef) => {
     curves.push({
       height: 23,
@@ -40,7 +41,7 @@ const colorfulWaves = {
     // We only need to update the board when the board is actually in the view
     // Otherwise just skip drawing
     if (window.scrollY > 300) return;
-    
+
     p5.background('#ffc800');
 
     for(let curve of curves) {
