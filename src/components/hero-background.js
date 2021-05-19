@@ -9,6 +9,7 @@ import colorfulWaves from "./heroGames/colorfulWaves";
 import randomColorCycling from "./heroGames/randomColorCycling";
 import circles from "./heroGames/circles";
 import drops from "./heroGames/drops";
+import colorMixing from "./heroGames/colorMixing";
 
 import "./hero-background.css";
 
@@ -20,6 +21,7 @@ const backgrounds = [
   randomColorCycling,
   circles,
   drops,
+  colorMixing,
   // breathingColor
 ];
 
