@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import lax from "lax.js"
+import tw from 'tailwind.macro'
 
 import SEO from "../components/seo"
 import Footer from "../components/footer"
@@ -434,6 +435,7 @@ const IndexPage = () => {
         {/* CONTACT FORM */}
         <ContactContainer id="contact">
           <h2>Contact me.</h2>
+          <p style={{...tw`text-sm`, color: '#666'}}>Please use GitHub issues instead of this contact form for reporting bugs, feature requests and questions for my open-source projects</p>
 
           <form name="contact" method="POST">
             <input type="hidden" name="form-name" value="contact" />
