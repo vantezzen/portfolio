@@ -27,6 +27,7 @@ export default function HTML(props) {
 
         <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js" data-skip-dnt="true"></script>
         <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+        <script async defer data-domain="vantezzen.io" src="https://ap.vantezzen.io/js/script.js"></script>
       </body>
     </html>
   )
