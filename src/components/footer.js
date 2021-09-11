@@ -9,9 +9,10 @@ const Container = styled.div`
   margin-top: 8rem;
   margin-bottom: 1rem;
   display: flex;
+  position: relative;
 `
 const LinkContent = styled.div`
-  color: #bbbbbb;
+  color: #737373;
   font-size: .85rem;
   margin-right: 1rem;
 `

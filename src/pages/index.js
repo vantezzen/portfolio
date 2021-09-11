@@ -32,7 +32,8 @@ import {
   AboutMeLink,
   SkillsContainer,
   ContactContainer,
-  SubmitButton
+  SubmitButton,
+  DarkButton
 } from '../styles/index.js'
 
 import Logo from "../images/logo.svg"
@@ -84,29 +85,19 @@ const IndexPage = () => {
     ];
 
     // HEADER
-    lax.addElements('body', {
-      scrollY: {
-        'background-color': [
-          [0, 200],
-          [235, 33],
-          {
-            cssFn: (val) => `rgb(${val}, ${val}, ${val})`
-          }
-        ],
-      }
-    }, {
-      easing: 'easeInOutQuint'
-    });
-    lax.addElements('#hero-background, #hero-background-btn', {
-      scrollY: {
-        'opacity': [
-          [0, 200],
-          [1, 0]
-        ],
-      }
-    }, {
-      easing: 'easeInOutQuint'
-    });
+    // lax.addElements('.name', {
+    //   scrollY: {
+    //     'background-color': [
+    //       [0, 200],
+    //       [235, 33],
+    //       {
+    //         cssFn: (val) => `rgb(${val}, ${val}, ${val})`
+    //       }
+    //     ],
+    //   }
+    // }, {
+    //   easing: 'easeInOutQuint'
+    // });
 
     // Lax seems to have problems calculating the correct position for the logo
     // when the background isn't positioned yet. This is why we need to wait 10ms
@@ -192,29 +183,16 @@ const IndexPage = () => {
     });
 
     // PROJECTS
-    lax.addElements('.project:nth-child(odd)', {
+    lax.addElements('.project', {
       scrollY: {
         opacity: inOutAnimation,
-        translateX: [
-          ['elInY - ( screenHeight / 4)', 'elCenterY - ( screenHeight / 4)'],
-          ['-1 * screenWidth / 4', 0]
-        ],
         translateY: [
           ['elInY - ( screenHeight / 4)', 'elCenterY - ( screenHeight / 4)'],
           [100, 0]
         ],
-      }
-    });
-    lax.addElements('.project:nth-child(even)', {
-      scrollY: {
-        opacity: inOutAnimation,
-        translateX: [
-          ['elInY', 'elCenterY'],
-          ['screenWidth / 4', 0]
-        ],
-        translateY: [
-          ['elInY', 'elCenterY'],
-          [100, 0]
+        scale: [
+          ['elInY - ( screenHeight / 4)', 'elCenterY - ( screenHeight / 4)'],
+          [0.8, 1]
         ],
       }
     });
@@ -258,7 +236,7 @@ const IndexPage = () => {
 
   return (
     <>
-      {showLoading && <Loading />} 
+      {/* {showLoading && <Loading />}  */}
 
       <SEO title="Home" />
 
@@ -266,8 +244,7 @@ const IndexPage = () => {
 
         <HeroBackground onLoad={increaseLoadState} />
 
-        <HeroContainer>
-          <img src={ Logo } alt="Bennett Hollstein's Logo" className="lax logo" height={ 50 } aria-hidden />
+        <HeroContainer className="hero-container">
           <ScrollDownInfo className="scroll-down-info">
             Scroll down
           </ScrollDownInfo>
@@ -392,36 +369,52 @@ const IndexPage = () => {
 
           <ul className="skills">
 						<li>JavaScript</li>
-						<li>NodeJS</li>
-						<li>Express</li>
-						<li>socket.io</li>
-						<li>AdonisJS</li>
-						<li>React</li>
-						<li>GatsbyJS</li>
-						<li>react-router</li>
-						<li>Redux</li>
-						<li>styled-components</li>
-						<li>mobx</li>
-						<li>mobx-react</li>
-						<li>ElectronJS</li>
-						<li>vueJS</li>
-						<li>AngularJS</li>
-						<li>jQuery</li>
+            <ul className="subskills">
+              <li>NodeJS</li>
+              <li>Express</li>
+              <li>socket.io</li>
+              <li>AdonisJS</li>
+              <li>React</li>
+              <li>GatsbyJS</li>
+              <li>react-router</li>
+              <li>Redux</li>
+              <li>styled-components</li>
+              <li>mobx</li>
+              <li>mobx-react</li>
+              <li>three.js</li>
+              <li>ElectronJS</li>
+              <li>vueJS</li>
+              <li>AngularJS</li>
+              <li>jQuery</li>
+            </ul>
 						<li>CSS</li>
-						<li>SCSS</li>
-						<li>Bootstrap</li>
-						<li>tailwind.css</li>
+            <ul className="subskills">
+              <li>SCSS</li>
+              <li>Bootstrap</li>
+              <li>tailwind.css</li>
+            </ul>
 						<li>HTML</li>
 						<li>PHP</li>
-						<li>Laravel</li>
-						<li>PHPUnit</li>
-						<li>Composer</li>
+            <ul className="subskills">
+              <li>Laravel</li>
+              <li>PHPUnit</li>
+              <li>Composer</li>
+            </ul>
 						<li>SQL</li>
-						<li>MySQL</li>
-						<li>PostgreSQL</li>
+            <ul className="subskills">
+              <li>MySQL</li>
+              <li>PostgreSQL</li>
+            </ul>
+            <li>C#</li>
+            <ul className="subskills">
+              <li>Unity</li>
+              <li>ASP.NET</li>
+            </ul>
 						<li>Redis</li>
 						<li>Docker</li>
-						<li>Kubernetes</li>
+            <ul className="subskills">
+						  <li>Kubernetes</li>
+            </ul>
 						<li>Git</li>
 						<li>Bash</li>
 
@@ -452,9 +445,9 @@ const IndexPage = () => {
               <textarea name="message" id="message" placeholder="Hello,..." required></textarea>
             </div>
             <SubmitButton type="submit">
-              <LightButton>
+              <DarkButton>
                 Send message
-              </LightButton>
+              </DarkButton>
             </SubmitButton>
             
           </form>
