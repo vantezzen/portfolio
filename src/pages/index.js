@@ -382,6 +382,7 @@ const IndexPage = () => {
               <li>mobx</li>
               <li>mobx-react</li>
               <li>three.js</li>
+              <li>Cypress</li>
               <li>ElectronJS</li>
               <li>vueJS</li>
               <li>AngularJS</li>
@@ -408,7 +409,14 @@ const IndexPage = () => {
             <li>C#</li>
             <ul className="subskills">
               <li>Unity</li>
+              <li>.Net</li>
               <li>ASP.NET</li>
+            </ul>
+            <li>Java</li>
+            <ul className="subskills">
+              <li>Android App Development</li>
+              <li>JUnit</li>
+              <li>Mockito</li>
             </ul>
 						<li>Redis</li>
 						<li>Docker</li>
