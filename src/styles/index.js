@@ -21,14 +21,11 @@ export const Container = styled.div`
   }
 `
 export const HeroContainer = styled.div`
-  margin-top: 70vh;
+  margin-top: 40vh;
 `
 export const HeroName = styled.h1`
   font-size: 3rem;
   margin-top: 150px;
-  background-color: #212121;
-  padding: 2rem;
-  border-radius: 1rem;
 `
 export const ScrollDownInfo = styled.div`
   font-size: 0.9rem;
@@ -47,10 +44,6 @@ export const ScrollDownInfo = styled.div`
 export const ProjectsContainer = styled.div`
   margin-top: 20vh;
   position: relative;
-  
-  h2 {
-    color: #212121;
-  }
 `
 export const ProjectsListContainer = styled.div`
   @media screen and (min-width: 800px) {
@@ -62,7 +55,8 @@ export const ProjectsListContainer = styled.div`
 `
 export const ProjectContainer = styled.div`
   ${tw`w-full mb-12 lg:mb-0`}
-  background-color: #212121;
+  background-color: #EBEBEB;
+  color: #212121;
   border-radius: 1rem;
   padding: 1rem;
 `
@@ -110,9 +104,6 @@ export const AboutMeContainer = styled.div`
   margin-top: 5rem;
   padding: 5rem 1rem 0 1rem;
 
-  color: #212121;
-  background-color: #EBEBEB;
-
   border-top-color: rgba(100, 100, 100, 0.5);
   border-top-style: solid;
   border-top-width: .25rem;
@@ -125,7 +116,7 @@ export const AboutMeLinkContainer = styled.div`
   margin-top: 2rem;
 `;
 export const AboutMeLink = styled.a`
-  color: #000000;
+  color: #FFFFFF;
   transition: .5s;
   padding: 1rem;
 
@@ -143,7 +134,7 @@ export const SkillsContainer = styled.div`
   border-top-width: .25rem;
 
   h2 {
-    color: #212121;
+    color: #EBEBEB;
   }
 
   ul {
@@ -190,10 +181,6 @@ export const ContactContainer = styled.div`
   border-top-color: rgba(100, 100, 100, 0.5);
   border-top-style: solid;
   border-top-width: .25rem;
-
-  h2 {
-    color: #212121;
-  }
 
   .form-group {
     margin-bottom: 1rem;

@@ -85,6 +85,29 @@ const IndexPage = () => {
     ];
 
     // HEADER
+    lax.addElements('body', {
+      scrollY: {
+        'background-color': [
+          [0, 200],
+          [235, 33],
+          {
+            cssFn: (val) => `rgb(${val}, ${val}, ${val})`
+          }
+        ],
+      }
+    }, {
+      easing: 'easeInOutQuint'
+    });
+    lax.addElements('#hero-background, #hero-background-btn', {
+      scrollY: {
+        'opacity': [
+          [0, 200],
+          [1, 0]
+        ],
+      }
+    }, {
+      easing: 'easeInOutQuint'
+    });
     // lax.addElements('.name', {
     //   scrollY: {
     //     'background-color': [
@@ -236,7 +259,7 @@ const IndexPage = () => {
 
   return (
     <>
-      {/* {showLoading && <Loading />}  */}
+      {showLoading && <Loading />}
 
       <SEO title="Home" />
 
@@ -245,6 +268,8 @@ const IndexPage = () => {
         <HeroBackground onLoad={increaseLoadState} />
 
         <HeroContainer className="hero-container">
+          <img src={ Logo } alt="Bennett Hollstein's Logo" className="lax logo" height={ 50 } aria-hidden />
+
           <ScrollDownInfo className="scroll-down-info">
             Scroll down
           </ScrollDownInfo>
@@ -285,25 +310,6 @@ const IndexPage = () => {
             <ProjectContainer className="project">
               <TiltedByMouse>
                 <ProjectImage className="project-img">
-                  <Image src="screenshots/ferdi.png" />
-                </ProjectImage>
-              </TiltedByMouse>
-
-              <ProjectHeading aria-label="Project name: Ferdi">Ferdi</ProjectHeading>
-              <ProjectDescription>Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application</ProjectDescription>
-              <ProjectTechStack aria-label="Technologies used">ElectronJS, ReactJS</ProjectTechStack>
-
-              <Link to="/ferdi" style={{ textDecoration: 'none' }} className="view-project-btn">
-                <LightButton>
-                  View
-                </LightButton>
-              </Link>
-            </ProjectContainer>
-
-
-            <ProjectContainer className="project">
-              <TiltedByMouse>
-                <ProjectImage className="project-img">
                   <Image src="screenshots/skipsilence_1.png" />
                 </ProjectImage>
               </TiltedByMouse>
@@ -315,9 +321,9 @@ const IndexPage = () => {
               <ProjectTechStack aria-label="Technologies used">TypeScript, ReactJS, JavaScript Media API</ProjectTechStack>
 
               <Link to="/skipsilence" style={{ textDecoration: 'none' }} className="view-project-btn">
-                <LightButton>
+                <DarkButton>
                   View
-                </LightButton>
+                </DarkButton>
               </Link>
             </ProjectContainer>
 
@@ -336,9 +342,29 @@ const IndexPage = () => {
               <ProjectTechStack aria-label="Technologies used">WebSockets, WebRTC</ProjectTechStack>
 
               <Link to="/blymp" style={{ textDecoration: 'none' }} className="view-project-btn">
-                <LightButton>
+                <DarkButton>
                   View
-                </LightButton>
+                </DarkButton>
+              </Link>
+            </ProjectContainer>
+
+            <ProjectContainer className="project">
+              <TiltedByMouse>
+                <ProjectImage className="project-img">
+                  <Image src="screenshots/cauldron_1.png" />
+                </ProjectImage>
+              </TiltedByMouse>
+
+              <ProjectHeading aria-label="Project name: cauldron.js">Cauldron.js</ProjectHeading>
+              <ProjectDescription>
+                Run a Minecraft server in the browser.
+              </ProjectDescription>
+              <ProjectTechStack aria-label="Technologies used">IndexedDB, WebSockets</ProjectTechStack>
+
+              <Link to="/cauldron" style={{ textDecoration: 'none' }} className="view-project-btn">
+                <DarkButton>
+                  View
+                </DarkButton>
               </Link>
             </ProjectContainer>
 
@@ -353,10 +379,10 @@ const IndexPage = () => {
               <ProjectDescription>You can find all of my open-source projects on GitHub.</ProjectDescription>
               {/* <ProjectTechStack>.</ProjectTechStack> */}
 
-              <a href="https://github.com/vantezzen" rel="noopener noreferrer" target="_blank" style={{ textDecoration: 'none' }} aria-label="GitHub profile">
-                <LightButton className="view-project-btn">
+              <a href="https://github.com/vantezzen" rel="noopener noreferrer" target="_blank" style={{ textDecoration: 'none', marginTop: 'auto' }} aria-label="GitHub profile">
+                <DarkButton className="view-project-btn">
                   View
-                </LightButton>
+                </DarkButton>
               </a>
             </ProjectContainer>
 
@@ -453,9 +479,9 @@ const IndexPage = () => {
               <textarea name="message" id="message" placeholder="Hello,..." required></textarea>
             </div>
             <SubmitButton type="submit">
-              <DarkButton>
+              <LightButton>
                 Send message
-              </DarkButton>
+              </LightButton>
             </SubmitButton>
             
           </form>
