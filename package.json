@@ -27,7 +27,7 @@
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.1",
     "tailwind.macro": "^0.5.10",
-    "three": "^0.132.2"
+    "three": "^0.137.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1",
