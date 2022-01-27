@@ -459,34 +459,6 @@ const IndexPage = () => {
 					</ul>
         </SkillsContainer>
 
-        {/* CONTACT FORM */}
-        <ContactContainer id="contact">
-          <h2>Contact me.</h2>
-          <p style={{...tw`text-sm`, color: '#666'}}>Please use GitHub issues instead of this contact form for reporting bugs, feature requests and questions for my open-source projects</p>
-
-          <form name="contact" method="POST">
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" placeholder="Jon Doe" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="mail">Mail</label>
-              <input type="email" name="mail" id="mail" placeholder="jon@example.com" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" placeholder="Hello,..." required></textarea>
-            </div>
-            <SubmitButton type="submit">
-              <LightButton>
-                Send message
-              </LightButton>
-            </SubmitButton>
-            
-          </form>
-        </ContactContainer>
-
         <Footer />
       </Container>
     </>
