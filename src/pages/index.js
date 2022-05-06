@@ -401,6 +401,7 @@ const IndexPage = () => {
               <li>socket.io</li>
               <li>AdonisJS</li>
               <li>React</li>
+              <li>NextJS</li>
               <li>GatsbyJS</li>
               <li>react-router</li>
               <li>Redux</li>
@@ -411,8 +412,6 @@ const IndexPage = () => {
               <li>Cypress</li>
               <li>ElectronJS</li>
               <li>vueJS</li>
-              <li>AngularJS</li>
-              <li>jQuery</li>
             </ul>
 						<li>CSS</li>
             <ul className="subskills">
@@ -425,6 +424,7 @@ const IndexPage = () => {
             <ul className="subskills">
               <li>Laravel</li>
               <li>PHPUnit</li>
+              <li>Mockery</li>
               <li>Composer</li>
             </ul>
 						<li>SQL</li>
@@ -432,10 +432,10 @@ const IndexPage = () => {
               <li>MySQL</li>
               <li>PostgreSQL</li>
             </ul>
+            <li>C</li>
             <li>C#</li>
             <ul className="subskills">
               <li>Unity</li>
-              <li>.Net</li>
               <li>ASP.NET</li>
             </ul>
             <li>Java</li>
@@ -443,6 +443,13 @@ const IndexPage = () => {
               <li>Android App Development</li>
               <li>JUnit</li>
               <li>Mockito</li>
+            </ul>
+						<li>AWS</li>
+            <ul className="subskills">
+              <li>AWS Beanstalk</li>
+              <li>AWS CloudWatch</li>
+              <li>AWS SQS</li>
+              <li>AWS IAM</li>
             </ul>
 						<li>Redis</li>
 						<li>Docker</li>
@@ -452,9 +459,16 @@ const IndexPage = () => {
 						<li>Git</li>
 						<li>Bash</li>
 
-						<li>Adobe Photoshop</li>
-						<li>Affinity Photo</li>
-						<li>Adobe XD</li>
+						<li>Photo Editing Software</li>
+            <ul className="subskills">
+						  <li>Adobe Photoshop</li>
+						  <li>Affinity Photo</li>
+            </ul>
+						<li>UI Design Tools</li>
+            <ul className="subskills">
+						  <li>Adobe XD</li>
+						  <li>Figma</li>
+            </ul>
 						<li>Adobe Illustrator</li>
 					</ul>
         </SkillsContainer>
