@@ -2,7 +2,7 @@
  * p5.js Game of Life Sketch for vantezzen.io
  */
 let grid = [];
-let emptyGrid = [];
+let gridNext = [];
 const GRID_SIZE = 30;
 let touchUpdater = false;
 // We need to queue the changes, otherwise they will be overdrawn by the step method
@@ -13,11 +13,9 @@ let GRID_ROWS = 0;
 // Simulate one step in the Game of Life game
 // Based on the generate function on https://p5js.org/examples/simulate-game-of-life.html
 function step() {
-  let next = emptyGrid;
-
   // Work the changes queue
   for(let change of changesQueue) {
-    next[change.x][change.y] = grid[change.x][change.y] > 0 ? 0 : 1;
+    grid[change.x][change.y] = grid[change.x][change.y] > 0 ? 0 : 1;
   }
   // Clear the changes queue
   changesQueue = [];
@@ -38,13 +36,13 @@ function step() {
       neighbors -= grid[x][y];
       // Rules of Life
       if (grid[x][y] && neighbors < 2) {
-        next[x][y] = 0;
+        gridNext[x][y] = 0;
       } else if (grid[x][y] && neighbors >  3) {
-        next[x][y] = 0;
+        gridNext[x][y] = 0;
       } else if (!grid[x][y] && neighbors === 3) {
-        next[x][y] = 1;
+        gridNext[x][y] = 1;
       } else {
-        next[x][y] = grid[x][y];
+        gridNext[x][y] = grid[x][y];
       }
     }
   }
@@ -57,13 +55,13 @@ function step() {
   }
   for (let i = -2; i <= 4; i++) {
     for (let j = -2; j <= 4; j++) {
-      if (next[centerX + i] && next[centerX + i][centerY + j]) {
-        next[centerX + i][centerY + j] = 0;
+      if (gridNext[centerX + i] && gridNext[centerX + i][centerY + j]) {
+        gridNext[centerX + i][centerY + j] = 0;
       }
     }
   }
 
-  grid = next;
+  [grid, gridNext] = [gridNext, grid];
 }
 /**
  * Update the value on the current mouse location
@@ -107,13 +105,11 @@ function initGrid(p5) {
   // Initialize the grid
   for(let i = 0; i < GRID_COLUMNS; i++) {
     grid[i] = [];
-    emptyGrid[i] = [];
+    gridNext[i] = [];
     
     for(let j = 0; j < GRID_ROWS; j++) {
       // Fill the cells randomly with a chance of 15% of being alive
-      grid[i][j] = Math.round(Math.random() - 0.35);
-
-      emptyGrid[i][j] = 0;
+      gridNext[i][j] = grid[i][j] = Math.round(Math.random() - 0.35);
     }
   }
 }
