@@ -25,9 +25,15 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
 
-        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js" data-skip-dnt="true"></script>
-        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
-        <script async defer data-domain="vantezzen.io" src="https://ap.vantezzen.io/js/script.js"></script>
+        <script
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          data-skip-dnt="true"
+        ></script>
+        <noscript>
+          <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" />
+        </noscript>
       </body>
     </html>
   )
