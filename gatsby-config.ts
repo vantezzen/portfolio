@@ -5,11 +5,15 @@ const config: GatsbyConfig = {
     title: `Bennett Hollstein`,
     description: `Crafting beautiful websites and web applications`,
     author: `@vantezzen`,
+    siteUrl: `https://vantezzen.io`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
