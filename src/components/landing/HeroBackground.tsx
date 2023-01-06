@@ -36,7 +36,7 @@ const B = function (x: number, y: number, t: number) {
   );
 };
 
-function HeroBackground() {
+function HeroBackground({ onLoadDone }: { onLoadDone: () => void }) {
   return (
     <div className="absolute top-0 left-0">
       <Sketch
@@ -49,6 +49,7 @@ function HeroBackground() {
           cnv.attribute("height", "32");
 
           $ = cnv.elt.getContext("2d");
+          onLoadDone();
         }}
         draw={(p5) => {
           // We only need to update the canvas when the canvas is actually in the view
