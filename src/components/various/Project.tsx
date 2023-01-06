@@ -1,3 +1,4 @@
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Button from "./Button";
 
@@ -12,7 +13,7 @@ function Project({
   description: React.ReactNode;
   buildWith: string;
   buttons?: React.ReactNode;
-  image: string;
+  image: React.ReactNode;
 }) {
   return (
     <div className="bg-brand-900 p-6 md:p-12 rounded-xl w-full mt-24 font-medium">
@@ -28,13 +29,7 @@ function Project({
           <div className="flex gap-6">{buttons}</div>
         </div>
 
-        <div>
-          <img
-            src={image}
-            alt="Screenshot of the website"
-            className="rounded-lg ml-auto"
-          />
-        </div>
+        <div>{image}</div>
       </div>
     </div>
   );

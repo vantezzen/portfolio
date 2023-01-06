@@ -1,11 +1,8 @@
 import React from "react";
 import SectionContainer from "../various/SectionContainer";
-import smarketerJobs from "../../images/screenshots/smarketer-jobs.png";
-import skipSilence from "../../images/screenshots/skip-silence.png";
-import blympIo from "../../images/screenshots/blymp.io.png";
-import github from "../../images/screenshots/github.png";
 import Button from "../various/Button";
 import Project from "../various/Project";
+import { StaticImage } from "gatsby-plugin-image";
 
 function Projects() {
   return (
@@ -43,7 +40,13 @@ function Projects() {
             </Button>
           </a>
         }
-        image={smarketerJobs}
+        image={
+          <StaticImage
+            src="../../images/screenshots/smarketer-jobs.png"
+            alt="Screenshot of Smarketer Jobs"
+            className="rounded-lg ml-auto"
+          />
+        }
       />
 
       <Project
@@ -93,7 +96,13 @@ function Projects() {
             </a>
           </>
         }
-        image={skipSilence}
+        image={
+          <StaticImage
+            src="../../images/screenshots/skip-silence.png"
+            alt="Screenshot of Skip Silence"
+            className="rounded-lg ml-auto"
+          />
+        }
       />
 
       <Project
@@ -133,7 +142,13 @@ function Projects() {
             </a>
           </>
         }
-        image={blympIo}
+        image={
+          <StaticImage
+            src="../../images/screenshots/blymp.io.png"
+            alt="Screenshot of blymp.io"
+            className="rounded-lg ml-auto"
+          />
+        }
       />
 
       <Project
@@ -160,7 +175,13 @@ function Projects() {
             </a>
           </>
         }
-        image={github}
+        image={
+          <StaticImage
+            src="../../images/screenshots/github.png"
+            alt="Screenshot of GitHub profile"
+            className="rounded-lg ml-auto"
+          />
+        }
       />
     </SectionContainer>
   );

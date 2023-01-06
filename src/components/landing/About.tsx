@@ -1,14 +1,18 @@
 import React from "react";
 import ThreeLogo from "./ThreeLogo";
-import uisGrid from "../../images/uis-grid.png";
 import { ExternalLink } from "react-feather";
 import SectionContainer from "../various/SectionContainer";
+import { StaticImage } from "gatsby-plugin-image";
 
 function About() {
   return (
     <SectionContainer>
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12" id="about">
-        <img src={uisGrid} className="rounded-lg h-full object-cover w-full" />
+        <StaticImage
+          alt="Grid of UIs"
+          src="../../images/uis-grid.png"
+          className="rounded-lg h-full object-cover w-full"
+        />
 
         <div className="lg:max-w-2xl bg-brand-900 rounded-lg p-6 md:p-12 font-medium leading-relaxed">
           <p className="mb-3">
