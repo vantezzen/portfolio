@@ -13,7 +13,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <Helmet>
         <title>
-          Hollstein - Crafting beautiful websites and web applications
+          Hollstein - Crafting powerful websites and web applications
         </title>
       </Helmet>
 
