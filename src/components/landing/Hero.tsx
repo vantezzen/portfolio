@@ -35,7 +35,7 @@ function Hero() {
       <div className="flex flex-col">
         <ThreeLogo />
         <h1 className="font-bold text-brand-700 text-4xl lg:text-6xl md:max-w-4xl z-10 p-6 mix-blend-overlay">
-          <Balancer>Crafting beautiful websites and web applications</Balancer>
+          <Balancer>Crafting powerful websites and web applications</Balancer>
         </h1>
       </div>
     </section>
