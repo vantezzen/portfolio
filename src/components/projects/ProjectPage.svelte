@@ -7,6 +7,6 @@
 	Go back
 </a>
 
-<div class="project-page px-24 py-12 flex flex-col gap-4">
+<div class="project-page px-6 md:px-24 py-12 flex flex-col gap-4">
 	<slot />
 </div>
