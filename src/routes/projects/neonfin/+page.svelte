@@ -1,5 +1,5 @@
 <script>
-	import neonFinImage from '$lib/images/neonfin.png';
+	import neonFinImage from '$lib/images/neonfin.png?webp&w=1000&imagetools';
 	import Button from '../../../components/Button.svelte';
 	import ProjectHeader from '../../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../../components/projects/ProjectPage.svelte';

@@ -15,17 +15,14 @@
 		<Card color="bg-orange-100" size={6}>
 			<div class="">
 				<p class="mb-3">
-					Web applications allow us to access{' '}
-					<span class={textHighlight}> powerful tools and information </span>{' '}
-					on any device and without the need for installation.
+					Hey, I am Bennett. I am passionate about web development and how it can make our lives
+					<span class={textHighlight}>easier and more enjoyable</span>.
 				</p>
 				<p class="mb-3">
-					As a web developer, I have the opportunity to create{' '}
-					<span class={textHighlight}>powerful and easy-to-use</span>{' '}
-					websites and web applications that not only look great, but also provide value and functionality.
 					I believe that a great web design{' '}
-					<span class={textHighlight}>goes beyond just aesthetics</span>, but also considers the
-					needs and goals of the users.
+					<span class={textHighlight}>goes beyond just aesthetics</span>, and also considers the
+					needs and goals of the users. I love to explore new technologies and trends and apply them
+					to my projects.
 				</p>
 				<p class="mb-3">
 					In my current role as a web developer and project manager at{' '}
@@ -34,11 +31,10 @@
 					</a>
 					, I have the chance to bring this philosophy to life and{' '}
 					<span class={textHighlight}> create websites that make a meaningful impact </span>
-					. With a bachelor degree in applied computer science from HTW Berlin, I have the skills and
-					knowledge to turn my ideas into reality and contribute to the constantly evolving field of
-					web development. Additionally, I am currently studying{' '}
-					<span class={textHighlight}> International Digital Business </span>{' '}
-					at HWR Berlin to expand my knowledge of economics and project management.
+					. I have a background in applied computer science from my bachelors degree at HTW Berlin and
+					I am currently studying
+					<span class={textHighlight}> International Digital Business </span> at HWR Berlin to learn
+					more about the global aspects of web development and project management.
 				</p>
 			</div>
 		</Card>

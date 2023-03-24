@@ -9,14 +9,14 @@
 
 <a
 	{href}
-	class="card rounded-lg shadow-brand p-5 relative"
+	class="card rounded-lg shadow-brand p-5 relative hover:scale-105 transition-all duration-500"
 	style="--size: {size};--color: {color};"
 >
 	<img src={image} alt="" style:--tag={title} class="rounded object-cover w-full h-full" />
 
 	<div class="absolute top-0 left-0 w-full h-full">
 		<div
-			class="w-full h-full card-gradient rounded-lg flex justify-end items-center text-white flex-col p-4"
+			class="w-full h-full card-gradient rounded-lg flex justify-end items-center text-white text-center flex-col p-4"
 		>
 			<p class="font-bold text-xs">
 				{preTitle}

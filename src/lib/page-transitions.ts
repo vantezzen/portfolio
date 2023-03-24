@@ -43,6 +43,7 @@ export const preparePageTransition = () => {
 		const navigationComplete = navigation.complete();
 
 		document.startViewTransition(async () => {
+			console.log('start transition');
 			await navigationComplete;
 		});
 	});

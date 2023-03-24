@@ -1,3 +1,3 @@
-<div class="flex flex-col md:grid grid-cols-8 gap-8">
+<div class="flex flex-col sm:grid sm:grid-cols-8 gap-8">
 	<slot />
 </div>

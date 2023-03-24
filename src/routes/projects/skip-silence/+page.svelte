@@ -1,5 +1,5 @@
 <script>
-	import skipSilenceImage from '$lib/images/skipsilence.png';
+	import skipSilenceImage from '$lib/images/skipsilence.png?webp&w=1000&imagetools';
 	import Button from '../../../components/Button.svelte';
 	import ProjectHeader from '../../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../../components/projects/ProjectPage.svelte';
@@ -30,6 +30,15 @@
 			<span class="text-orange-500 font-bold"> the Plasmo extension framework </span>{' '}
 			to allow for easier development and maintenance. It has been installed over 10.000 times across
 			Chrome and Firefox.
+		</p>
+	</Section>
+
+	<Section title="Lessons learned">
+		<p>
+			Due this extension, I learned about the JavaScript Media APIs and what it possible with the
+			Media Nodes available.<br />
+			The extension seems to use the Media APIs in a way that is not intended by the browser develops.
+			Due to this, I often encountered bugs in the browser's implementations and had to work around them.
 		</p>
 	</Section>
 

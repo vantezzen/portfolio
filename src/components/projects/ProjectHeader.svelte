@@ -15,9 +15,9 @@
 	</div>
 </div>
 
-<div class="flex gap-3 my-6 font-bold">
+<div class="flex flex-col gap-3 my-6 font-bold">
 	{#if preTitle}
-		<p class="text-4xl">{preTitle}</p>
+		<p class="text-zinc-600">{preTitle}</p>
 	{/if}
 	<h1 class="text-4xl">{title}</h1>
 </div>

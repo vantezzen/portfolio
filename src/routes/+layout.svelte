@@ -2,8 +2,10 @@
 	import './styles.css';
 	import { preparePageTransition } from '$lib/page-transitions';
 	import Footer from '../components/layout/Footer.svelte';
+	import { setupHistory } from '$lib/history';
 
 	preparePageTransition();
+	setupHistory();
 </script>
 
 <div class="app">
