@@ -3,6 +3,7 @@
 	import { preparePageTransition } from '$lib/page-transitions';
 	import Footer from '../components/layout/Footer.svelte';
 	import { setupHistory } from '$lib/history';
+	import LoadingScreen from '../components/LoadingScreen.svelte';
 
 	preparePageTransition();
 	setupHistory();
@@ -14,6 +15,7 @@
 	</main>
 
 	<Footer />
+	<LoadingScreen />
 </div>
 
 <style>
