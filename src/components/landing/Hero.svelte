@@ -3,7 +3,7 @@
 </script>
 
 <section class="w-full relative overflow-hidden">
-	<div class="absolute top-0 left-0 mix-blend-multiply w-full">
+	<div class="absolute top-0 left-0 mix-blend-multiply w-full h-full">
 		<ColorfulBackground />
 	</div>
 	<h1
