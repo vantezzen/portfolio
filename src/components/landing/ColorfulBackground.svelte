@@ -1,11 +1,14 @@
 <script lang="ts">
-	import P5 from 'p5-svelte';
-	import type { Sketch } from 'p5-svelte';
 	import { loading, startLoading } from '$lib/loading';
+	import { onMount } from 'svelte';
 
 	startLoading();
 
+	const canvasWidth = 32;
+	const canvasHeight = 32;
+
 	let ctx: CanvasRenderingContext2D | null = null;
+	let canvas: HTMLCanvasElement | null = null;
 
 	let t = 5;
 
@@ -34,40 +37,49 @@
 		);
 	};
 
-	const sketch: Sketch = (p5) => {
-		p5.setup = () => {
-			const cnv = p5.createCanvas(32, 32);
-			cnv.style('width', '100%');
-			cnv.style('height', '100%');
-			cnv.attribute('width', '32');
-			cnv.attribute('height', '32');
+	const drawCanvas = () => {
+		// We only need to update the canvas when the canvas is actually in the view
+		// Otherwise just skip drawing
+		if (window.scrollY > 300) {
+			setTimeout(drawCanvas, 100);
+			return;
+		}
 
-			ctx = cnv.elt.getContext('2d');
-			loading.set(false);
-		};
+		if (ctx) {
+			for (let x = 0; x <= canvasWidth; x++) {
+				for (let y = 0; y <= canvasHeight; y++) {
+					const r = R(x, y, t);
+					const g = G(x, y, t);
+					const b = B(x, y, t);
 
-		p5.draw = () => {
-			// We only need to update the canvas when the canvas is actually in the view
-			// Otherwise just skip drawing
-			if (window.scrollY > 300) return;
-
-			for (let x = 0; x <= 35; x++) {
-				for (let y = 0; y <= 35; y++) {
-					if (ctx) {
-						// p5's rendering Engine will mess with the rendering of the colors
-						// so we need to directly access the canvas instead
-						const r = R(x, y, t);
-						const g = G(x, y, t);
-						const b = B(x, y, t);
-
-						ctx.fillStyle = `rgb(${r},${g},${b})`;
-						ctx.fillRect(x, y, 1, 1);
-					}
+					ctx.fillStyle = `rgb(${r},${g},${b})`;
+					ctx.fillRect(x, y, 1, 1);
 				}
 			}
 			t += SPEED;
-		};
+		}
+
+		requestAnimationFrame(drawCanvas);
 	};
+
+	onMount(() => {
+		if (!canvas) return;
+
+		canvas.width = canvasWidth;
+		canvas.height = canvasHeight;
+		ctx = canvas.getContext('2d');
+
+		loading.set(false);
+
+		requestAnimationFrame(drawCanvas);
+	});
 </script>
 
-<P5 {sketch} />
+<canvas bind:this={canvas} />
+
+<style>
+	canvas {
+		width: 100%;
+		height: 100%;
+	}
+</style>

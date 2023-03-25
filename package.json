@@ -37,7 +37,6 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/dm-sans": "^4.5.9",
-		"feather-icons": "^4.29.0",
-		"p5-svelte": "^3.1.2"
+		"feather-icons": "^4.29.0"
 	}
 }
