@@ -14,7 +14,7 @@
 			method="POST"
 			data-netlify-recaptcha="true"
 			data-netlify="true"
-			netlify-honeypot="bot-field"
+			data-netlify-honeypot="bot-field"
 		>
 			<div class="grid gap-4">
 				<div class="text-zinc-500 font-medium">
