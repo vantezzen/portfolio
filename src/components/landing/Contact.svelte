@@ -12,7 +12,6 @@
 		<form
 			name="contact"
 			method="POST"
-			data-netlify-recaptcha="true"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
 			action="/success"
@@ -25,7 +24,6 @@
 				<Input label="Email" name="email" />
 				<Input label="Name" name="name" />
 				<Textarea label="Message" name="message" />
-				<div data-netlify-recaptcha="true" />
 				<input type="hidden" name="form-name" value="contact" />
 
 				<Button type="submit" highlighted>Send</Button>

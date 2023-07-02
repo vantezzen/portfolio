@@ -4,6 +4,7 @@
 	import Hero from '../components/landing/Hero.svelte';
 	import Projects from '../components/landing/Projects.svelte';
 	import Tech from '../components/landing/Tech.svelte';
+	export const prerender = true;
 </script>
 
 <svelte:head>
