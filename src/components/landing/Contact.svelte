@@ -15,6 +15,7 @@
 			data-netlify-recaptcha="true"
 			data-netlify="true"
 			data-netlify-honeypot="bot-field"
+			action="/success"
 		>
 			<div class="grid gap-4">
 				<div class="text-zinc-500 font-medium">
