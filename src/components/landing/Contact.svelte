@@ -9,13 +9,7 @@
 
 <Section title="Contact">
 	<Card color="bg-orange-100">
-		<form
-			name="contact"
-			method="POST"
-			data-netlify="true"
-			data-netlify-honeypot="bot-field"
-			action="/success"
-		>
+		<form name="contact" method="POST" data-netlify="true" action="/success">
 			<div class="grid gap-4">
 				<div class="text-zinc-500 font-medium">
 					For bug reports and feature requests please instead use GitHub issues on the respective
