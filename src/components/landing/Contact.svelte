@@ -9,13 +9,7 @@
 
 <Section title="Contact">
 	<Card color="bg-orange-100">
-		<form
-			name="contact"
-			method="POST"
-			data-netlify="true"
-			action="/success"
-			data-netlify-recaptcha="true"
-		>
+		<form name="contact" method="POST" data-netlify="true" action="/success">
 			<div class="grid gap-4">
 				<div class="text-zinc-500 font-medium">
 					For bug reports and feature requests please instead use GitHub issues on the respective
@@ -24,7 +18,6 @@
 				<Input label="Email" name="email" />
 				<Input label="Name" name="name" />
 				<Textarea label="Message" name="message" />
-				<div data-netlify-recaptcha="true" />
 				<input type="hidden" name="form-name" value="contact" />
 
 				<Button type="submit" highlighted>Send</Button>
