@@ -1,5 +1,6 @@
 <script>
 	import About from '../components/landing/About.svelte';
+	import Contact from '../components/landing/Contact.svelte';
 	import Hero from '../components/landing/Hero.svelte';
 	import Projects from '../components/landing/Projects.svelte';
 	import Tech from '../components/landing/Tech.svelte';
@@ -15,4 +16,5 @@
 	<About />
 	<Projects />
 	<Tech />
+	<Contact />
 </section>
