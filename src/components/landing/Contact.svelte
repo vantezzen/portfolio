@@ -9,13 +9,6 @@
 	const sitekey = '6Le2OPUmAAAAAHL1_Fo5UOe06nuy4zDKA-4DNSDr';
 
 	onMount(async () => {
-		const script = document.createElement('script');
-		script.id = 'googleRecaptchaScript';
-		script.src = `https://www.google.com/recaptcha/api.js?render=explicit&sitekey=${sitekey}`;
-		script.async = true;
-		script.defer = true;
-		document.head.appendChild(script);
-
 		window.grecaptcha.ready(() => {
 			window.grecaptcha.render('googleRecaptchaDiv', {
 				sitekey
