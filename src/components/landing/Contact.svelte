@@ -1,10 +1,27 @@
 <script>
+	import { onMount } from 'svelte';
 	import Button from '../Button.svelte';
 	import Card from '../Card.svelte';
-	import CardGrid from '../CardGrid.svelte';
 	import Input from '../Input.svelte';
 	import Section from '../Section.svelte';
 	import Textarea from '../Textarea.svelte';
+
+	const sitekey = '6Le2OPUmAAAAAHL1_Fo5UOe06nuy4zDKA-4DNSDr';
+
+	onMount(async () => {
+		const script = document.createElement('script');
+		script.id = 'googleRecaptchaScript';
+		script.src = `https://www.google.com/recaptcha/api.js?render=explicit&sitekey=${sitekey}`;
+		script.async = true;
+		script.defer = true;
+		document.head.appendChild(script);
+
+		window.grecaptcha.ready(() => {
+			window.grecaptcha.render('googleRecaptchaDiv', {
+				sitekey
+			});
+		});
+	});
 </script>
 
 <Section title="Contact">
@@ -25,7 +42,7 @@
 				<Input label="Name" name="name" />
 				<Textarea label="Message" name="message" />
 				<input type="hidden" name="form-name" value="contact" />
-				<div class="g-recaptcha" data-sitekey="6Le2OPUmAAAAAHL1_Fo5UOe06nuy4zDKA-4DNSDr" />
+				<div id="googleRecaptchaDiv" />
 
 				<Button type="submit" highlighted>Send</Button>
 			</div>

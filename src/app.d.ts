@@ -22,6 +22,10 @@ declare global {
 	interface CSSStyleDeclaration {
 		viewTransitionName: string;
 	}
+
+	interface Window {
+		grecaptcha: any;
+	}
 }
 
 export {};
