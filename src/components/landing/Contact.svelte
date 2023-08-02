@@ -27,6 +27,14 @@
 			data-netlify-recaptcha="true"
 		>
 			<div class="grid gap-4">
+				<div class="text-zinc-500 font-bold">
+					If you want your Wrapped for TikTok, instead go to <a
+						href="https://wrapped.vantezzen.io"
+						class="underline"
+					>
+						wrapped.vantezzen.io
+					</a> - this is just a contact form.
+				</div>
 				<div class="text-zinc-500 font-medium">
 					For bug reports and feature requests please instead use GitHub issues on the respective
 					repository - reporting these here will be ignored. Thank you!
