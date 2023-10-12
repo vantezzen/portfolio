@@ -37,7 +37,7 @@
 		<p>
 			Due this extension, I learned about the JavaScript Media APIs and what it possible with the
 			Media Nodes available.<br />
-			The extension seems to use the Media APIs in a way that is not intended by the browser develops.
+			The extension seems to use the Media APIs in a way that is not intended by the browser developers.
 			Due to this, I often encountered bugs in the browser's implementations and had to work around them.
 		</p>
 	</Section>

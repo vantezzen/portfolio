@@ -8,6 +8,7 @@
 	import neonFinImage from '$lib/images/neonfin.png?webp&w=800&imagetools';
 	import asditheringImage from '$lib/images/asdithering.png?webp&w=800&imagetools';
 	import blympioImage from '$lib/images/blympio.png?webp&w=800&imagetools';
+	import wonderrailImage from '$lib/images/wonderrail.png?webp&w=800&imagetools';
 	import powImage from '$lib/images/pow.svg';
 	import gitHubImage from '$lib/images/github.svg';
 
@@ -17,6 +18,53 @@
 <Section title="Projects">
 	<CardGrid>
 		<ProjectCard
+			image={wonderrailImage}
+			size={5}
+			color="#58d677"
+			preTitle=""
+			title="WonderRail"
+			href="/projects/wonderrail"
+		/>
+		<ProjectCard
+			image={skipSilenceImage}
+			size={3}
+			color="#2A2A2A"
+			preTitle=""
+			title="Skip Silence"
+			href="/projects/skip-silence"
+		/>
+		<ProjectCard
+			image={neonFinImage}
+			size={3}
+			color="#18181B"
+			preTitle=""
+			title="neonFin"
+			href="/projects/neonfin"
+		/>
+		<ProjectCard
+			image={blympioImage}
+			size={2}
+			color="#f5f2f9"
+			title="blymp.io"
+			href="/projects/blympio"
+		/>
+		<ProjectCard
+			image={asditheringImage}
+			size={3}
+			color="#EBEBEB"
+			preTitle="Technical project"
+			title="asdithering"
+			href="/projects/asdithering"
+		/>
+		<ProjectCard
+			image={powImage}
+			size={2}
+			color="#212121"
+			preTitle="Technical project"
+			title="pow"
+			href="/projects/pow"
+		/>
+		<ProjectCard
 			image={jobsImage}
 			size={3}
 			color="#3B82F6"
@@ -25,47 +73,8 @@
 			href="/projects/jobs"
 		/>
 		<ProjectCard
-			image={skipSilenceImage}
-			size={5}
-			color="#2A2A2A"
-			preTitle=""
-			title="Skip Silence"
-			href="/projects/skip-silence"
-		/>
-		<ProjectCard
-			image={neonFinImage}
-			size={4}
-			color="#18181B"
-			preTitle=""
-			title="neonFin"
-			href="/projects/neonfin"
-		/>
-		<ProjectCard
-			image={asditheringImage}
-			size={4}
-			color="#EBEBEB"
-			preTitle="Technical project"
-			title="asdithering"
-			href="/projects/asdithering"
-		/>
-		<ProjectCard
-			image={blympioImage}
-			size={3}
-			color="#f5f2f9"
-			title="blymp.io"
-			href="/projects/blympio"
-		/>
-		<ProjectCard
-			image={powImage}
-			size={3}
-			color="#212121"
-			preTitle="Technical project"
-			title="pow"
-			href="/projects/pow"
-		/>
-		<ProjectCard
 			image={gitHubImage}
-			size={2}
+			size={3}
 			color="#24292F"
 			preTitle="More projects on"
 			title="GitHub"
