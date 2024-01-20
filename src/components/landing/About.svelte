@@ -31,10 +31,9 @@
 					</a>
 					, I have the chance to bring this philosophy to life and{' '}
 					<span class={textHighlight}> create websites that make a meaningful impact </span>
-					. I have a background in applied computer science from my bachelors degree at HTW Berlin and
-					I am currently studying
-					<span class={textHighlight}> International Digital Business </span> at HWR Berlin to learn
-					more about the global aspects of web development and project management.
+					. I am currently studying
+					<span class={textHighlight}> applied computer science </span> at HTW Berlin where I previously
+					completed my bachelor's degree in the same field.
 				</p>
 			</div>
 		</Card>
