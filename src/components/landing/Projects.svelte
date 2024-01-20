@@ -10,6 +10,9 @@
 	import blympioImage from '$lib/images/blympio.png?webp&w=800&imagetools';
 	import wonderrailImage from '$lib/images/wonderrail.png?webp&w=800&imagetools';
 	import powImage from '$lib/images/pow.svg';
+	import wrappedImage from '$lib/images/wrapped.png';
+	import purrsonaImage from '$lib/images/purrsona.png';
+	import lockboxImage from '$lib/images/lockbox.png';
 	import gitHubImage from '$lib/images/github.svg';
 
 	import ProjectCard from './ProjectCard.svelte';
@@ -42,6 +45,13 @@
 			href="/projects/neonfin"
 		/>
 		<ProjectCard
+			image={wrappedImage}
+			size={3}
+			color="#FFFFFF"
+			title="Wrapped"
+			href="/projects/wrapped"
+		/>
+		<ProjectCard
 			image={blympioImage}
 			size={2}
 			color="#f5f2f9"
@@ -49,8 +59,15 @@
 			href="/projects/blympio"
 		/>
 		<ProjectCard
-			image={asditheringImage}
+			image={purrsonaImage}
 			size={3}
+			color="#f3e8ff"
+			title="Purrsona"
+			href="/projects/purrsona"
+		/>
+		<ProjectCard
+			image={asditheringImage}
+			size={2}
 			color="#EBEBEB"
 			preTitle="Technical project"
 			title="asdithering"
@@ -58,11 +75,18 @@
 		/>
 		<ProjectCard
 			image={powImage}
-			size={2}
+			size={3}
 			color="#212121"
 			preTitle="Technical project"
 			title="pow"
 			href="/projects/pow"
+		/>
+		<ProjectCard
+			image={lockboxImage}
+			size={3}
+			color="#FFFFFF"
+			title="LockBox"
+			href="/projects/lockbox"
 		/>
 		<ProjectCard
 			image={jobsImage}
@@ -74,7 +98,7 @@
 		/>
 		<ProjectCard
 			image={gitHubImage}
-			size={3}
+			size={2}
 			color="#24292F"
 			preTitle="More projects on"
 			title="GitHub"
