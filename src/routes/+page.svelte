@@ -5,10 +5,6 @@
 	import Tech from '../components/landing/Tech.svelte';
 	import Wrapped from '../components/landing/Wrapped.svelte';
 	export const prerender = true;
-
-	ezstandalone.cmd.push(function() {
-        ezstandalone.showAds(101)
-    });
 </script>
 
 <svelte:head>
