@@ -25,15 +25,15 @@
 					to my projects.
 				</p>
 				<p class="mb-3">
-					In my current role as a web developer and project manager at{' '}
+					In my current role as a fullstack web developer at{' '}
 					<a href="https://smarketer.de" class="underline" target="_blank" rel="noreferrer">
 						Smarketer
 					</a>
 					, I have the chance to bring this philosophy to life and{' '}
 					<span class={textHighlight}> create websites that make a meaningful impact </span>
-					. I am currently studying
-					<span class={textHighlight}> applied computer science </span> at HTW Berlin where I previously
-					completed my bachelor's degree in the same field.
+					. Previously I completed my
+					<span class={textHighlight}> master's degree </span>in applied computer science at HTW
+					Berlin.
 				</p>
 			</div>
 		</Card>
