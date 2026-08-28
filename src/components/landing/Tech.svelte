@@ -7,7 +7,7 @@
 <Section title="Tech">
 	<p class="font-medium">
 		I've been mostly working with{' '}
-		<span class={textHighlight}>Laravel</span>,{' '}
+		<span class={textHighlight}>Django</span>,{' '}
 		<span class={textHighlight}>Docker</span>,{' '}
 		<span class={textHighlight}>React/Next.js</span>,{' '}
 		<span class={textHighlight}>TypeScript</span> and{' '}

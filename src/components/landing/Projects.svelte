@@ -4,7 +4,8 @@
 
 	import skipSilenceImage from '$lib/images/skipsilence.png?webp&w=800&imagetools';
 	import asditheringImage from '$lib/images/asdithering.png?webp&w=800&imagetools';
-	import wonderrailImage from '$lib/images/wonderrail.png?webp&w=800&imagetools';
+	import autoformImage from '$lib/images/autoform.png?webp&w=800&imagetools';
+	import fresnelImage from '$lib/images/fresnel.png?webp&w=800&imagetools';
 	import wrappedImage from '$lib/images/wrapped.png';
 	import gitHubImage from '$lib/images/github.svg';
 
@@ -14,12 +15,27 @@
 <Section title="Projects">
 	<CardGrid>
 		<ProjectCard
-			image={wonderrailImage}
-			size={5}
-			color="#58d677"
+			image={fresnelImage}
+			size={4}
+			color="#271021"
+			preTitle="macOS App"
+			title="Fresnel"
+			href="/projects/fresnel"
+		/>
+		<ProjectCard
+			image={autoformImage}
+			size={4}
+			color="#F5F6F8"
 			preTitle=""
-			title="WonderRail"
-			href="/projects/wonderrail"
+			title="autoform"
+			href="/projects/autoform"
+		/>
+		<ProjectCard
+			image={wrappedImage}
+			size={3}
+			color="#FFFFFF"
+			title="Wrapped"
+			href="/projects/wrapped"
 		/>
 		<ProjectCard
 			image={skipSilenceImage}
@@ -30,15 +46,8 @@
 			href="/projects/skip-silence"
 		/>
 		<ProjectCard
-			image={wrappedImage}
-			size={3}
-			color="#FFFFFF"
-			title="Wrapped"
-			href="/projects/wrapped"
-		/>
-		<ProjectCard
 			image={asditheringImage}
-			size={3}
+			size={2}
 			color="#EBEBEB"
 			preTitle="Technical project"
 			title="asdithering"
