@@ -7,9 +7,11 @@
 <Section title="Tech">
 	<p class="font-medium">
 		I've been mostly working with
+		<span class={textHighlight}>React/Next.js</span>,
+		<span class={textHighlight}>Vercel eve</span>,
 		<span class={textHighlight}>Django</span>,
 		<span class={textHighlight}>Docker</span>,
-		<span class={textHighlight}>React/Next.js</span>,
+		<span class={textHighlight}>LangFuse</span>,
 		<span class={textHighlight}>TypeScript</span> and
 		<span class={textHighlight}>PostgreSQL</span> lately.
 	</p>
@@ -18,8 +20,6 @@
 		including
 		<span class={textHighlight}>Java</span> with Android Development,
 		<span class={textHighlight}>Swift</span> with iOS Development,
-		<span class={textHighlight}>C#</span> for use with
-		<span class={textHighlight}>ASP.NET</span>,
 		<span class={textHighlight}>C</span> for low-level programming and
 		<span class={textHighlight}>Python</span>.
 	</p>
@@ -36,9 +36,9 @@
 		Through my job at Smarketer, I could also get experience with
 		<span class={textHighlight}>Redis</span> for large-scale caching,
 		<span class={textHighlight}>GitHub Actions</span> for CI/CD,
-		<span class={textHighlight}>AWS</span> including AWS Beanstalk, CloudWatch, RDS and IAM
-		permissions and
-		<span class={textHighlight}>various testing libraries</span> like PHPUnit, Cypress and Mockery.
+		<span class={textHighlight}>AWS</span> including <span class={textHighlight}>Terraform</span>
+		and
+		<span class={textHighlight}>various testing libraries</span> like vitest, PHPUnit, Cypress and Mockery.
 	</p>
 	<p class="mt-6 font-medium">
 		Apart from programming, I also have experience with
