@@ -1,7 +1,4 @@
 <script>
-	import jobsImage from '$lib/images/jobs.png';
-	import Button from '../../../components/Button.svelte';
-	import ProjectHeader from '../../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../../components/projects/ProjectPage.svelte';
 	import Section from '../../../components/Section.svelte';
 </script>
@@ -66,7 +63,7 @@
 			<br />
 			- Reichweitenmessung/Marketing
 			<br />
-			<span class="tsmcom" />
+			<span class="tsmcom"></span>
 		</p>
 		<h3 id="dsg-general-terms">Verwendete Begrifflichkeiten</h3>
 		<p>
@@ -81,8 +78,8 @@
 			<br />
 			<br />
 			„Verarbeitung“ ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder
-			jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Der Begriff reicht weit
-			und umfasst praktisch jeden Umgang mit Daten.
+			jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Der Begriff reicht weit und
+			umfasst praktisch jeden Umgang mit Daten.
 			<br />
 			<br />
 			„Pseudonymisierung“ die Verarbeitung personenbezogener Daten in einer Weise, dass die personenbezogenen
@@ -119,12 +116,12 @@
 			Die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer Leistungen und Durchführung vertraglicher
 			Maßnahmen sowie Beantwortung von Anfragen ist Art. 6 Abs. 1 lit. b DSGVO;
 			<br />
-			Die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer rechtlichen Verpflichtungen ist
-			Art. 6 Abs. 1 lit. c DSGVO;
+			Die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer rechtlichen Verpflichtungen ist Art.
+			6 Abs. 1 lit. c DSGVO;
 			<br />
 			Für den Fall, dass lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen
-			Person eine Verarbeitung personenbezogener Daten erforderlich machen, dient Art. 6 Abs. 1 lit.
-			d DSGVO als Rechtsgrundlage.
+			Person eine Verarbeitung personenbezogener Daten erforderlich machen, dient Art. 6 Abs. 1 lit. d
+			DSGVO als Rechtsgrundlage.
 			<br />
 			Die Rechtsgrundlage für die erforderliche Verarbeitung zur Wahrnehmung einer Aufgabe, die im öffentlichen
 			Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt, die dem Verantwortlichen übertragen
@@ -132,7 +129,7 @@
 			Die Rechtsgrundlage für die Verarbeitung zur Wahrung unserer berechtigten Interessen ist Art. 6
 			Abs. 1 lit. f DSGVO. <br />
 			Die Verarbeitung von Daten zu anderen Zwecken als denen, zu denen sie ehoben wurden, bestimmt sich
-			nach den Vorgaben des Art 6 Abs. 4 DSGVO.{' '}
+			nach den Vorgaben des Art 6 Abs. 4 DSGVO.
 			<br />
 			Die Verarbeitung von besonderen Kategorien von Daten (entsprechend Art. 9 Abs. 1 DSGVO) bestimmt
 			sich nach den Vorgaben des Art. 9 Abs. 2 DSGVO. <br />
@@ -231,7 +228,7 @@
 		<p>
 			Durch die Nutzung von reCAPTCHA werden Daten an Google übertragen die Google nutzt um
 			festzustellen ob der Besucher ein Mensch oder ein (Spam)bot ist. Welche Daten von Google
-			erfasst werden und wofür diese Daten verwendet werden, können Sie auf{' '}
+			erfasst werden und wofür diese Daten verwendet werden, können Sie auf
 			<a
 				href="https://policies.google.com/privacy?hl=de-AT"
 				target="_blank"
@@ -239,10 +236,10 @@
 				class="external"
 			>
 				https://policies.google.com/privacy?hl=de-AT
-			</a>{' '}
+			</a>
 			nachlesen.
 			<br />
-			Die Nutzungsbedingungen für Dienste und Produkte von Google können Sie unter{' '}
+			Die Nutzungsbedingungen für Dienste und Produkte von Google können Sie unter
 			<a
 				href="https://policies.google.com/terms?hl=de-AT"
 				target="_blank"
@@ -294,13 +291,13 @@
 			<br />
 			Ein genereller Widerspruch gegen den Einsatz der zu Zwecken des Onlinemarketing eingesetzten Cookies
 			kann bei einer Vielzahl der Dienste, vor allem im Fall des Trackings, über die US-amerikanische
-			Seite{' '}
+			Seite
 			<a href="http://www.aboutads.info/choices/"> http://www.aboutads.info/choices/ </a>
-			oder die EU-Seite{' '}
-			<a href="http://www.youronlinechoices.com/"> http://www.youronlinechoices.com/ </a>{' '}
-			erklärt werden. Des Weiteren kann die Speicherung von Cookies mittels deren Abschaltung in den
-			Einstellungen des Browsers erreicht werden. Bitte beachten Sie, dass dann gegebenenfalls nicht
-			alle Funktionen dieses Onlineangebotes genutzt werden können.
+			oder die EU-Seite
+			<a href="http://www.youronlinechoices.com/"> http://www.youronlinechoices.com/ </a>
+			erklärt werden. Des Weiteren kann die Speicherung von Cookies mittels deren Abschaltung in den Einstellungen
+			des Browsers erreicht werden. Bitte beachten Sie, dass dann gegebenenfalls nicht alle Funktionen
+			dieses Onlineangebotes genutzt werden können.
 		</p>
 		<h3 id="dsg-general-erasure">Löschung von Daten</h3>
 		<p>
@@ -323,9 +320,9 @@
 			eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle
 			Benachrichtigung erforderlich wird.
 		</p>
-		<p />
+		<p></p>
 		<h3 id="dsg-commercialpurpose">Geschäftsbezogene Verarbeitung</h3>
-		<p />
+		<p></p>
 		<p>
 			<span class="ts-muster-content">
 				Zusätzlich verarbeiten wir
@@ -338,9 +335,9 @@
 				Service und Kundenpflege, Marketing, Werbung und Marktforschung.
 			</span>
 		</p>
-		<p />
+		<p></p>
 		<h3 id="dsg-contact">Kontaktaufnahme</h3>
-		<p />
+		<p></p>
 		<p>
 			<span class="ts-muster-content">
 				Bei der Kontaktaufnahme mit uns (z.B. per Kontaktformular, E-Mail, Telefon oder via sozialer
@@ -355,9 +352,9 @@
 				alle zwei Jahre; Ferner gelten die gesetzlichen Archivierungspflichten.
 			</span>
 		</p>
-		<p />
+		<p></p>
 		<h3 id="dsg-hostingprovider">Hosting und E-Mail-Versand</h3>
-		<p />
+		<p></p>
 		<p>
 			<span class="ts-muster-content">
 				Die von uns in Anspruch genommenen Hosting-Leistungen dienen der Zurverfügungstellung der
@@ -372,10 +369,10 @@
 				28 DSGVO (Abschluss Auftragsverarbeitungsvertrag).
 			</span>
 		</p>
-		<p />
+		<p></p>
 		<h3>Datenerhebung durch Dritte</h3>
 		<h4 id="dsg-logfiles">Erhebung von Zugriffsdaten und Logfiles</h4>
-		<p />
+		<p></p>
 		<p>
 			<span class="ts-muster-content">
 				Wir, bzw. unser Hostinganbieter, erhebt auf Grundlage unserer berechtigten Interessen im
@@ -387,20 +384,20 @@
 				<br />
 				<br />
 				Logfile-Informationen werden aus Sicherheitsgründen (z.B. zur Aufklärung von Missbrauchs- oder
-				Betrugshandlungen) für die Dauer von maximal 7 Tagen gespeichert und danach gelöscht. Daten,
-				deren weitere Aufbewahrung zu Beweiszwecken erforderlich ist, sind bis zur endgültigen Klärung
-				des jeweiligen Vorfalls von der Löschung ausgenommen.
+				Betrugshandlungen) für die Dauer von maximal 7 Tagen gespeichert und danach gelöscht. Daten, deren
+				weitere Aufbewahrung zu Beweiszwecken erforderlich ist, sind bis zur endgültigen Klärung des jeweiligen
+				Vorfalls von der Löschung ausgenommen.
 			</span>
 		</p>
 		<p>
-			Für die Bereitstellung unserer Webseite nutzen wir die Dienste von{' '}
-			<a href="https://www.netlify.com">Netlify</a>. Bitte beachten Sie hierfür die{' '}
-			<a href="https://www.netlify.com/privacy/">Datenschutzerklärung</a>{' '}
-			und{' '}
-			<a href="https://www.netlify.com/gdpr/">GDPR/DSGVO Informationen</a>{' '}
+			Für die Bereitstellung unserer Webseite nutzen wir die Dienste von
+			<a href="https://www.netlify.com">Netlify</a>. Bitte beachten Sie hierfür die
+			<a href="https://www.netlify.com/privacy/">Datenschutzerklärung</a>
+			und
+			<a href="https://www.netlify.com/gdpr/">GDPR/DSGVO Informationen</a>
 			von Netlify
 		</p>
-		<p />
+		<p></p>
 		<h3 id="dsg-general-revokeconsent">SimpleAnalytics</h3>
 		<p>
 			To get critical information about the behavior of our visitors, we use
@@ -415,14 +412,14 @@
 				rel="noopener noreferrer"
 			>
 				Go to their documentation
-			</a>{' '}
+			</a>
 			to find out what Simple Analytics collects (and most importantly what they don't).
 		</p>
 		<h4 id="dsg-minimalpedia">Zusatz für 'minimalpedia'</h4>
-		<p />
+		<p></p>
 		<p>
-			'minimalpedia' ist eines meiner Projekte, welches unter{' '}
-			<a href="https://minimalpedia.vantezzen.io/"> https://minimalpedia.vantezzen.io/ </a>{' '}
+			'minimalpedia' ist eines meiner Projekte, welches unter
+			<a href="https://minimalpedia.vantezzen.io/"> https://minimalpedia.vantezzen.io/ </a>
 			bereitgestellt wird.
 		</p>
 		<p>
@@ -430,32 +427,30 @@
 			Zusatz, zugestimmt.
 		</p>
 		<p>
-			'minimalpedia' sendet und empfängt während der Nutzung Daten von der{' '}
+			'minimalpedia' sendet und empfängt während der Nutzung Daten von der
 			<a href="https://en.wikipedia.org/w/api.php"> Wikipedia API Datenschnittstelle </a>
-			. Hierfür gilt zusätzlich die{' '}
+			. Hierfür gilt zusätzlich die
 			<a href="https://foundation.wikimedia.org/wiki/Privacy_policy">
 				Datenschutzerklärung von Wikipedia
 			</a>
 			.
 		</p>
 		<p>
-			Das Projekt wird auf Servern von{' '}
+			Das Projekt wird auf Servern von
 			<a href="https://www.github.com">
 				Github Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA
-			</a>{' '}
-			gehostet. Beachten Sie daher auch die{' '}
-			<a href="https://help.github.com/articles/github-privacy-policy/">
-				GitHub Privacy Policy
-			</a>{' '}
-			und{' '}
+			</a>
+			gehostet. Beachten Sie daher auch die
+			<a href="https://help.github.com/articles/github-privacy-policy/"> GitHub Privacy Policy </a>
+			und
 			<a href="https://help.github.com/articles/global-privacy-practices/">
 				GitHub Global Privacy Practices
 			</a>
 			.
 		</p>
-		<p />
+		<p></p>
 		<h3 id="dsg-socialmedia">Onlinepräsenzen in sozialen Medien</h3>
-		<p />
+		<p></p>
 		<p>
 			<span class="ts-muster-content">
 				Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke und Plattformen, um mit den
@@ -472,19 +467,18 @@
 				<br />
 				Ferner werden die Daten der Nutzer im Regelfall für Marktforschungs- und Werbezwecke verarbeitet.
 				So können z.B. aus dem Nutzungsverhalten und sich daraus ergebenden Interessen der Nutzer Nutzungsprofile
-				erstellt werden. Die Nutzungsprofile können wiederum verwendet werden, um z.B. Werbeanzeigen
-				innerhalb und außerhalb der Plattformen zu schalten, die mutmaßlich den Interessen der Nutzer
-				entsprechen. Zu diesen Zwecken werden im Regelfall Cookies auf den Rechnern der Nutzer gespeichert,
-				in denen das Nutzungsverhalten und die Interessen der Nutzer gespeichert werden. Ferner können
-				in den Nutzungsprofilen auch Daten unabhängig der von den Nutzern verwendeten Geräte gespeichert
-				werden (insbesondere wenn die Nutzer Mitglieder der jeweiligen Plattformen sind und bei diesen
-				eingeloggt sind).
+				erstellt werden. Die Nutzungsprofile können wiederum verwendet werden, um z.B. Werbeanzeigen innerhalb
+				und außerhalb der Plattformen zu schalten, die mutmaßlich den Interessen der Nutzer entsprechen.
+				Zu diesen Zwecken werden im Regelfall Cookies auf den Rechnern der Nutzer gespeichert, in denen
+				das Nutzungsverhalten und die Interessen der Nutzer gespeichert werden. Ferner können in den Nutzungsprofilen
+				auch Daten unabhängig der von den Nutzern verwendeten Geräte gespeichert werden (insbesondere
+				wenn die Nutzer Mitglieder der jeweiligen Plattformen sind und bei diesen eingeloggt sind).
 				<br />
 				<br />
 				Die Verarbeitung der personenbezogenen Daten der Nutzer erfolgt auf Grundlage unserer berechtigten
-				Interessen an einer effektiven Information der Nutzer und Kommunikation mit den Nutzern gem.
-				Art. 6 Abs. 1 lit. f. DSGVO. Falls die Nutzer von den jeweiligen Anbietern der Plattformen um
-				eine Einwilligung in die vorbeschriebene Datenverarbeitung gebeten werden, ist die Rechtsgrundlage
+				Interessen an einer effektiven Information der Nutzer und Kommunikation mit den Nutzern gem. Art.
+				6 Abs. 1 lit. f. DSGVO. Falls die Nutzer von den jeweiligen Anbietern der Plattformen um eine
+				Einwilligung in die vorbeschriebene Datenverarbeitung gebeten werden, ist die Rechtsgrundlage
 				der Verarbeitung Art. 6 Abs. 1 lit. a., Art. 7 DSGVO.
 				<br />
 				<br />
@@ -498,15 +492,15 @@
 				und Auskünfte geben. Sollten Sie dennoch Hilfe benötigen, dann können Sie sich an uns wenden.
 				<br />
 				<br />- Facebook, -Seiten, -Gruppen, (Facebook Ireland Ltd., 4 Grand Canal Square, Grand
-				Canal Harbour, Dublin 2, Irland) auf Grundlage einer{' '}
+				Canal Harbour, Dublin 2, Irland) auf Grundlage einer
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
 					href="https://www.facebook.com/legal/terms/page_controller_addendum"
 				>
 					Vereinbarung über gemeinsame Verarbeitung personenbezogener Daten
-				</a>{' '}
-				- Datenschutzerklärung:{' '}
+				</a>
+				- Datenschutzerklärung:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -514,7 +508,7 @@
 				>
 					https://www.facebook.com/about/privacy/
 				</a>
-				, speziell für Seiten:{' '}
+				, speziell für Seiten:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -522,7 +516,7 @@
 				>
 					https://www.facebook.com/legal/terms/information_about_page_insights_data
 				</a>
-				, Opt-Out:{' '}
+				, Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -530,7 +524,7 @@
 				>
 					https://www.facebook.com/settings?tab=ads
 				</a>
-				und{' '}
+				und
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -538,7 +532,7 @@
 				>
 					http://www.youronlinechoices.com
 				</a>
-				, Privacy Shield:{' '}
+				, Privacy Shield:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -556,7 +550,7 @@
 				>
 					https://policies.google.com/privacy
 				</a>
-				, Opt-Out:{' '}
+				, Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -564,7 +558,7 @@
 				>
 					https://adssettings.google.com/authenticated
 				</a>
-				, Privacy Shield:{' '}
+				, Privacy Shield:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -574,7 +568,7 @@
 				</a>
 				.<br />
 				<br />- Instagram (Instagram Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA) –
-				Datenschutzerklärung/ Opt-Out:{' '}
+				Datenschutzerklärung/ Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -584,11 +578,11 @@
 				</a>
 				.<br />
 				<br />- Twitter (Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA)
-				- Datenschutzerklärung:{' '}
+				- Datenschutzerklärung:
 				<a target="_blank" rel="noopener noreferrer nofollow" href="https://twitter.com/de/privacy">
 					https://twitter.com/de/privacy
 				</a>
-				, Opt-Out:{' '}
+				, Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -596,7 +590,7 @@
 				>
 					https://twitter.com/personalization
 				</a>
-				, Privacy Shield:{' '}
+				, Privacy Shield:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -606,7 +600,7 @@
 				</a>
 				.<br />
 				<br />- Pinterest (Pinterest Inc., 635 High Street, Palo Alto, CA, 94301, USA) –
-				Datenschutzerklärung/ Opt-Out:{' '}
+				Datenschutzerklärung/ Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -624,7 +618,7 @@
 				>
 					https://www.linkedin.com/legal/privacy-policy
 				</a>
-				, Opt-Out:{' '}
+				, Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -642,7 +636,7 @@
 				</a>
 				.<br />
 				<br />- Xing (XING AG, Dammtorstraße 29-32, 20354 Hamburg, Deutschland) -
-				Datenschutzerklärung/ Opt-Out:{' '}
+				Datenschutzerklärung/ Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -652,7 +646,7 @@
 				</a>
 				.<br />
 				<br />- Wakalet (Wakelet Limited, 76 Quay Street, Manchester, M3 4PR, United Kingdom) -
-				Datenschutzerklärung/ Opt-Out:{' '}
+				Datenschutzerklärung/ Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -662,7 +656,7 @@
 				</a>
 				.<br />
 				<br />- Soundcloud (SoundCloud Limited, Rheinsberger Str. 76/77, 10115 Berlin, Deutschland)
-				- Datenschutzerklärung/ Opt-Out:{' '}
+				- Datenschutzerklärung/ Opt-Out:
 				<a
 					target="_blank"
 					rel="noopener noreferrer nofollow"
@@ -680,10 +674,10 @@
 			rel="noopener noreferrer nofollow"
 		>
 			Erstellt mit Datenschutz-Generator.de von RA Dr. Thomas Schwenke
-		</a>{' '}
+		</a>
 		und dem&nbsp;
 		<a
-			style={{ textDecoration: 'none' }}
+			style="text-decoration: none"
 			title="Datenschutz Generator von firmenwebseiten.at"
 			href="https://www.firmenwebseiten.at/datenschutz-generator/"
 			target="_blank"
@@ -691,13 +685,13 @@
 		>
 			Datenschutz Generator von firmenwebseiten.at
 		</a>
-		&nbsp;in Kooperation mit{' '}
+		&nbsp;in Kooperation mit
 		<a
 			href="https://www.geschenkekaufen.at"
 			target="_blank"
 			rel="noopener noreferrer nofollow"
 			title=""
-			style={{ textDecoration: 'none' }}
+			style="text-decoration: none"
 		>
 			geschenkekaufen.at
 		</a>

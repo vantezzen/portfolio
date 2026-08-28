@@ -21,13 +21,13 @@
 			the lecturers can take very long to write something down.
 		</p>
 		<p class="mt-2">
-			This extension{' '}
+			This extension
 			<span class="text-orange-500 font-bold">analyzes audio</span> playing in the browser to automatically
 			speed up the video when the lecturer is silent.
 		</p>
 		<p class="mt-2">
-			The extension has been rewritten for{' '}
-			<span class="text-orange-500 font-bold"> the Plasmo extension framework </span>{' '}
+			The extension has been rewritten for
+			<span class="text-orange-500 font-bold"> the Plasmo extension framework </span>
 			to allow for easier development and maintenance. It has been installed over 10.000 times across
 			Chrome and Firefox.
 		</p>

@@ -1,10 +1,21 @@
-<script>
-	export let image = '';
-	export let size = 2;
-	export let color = '#FFFFFF';
-	export let preTitle = '';
-	export let title = '';
-	export let href = '';
+<script lang="ts">
+	interface Props {
+		image?: string;
+		size?: number;
+		color?: string;
+		preTitle?: string;
+		title?: string;
+		href?: string;
+	}
+
+	let {
+		image = '',
+		size = 2,
+		color = '#FFFFFF',
+		preTitle = '',
+		title = '',
+		href = ''
+	}: Props = $props();
 </script>
 
 <a
@@ -12,7 +23,7 @@
 	class="card rounded-lg shadow-brand p-5 relative hover:scale-105 transition-all duration-500"
 	style="--size: {size};--color: {color};"
 >
-	<img src={image} alt="" style:--tag={title} class="rounded object-cover w-full h-full" />
+	<img src={image} alt="" style:--tag={title} class="rounded-sm object-cover w-full h-full" />
 
 	<div class="absolute top-0 left-0 w-full h-full">
 		<div

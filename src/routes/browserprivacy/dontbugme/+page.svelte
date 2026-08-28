@@ -1,7 +1,4 @@
 <script>
-	import jobsImage from '$lib/images/jobs.png';
-	import Button from '../../../components/Button.svelte';
-	import ProjectHeader from '../../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../../components/projects/ProjectPage.svelte';
 	import Section from '../../../components/Section.svelte';
 </script>
@@ -30,7 +27,7 @@
 		<p>
 			We do however need to send your current website to BugMeNot to get credentials availible for
 			this domain. As we do still want you to have the greatest privacy possible, we only send the
-			TLD of your current website, e.g. <code>"example.com"</code> instead of{' '}
+			TLD of your current website, e.g. <code>"example.com"</code> instead of
 			<code>"example.com/profiles/John.Doe"</code>.
 		</p>
 
@@ -109,11 +106,11 @@
 		</h2>
 
 		<p>
-			Our browser extension will share your current TLD with{' '}
+			Our browser extension will share your current TLD with
 			<code>BugMeNot.com</code> in order to get a list of availible accounts. In order for this to
 			happen, your browser will send a request to <code>http://bugmenot.com/view/[TLD]</code>,
-			replacing{' '}
-			<code>[TLD]</code> with your current TLD, e.g.{' '}
+			replacing
+			<code>[TLD]</code> with your current TLD, e.g.
 			<code>example.com</code>.
 		</p>
 
@@ -128,7 +125,7 @@
 
 			<li>
 				You enable "Automatically check for availible accounts and show badge". In this case,
-				DontBugMe will send your current TLD to{' '}
+				DontBugMe will send your current TLD to
 				<code>BugMeNot.com</code> when you open a new website or switch browser tabs or windows. The
 				extension will then cache the result it got back from <code>BugMeNot.com</code> for a limited
 				time in order to not send a new request everytime you open the same TLD.
@@ -136,7 +133,7 @@
 		</ul>
 
 		<p>
-			For more information on how <code>BugMeNot.com</code> will process your data, please visit{' '}
+			For more information on how <code>BugMeNot.com</code> will process your data, please visit
 			<a href="http://bugmenot.com/terms.php">its terms of service</a>.
 		</p>
 

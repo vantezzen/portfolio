@@ -4,7 +4,6 @@
 	import Projects from '../components/landing/Projects.svelte';
 	import Tech from '../components/landing/Tech.svelte';
 	import Wrapped from '../components/landing/Wrapped.svelte';
-	export const prerender = true;
 </script>
 
 <svelte:head>

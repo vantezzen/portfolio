@@ -35,8 +35,8 @@
 			neonFin is my first app fully relying on <span class="text-orange-500 font-bold"
 				>Firebase</span
 			>
-			for authentication, database and storage. It's been a great way to learn more about Firebase
-			and how to use it in scalable applications.<br />
+			for authentication, database and storage. It's been a great way to learn more about Firebase and
+			how to use it in scalable applications.<br />
 			I've been amazed by the speed of development with Firebase and how easy it is to build a production-ready
 			app with it.
 		</p>

@@ -1,10 +1,15 @@
-<script>
-	export let color = 'orange-500';
-	export let size = 2;
+<script lang="ts">
+	interface Props {
+		color?: string;
+		size?: number;
+		children?: import('svelte').Snippet;
+	}
+
+	let { color = 'orange-500', size = 2, children }: Props = $props();
 </script>
 
 <div class="card rounded-lg shadow-brand p-5 {color}" style="--size: {size};">
-	<slot />
+	{@render children?.()}
 </div>
 
 <style>

@@ -11,6 +11,17 @@
 	>
 		Crafting powerful websites and web applications
 	</h1>
+
+	<!-- Chevron down -->
+	<svg
+		class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-6 h-6 animate-[bounce_2s_infinite] z-10 text-zinc-500"
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+	</svg>
 </section>
 
 <style>
@@ -21,6 +32,6 @@
 	}
 
 	section {
-		min-height: 75vh;
+		min-height: 100vh;
 	}
 </style>

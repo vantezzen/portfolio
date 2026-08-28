@@ -1,7 +1,4 @@
 <script>
-	import jobsImage from '$lib/images/jobs.png';
-	import Button from '../../../components/Button.svelte';
-	import ProjectHeader from '../../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../../components/projects/ProjectPage.svelte';
 	import Section from '../../../components/Section.svelte';
 </script>
@@ -76,7 +73,7 @@
 		</p>
 
 		<p>
-			Additionally, our browser extension saves the settings you set using{' '}
+			Additionally, our browser extension saves the settings you set using
 			<a href="https://developer.chrome.com/apps/storage"> Chrome's extension storage system </a>
 			. Your settings will be Synchronised across all your devices using Chrome's built-in setting synchronisation.
 		</p>

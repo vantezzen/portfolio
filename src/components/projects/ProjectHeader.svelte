@@ -1,8 +1,12 @@
-<script>
-	export let image = '';
-	export let color = '#FFFFFF';
-	export let preTitle = '';
-	export let title = '';
+<script lang="ts">
+	interface Props {
+		image?: string;
+		color?: string;
+		preTitle?: string;
+		title?: string;
+	}
+
+	let { image = '', color = '#FFFFFF', preTitle = '', title = '' }: Props = $props();
 </script>
 
 <div class="rounded-lg header relative w-full" style="--color: {color};">
@@ -11,7 +15,7 @@
 	<div class="absolute top-0 left-0 w-full h-full">
 		<div
 			class="w-full h-full card-gradient rounded-lg flex justify-end items-center text-white flex-col p-4"
-		/>
+		></div>
 	</div>
 </div>
 

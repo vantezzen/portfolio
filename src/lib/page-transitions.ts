@@ -4,12 +4,12 @@ import { navigating } from '$app/stores';
 import { onDestroy } from 'svelte';
 
 function getNavigationStore() {
-	let callbacks: ((val?: any) => void)[] = [];
+	const callbacks: ((val?: unknown) => void)[] = [];
 
 	const navigation = {
 		...navigating,
 		complete: async () => {
-			await new Promise((res, _) => {
+			await new Promise((res) => {
 				callbacks.push(res);
 			});
 		}

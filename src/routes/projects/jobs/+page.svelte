@@ -21,8 +21,8 @@
 			>, the job board was completely overhauled and built from the ground up for Core Web Vitals.
 		</p>
 		<p class="mt-2">
-			The backend is built with Laravel and{' '}
-			<span class="text-orange-500 font-bold"> follows clean code principles </span>{' '}
+			The backend is built with Laravel and
+			<span class="text-orange-500 font-bold"> follows clean code principles </span>
 			to allow for easy maintenance and extensibility. It is deployed to AWS using AWS Elastic Beanstalk
 			while the frontend is deployed to Vercel.
 		</p>

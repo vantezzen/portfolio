@@ -7,6 +7,9 @@ node_modules
 .env.*
 !.env.example
 
+# Third-party, minified service worker
+static/sw.js
+
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json

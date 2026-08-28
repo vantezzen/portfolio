@@ -24,7 +24,12 @@ declare global {
 	}
 
 	interface Window {
-		grecaptcha: any;
+		grecaptcha: {
+			ready(callback: () => void): void;
+			render(container: string, parameters: { sitekey: string }): void;
+		};
+		// Present in Chrome(-ium) based browsers only.
+		chrome?: unknown;
 	}
 }
 

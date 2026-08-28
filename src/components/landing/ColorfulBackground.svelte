@@ -8,7 +8,7 @@
 	const canvasHeight = 32;
 
 	let ctx: CanvasRenderingContext2D | null = null;
-	let canvas: HTMLCanvasElement | null = null;
+	let canvas: HTMLCanvasElement | null = $state(null);
 
 	let t = 5;
 
@@ -75,7 +75,7 @@
 	});
 </script>
 
-<canvas bind:this={canvas} />
+<canvas bind:this={canvas}></canvas>
 
 <style>
 	canvas {

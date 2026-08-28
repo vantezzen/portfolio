@@ -43,7 +43,7 @@
 				<Input label="Name" name="name" />
 				<Textarea label="Message" name="message" />
 				<input type="hidden" name="form-name" value="contact" />
-				<div id="googleRecaptchaDiv" />
+				<div id="googleRecaptchaDiv"></div>
 
 				<Button type="submit" highlighted>Send</Button>
 			</div>

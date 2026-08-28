@@ -1,7 +1,5 @@
 <script>
-	import jobsImage from '$lib/images/jobs.png';
 	import Button from '../../components/Button.svelte';
-	import ProjectHeader from '../../components/projects/ProjectHeader.svelte';
 	import ProjectPage from '../../components/projects/ProjectPage.svelte';
 	import Section from '../../components/Section.svelte';
 </script>

@@ -1,4 +1,4 @@
-import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
+import { beforeNavigate, goto } from '$app/navigation';
 import { get, writable } from 'svelte/store';
 import { base } from '$app/paths';
 
@@ -26,8 +26,8 @@ export function addPage(page: string) {
 }
 
 export function popPage(): HistoryEntry | undefined {
-	let history = get(navigationHistory);
-	let page = history.pop();
+	const history = get(navigationHistory);
+	const page = history.pop();
 	navigationHistory.set(history);
 	return page;
 }

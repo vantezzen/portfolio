@@ -4,23 +4,30 @@
 	import ProjectPage from './projects/ProjectPage.svelte';
 	import Section from './Section.svelte';
 
-	export let name = '';
-	export let links: {
-		github: string;
-		firefox: string;
-		chrome: string;
-		edge?: string;
-	} = {
-		github: '',
-		firefox: '',
-		chrome: ''
-	};
+	interface Props {
+		name?: string;
+		links?: {
+			github: string;
+			firefox: string;
+			chrome: string;
+			edge?: string;
+		};
+	}
+
+	let {
+		name = '',
+		links = {
+			github: '',
+			firefox: '',
+			chrome: ''
+		}
+	}: Props = $props();
 
 	onMount(() => {
 		if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 			// Firefox
 			window.location.href = links.firefox;
-		} else if ((window as any).chrome) {
+		} else if (window.chrome) {
 			// Chrome(-ium)
 			window.location.href = links.chrome;
 		}

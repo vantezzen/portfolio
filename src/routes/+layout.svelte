@@ -1,9 +1,14 @@
-<script>
+<script lang="ts">
 	import './styles.css';
 	import { preparePageTransition } from '$lib/page-transitions';
 	import Footer from '../components/layout/Footer.svelte';
 	import { setupHistory } from '$lib/history';
 	import LoadingScreen from '../components/LoadingScreen.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	preparePageTransition();
 	setupHistory();
@@ -11,7 +16,7 @@
 
 <div class="app">
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 
 	<Footer />

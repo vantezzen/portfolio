@@ -9,7 +9,7 @@
 		<img class="w-auto h-16 mx-auto" src={logo} alt="Logo" />
 
 		<div class="loading-bar">
-			<div class="loading-bar__bar" />
+			<div class="loading-bar__bar"></div>
 		</div>
 	</div>
 {/if}

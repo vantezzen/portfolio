@@ -46,7 +46,7 @@
 		referrerpolicy="strict-origin-when-cross-origin"
 		allowfullscreen
 		class="mt-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 mx-auto"
-	/>
+	></iframe>
 
 	<Section title="Lessons learned">
 		<p>

@@ -2,13 +2,48 @@
 @import '@fontsource/dm-sans/700';
 @import '@fontsource/dm-sans/400';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source '../';
+
+@theme {
+	--color-fire-50: #ffe9e9;
+	--color-fire-100: #ffcfcf;
+	--color-fire-200: #ffb7b7;
+	--color-fire-300: #ff9f9f;
+	--color-fire-400: #ff8787;
+	--color-fire-500: #ff6f5f;
+	--color-fire-600: #ff5757;
+	--color-fire-700: #ff3f3f;
+	--color-fire-800: #ff2727;
+	--color-fire-900: #ff0f0f;
+
+	--shadow-brand: 0px 0px 47px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tailwind v4's preflight no longer sets this; restore the v3 behaviour. */
+@layer base {
+	button:not(:disabled),
+	[role='button']:not(:disabled) {
+		cursor: pointer;
+	}
+}
 
 body {
-	font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Segoe UI',
-		Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family:
+		'DM Sans',
+		-apple-system,
+		BlinkMacSystemFont,
+		'Avenir Next',
+		Avenir,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol';
 }
 
 /* Only do the FLIP-style animations when no reduced-motion preference */
