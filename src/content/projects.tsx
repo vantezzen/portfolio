@@ -1,10 +1,18 @@
 import type { ProjectCardProps } from "@/components/project-card";
+import { SidekickArt } from "@/components/home/sidekick-art";
 
 import fresnelImage from "@/assets/projects/fresnel/base.png";
 import autoformImage from "@/assets/projects/autoform/icon.png";
 import wrappedImage from "@/assets/projects/wrapped/wrapped-comments.png";
 
 export const projects: ProjectCardProps[] = [
+  {
+    title: "WaveMetrics Sidekick",
+    description: "AI teammate for Google Ads accounts",
+    art: <SidekickArt />,
+    href: "/projects/sidekick",
+    tags: ["Vercel Eve", "MCP", "LangFuse", "Multi-agent"],
+  },
   {
     title: "Fresnel",
     description: "Virtual relighting on macOS",

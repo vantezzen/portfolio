@@ -80,17 +80,19 @@ export function ProjectFooter({
             <span className="text-sm text-neutral-500">{next.description}</span>
           </div>
           <div className="flex items-center gap-4">
-            <div className="hidden size-16 items-center justify-center overflow-hidden rounded-2xl bg-white sm:flex">
-              <Image
-                src={next.image}
-                alt=""
-                className={
-                  next.variant === "icon"
-                    ? "size-8 object-contain"
-                    : "size-full object-cover object-top-left"
-                }
-              />
-            </div>
+            {next.image && (
+              <div className="hidden size-16 items-center justify-center overflow-hidden rounded-2xl bg-white sm:flex">
+                <Image
+                  src={next.image}
+                  alt=""
+                  className={
+                    next.variant === "icon"
+                      ? "size-8 object-contain"
+                      : "size-full object-cover object-top-left"
+                  }
+                />
+              </div>
+            )}
             <ArrowRight className="size-5 text-neutral-400 transition-transform group-hover:translate-x-1" />
           </div>
         </Link>

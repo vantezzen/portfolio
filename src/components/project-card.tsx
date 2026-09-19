@@ -6,7 +6,10 @@ import { TagList } from "./project/tag-list";
 export type ProjectCardProps = {
   title: string;
   description: string;
-  image: StaticImageData;
+  /** Screenshot or logo. Leave out when `art` renders the visual instead. */
+  image?: StaticImageData;
+  /** A small composition rendered live in place of an image. */
+  art?: React.ReactNode;
   href: string;
   /**
    * `screenshot` bleeds the image off the right edge of the card,
@@ -21,6 +24,7 @@ export function ProjectCard({
   title,
   description,
   image,
+  art,
   href,
   variant = "screenshot",
   imageClassName,
@@ -34,19 +38,23 @@ export function ProjectCard({
       <div
         className={cn(
           "flex aspect-9/12 items-center overflow-hidden rounded-4xl bg-neutral-100",
-          variant === "screenshot" ? "justify-end" : "justify-center",
+          variant === "screenshot" && !art ? "justify-end" : "justify-center",
         )}
       >
-        <Image
-          src={image}
-          alt={title}
-          className={cn(
-            "transition-transform duration-300 group-hover:scale-[1.02]",
-            variant === "screenshot" && "h-3/4 w-3/4 rounded-l-xl object-cover",
-            variant === "icon" && "w-1/3 object-contain",
-            imageClassName,
-          )}
-        />
+        {art ??
+          (image && (
+            <Image
+              src={image}
+              alt={title}
+              className={cn(
+                "transition-transform duration-300 group-hover:scale-[1.02]",
+                variant === "screenshot" &&
+                  "h-3/4 w-3/4 rounded-l-xl object-cover",
+                variant === "icon" && "w-1/3 object-contain",
+                imageClassName,
+              )}
+            />
+          ))}
       </div>
 
       <div className="mt-2 font-medium">

@@ -11,7 +11,7 @@ export function Projects() {
       <Constrained className="gap-0">
         <SectionTitle>Selected projects</SectionTitle>
       </Constrained>
-      <div className="flex w-full snap-x gap-6 overflow-x-auto overflow-y-clip px-6 pb-2 scroll-px-6 sm:px-10 sm:scroll-px-10 md:gap-8 md:px-24 md:scroll-px-24 xl:justify-center">
+      <div className="flex w-full snap-x gap-6 overflow-x-auto overflow-y-clip px-6 pb-2 scroll-px-6 sm:px-10 sm:scroll-px-10 md:gap-8 md:px-24 md:scroll-px-24 xl:justify-center-safe">
         {projects.map((project, index) => (
           <Reveal
             key={project.href}
