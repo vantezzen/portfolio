@@ -19,7 +19,7 @@ export const projects: ProjectCardProps[] = [
     image: autoformImage,
     href: "/projects/autoform",
     variant: "icon",
-    tags: ["50k monthly downloads", "3.5k GitHub stars", "TypeScript"],
+    tags: ["230k+ monthly downloads", "3.5k GitHub stars", "TypeScript"],
   },
   {
     title: "Wrapped for TikTok",

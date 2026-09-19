@@ -2,6 +2,7 @@ import { Github, Linkedin } from "@thesvg/react";
 
 export const site = {
   name: "Bennett Hollstein",
+  url: "https://vantezzen.io",
   tagline:
     "Fullstack Product Engineer focused on thoughtful products, robust systems, and practical AI.",
   location: "Berlin, Germany",

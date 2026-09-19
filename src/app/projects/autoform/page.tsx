@@ -20,7 +20,7 @@ const GITHUB_URL = "https://github.com/vantezzen/autoform";
 const DOCS_URL = "https://autoform.vantezzen.io";
 
 export const metadata: Metadata = {
-  title: "AutoForm – Instant React forms for your schema",
+  title: "AutoForm",
   description:
     "An open source library that renders complete, validated React forms from Zod, Yup or Joi schemas, for any UI library.",
 };

@@ -21,7 +21,7 @@ import candlelightImage from "@/assets/projects/fresnel/2.png";
 const APP_STORE_URL = "https://apps.apple.com/app/fresnel/id0000000000";
 
 export const metadata: Metadata = {
-  title: "Fresnel – Virtual relighting on macOS",
+  title: "Fresnel",
   description:
     "A macOS app that relights your webcam feed in real time with virtual lights, running fully on-device on the Neural Engine.",
 };

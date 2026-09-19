@@ -29,8 +29,16 @@ const fuzzyBubbles = Fuzzy_Bubbles({
 });
 
 export const metadata: Metadata = {
-  title: site.name,
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.name,
+    template: `%s · ${site.name}`,
+  },
   description: site.tagline,
+  // Title, description and image fall through from each page.
+  alternates: { canonical: "./" },
+  openGraph: { type: "website", siteName: site.name, locale: "en_US" },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Constrained } from "@/components/layout/constrained";
 import { ProjectNav } from "@/components/project/project-nav";
-import { site } from "@/content/site";
 
 /**
  * Layout for legal and policy pages. Children are plain HTML (headings,
@@ -48,7 +47,7 @@ export function LegalPage({
 /** Metadata for a legal page: titled, and kept out of search results. */
 export function legalMetadata(title: string, description?: string): Metadata {
   return {
-    title: `${title} – ${site.name}`,
+    title,
     description,
     robots: { index: false, follow: true },
   };

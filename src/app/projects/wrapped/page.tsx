@@ -30,7 +30,7 @@ const totalVisitors = access.reduce(
 );
 
 export const metadata: Metadata = {
-  title: "Wrapped for TikTok – Your year on TikTok",
+  title: "Wrapped for TikTok",
   description:
     "A Spotify-Wrapped-style year in review for TikTok, built from your own data export and processed entirely in the browser. 10 million visitors in a single month.",
 };
