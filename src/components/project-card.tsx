@@ -33,28 +33,29 @@ export function ProjectCard({
   return (
     <Link
       href={href}
-      className="group flex w-72 shrink-0 snap-start flex-col sm:w-80 md:w-96"
+      className="group flex w-72 shrink-0 snap-start flex-col outline-none transition-transform duration-150 ease-out active:scale-[0.99] motion-reduce:transition-none sm:w-80 md:w-96"
     >
-      <div
-        className={cn(
-          "flex aspect-9/12 items-center overflow-hidden rounded-4xl bg-neutral-100",
-          variant === "screenshot" && !art ? "justify-end" : "justify-center",
-        )}
-      >
-        {art ??
-          (image && (
-            <Image
-              src={image}
-              alt={title}
-              className={cn(
-                "transition-transform duration-300 group-hover:scale-[1.02]",
-                variant === "screenshot" &&
-                  "h-3/4 w-3/4 rounded-l-xl object-cover",
-                variant === "icon" && "w-1/3 object-contain",
-                imageClassName,
-              )}
-            />
-          ))}
+      <div className="relative flex aspect-9/12 items-center justify-center overflow-hidden rounded-4xl bg-neutral-100 transition-colors duration-250 ease group-hover:bg-neutral-200/60 group-focus-visible:ring-2 group-focus-visible:ring-neutral-300 motion-reduce:transition-none">
+        <div
+          className={cn(
+            "relative flex size-full items-center transition-transform duration-250 ease group-hover:scale-[1.03] motion-reduce:transition-none",
+            variant === "screenshot" && !art ? "justify-end" : "justify-center",
+          )}
+        >
+          {art ??
+            (image && (
+              <Image
+                src={image}
+                alt={title}
+                className={cn(
+                  variant === "screenshot" &&
+                    "h-3/4 w-3/4 rounded-l-xl object-cover",
+                  variant === "icon" && "w-1/3 object-contain",
+                  imageClassName,
+                )}
+              />
+            ))}
+        </div>
       </div>
 
       <div className="mt-2 font-medium">

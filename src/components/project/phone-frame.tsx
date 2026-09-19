@@ -1,22 +1,44 @@
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import phoneImage from "@/assets/phone.png";
+import phoneMask from "@/assets/phone-mask.png";
+
+/** Screen area of `phone-mask.png`, measured from its white region. */
+const FRAME = { width: 770, height: 1589 };
+const CUTOUT = { x: 34, y: 36, width: 700, height: 1518 };
 
 /**
- * Screen cutout of `phone.png`, measured from the file's alpha channel:
- * 697×1513 px at (36, 37) in a 770×1589 frame.
+ * Grow the screen a few source pixels past the mask so its antialiased edge
+ * always has content behind it. The mask clips the overhang; without the
+ * bleed a hairline of the page shows between the screen and the bezel.
  */
+const BLEED = 4;
+
 const SCREEN = {
-  left: "4.675%",
-  top: "2.329%",
-  width: "90.52%",
-  height: "95.22%",
+  left: `${((CUTOUT.x - BLEED) / FRAME.width) * 100}%`,
+  top: `${((CUTOUT.y - BLEED) / FRAME.height) * 100}%`,
+  width: `${((CUTOUT.width + BLEED * 2) / FRAME.width) * 100}%`,
+  height: `${((CUTOUT.height + BLEED * 2) / FRAME.height) * 100}%`,
 };
 
 /**
- * A phone mockup. Children render on the screen, behind the bezel. The screen
- * is masked with the frame's own transparency, so it follows the bezel's
- * continuous corners exactly.
+ * `phone-mask.png` is white over the screen and black everywhere else, so it
+ * masks by luminance. It clips the screen to the glass exactly, including
+ * outside the phone's rounded silhouette.
+ */
+const MASK: React.CSSProperties = {
+  maskImage: `url(${phoneMask.src})`,
+  maskMode: "luminance",
+  maskSize: "100% 100%",
+  maskRepeat: "no-repeat",
+  WebkitMaskImage: `url(${phoneMask.src})`,
+  WebkitMaskSize: "100% 100%",
+  WebkitMaskRepeat: "no-repeat",
+};
+
+/**
+ * A phone mockup. Children render on the screen, behind the bezel, clipped by
+ * `phone-mask.png` so they follow the glass's continuous corners exactly.
  */
 export function PhoneFrame({
   children,
@@ -35,16 +57,7 @@ export function PhoneFrame({
         ...style,
       }}
     >
-      <div
-        className="absolute inset-0"
-        style={{
-          maskImage: `linear-gradient(#000 0 0), url(${phoneImage.src})`,
-          maskSize: "100% 100%",
-          maskRepeat: "no-repeat",
-          maskComposite: "exclude",
-          WebkitMaskComposite: "xor",
-        }}
-      >
+      <div className="absolute inset-0" style={MASK}>
         <div className="absolute overflow-hidden bg-black" style={SCREEN}>
           {children}
         </div>

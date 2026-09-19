@@ -1,9 +1,9 @@
 import type { ProjectCardProps } from "@/components/project-card";
+import { AutoFormArt } from "@/components/home/autoform-art";
 import { SidekickArt } from "@/components/home/sidekick-art";
+import { WrappedArt } from "@/components/home/wrapped-art";
 
 import fresnelImage from "@/assets/projects/fresnel/base.png";
-import autoformImage from "@/assets/projects/autoform/icon.png";
-import wrappedImage from "@/assets/projects/wrapped/wrapped-comments.png";
 
 export const projects: ProjectCardProps[] = [
   {
@@ -24,15 +24,14 @@ export const projects: ProjectCardProps[] = [
   {
     title: "autoform",
     description: "Instant React form for your schema",
-    image: autoformImage,
+    art: <AutoFormArt />,
     href: "/projects/autoform",
-    variant: "icon",
     tags: ["230k+ monthly downloads", "3.5k GitHub stars", "TypeScript"],
   },
   {
     title: "Wrapped for TikTok",
     description: "Year-in-review for TikTok",
-    image: wrappedImage,
+    art: <WrappedArt />,
     href: "/projects/wrapped",
     tags: ["10M peak monthly users", "NextJS"],
   },
