@@ -45,7 +45,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistMono.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+
+        <script
+          defer
+          src="https://a.vantezzen.io/script.js"
+          data-website-id="98fcfa82-c3e6-46c7-8802-dd1fbb786ab4"
+        ></script>
+        <script
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          data-skip-dnt="true"
+        ></script>
+        <noscript>
+          <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" />
+        </noscript>
+      </body>
     </html>
   );
 }
