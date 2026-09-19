@@ -77,19 +77,27 @@ export function Pipeline({ steps }: { steps: PipelineStep[] }) {
             {step.runsOn && (
               <motion.span
                 variants={variants.text}
-                className="text-[11px] text-neutral-500 sm:flex sm:h-8 sm:items-end sm:justify-center sm:text-center"
+                className="w-24 shrink-0 text-[11px] text-neutral-500 sm:flex sm:h-8 sm:w-auto sm:items-end sm:justify-center sm:text-center"
               >
                 {step.runsOn}
               </motion.span>
             )}
 
-            <div className="flex flex-col items-center sm:flex-row">
-              <Track hidden={isFirst} variants={variants.track} />
+            <div className="flex w-2.5 shrink-0 flex-col items-center sm:w-auto sm:flex-row">
+              <Track
+                hidden={isFirst}
+                variants={variants.track}
+                className="h-[5px] flex-none sm:h-px sm:flex-1"
+              />
               <motion.span
                 variants={variants.dot}
                 className="size-2.5 shrink-0 rounded-full bg-white shadow-[0_0_0_4px_rgba(255,255,255,0.12)]"
               />
-              <Track hidden={isLast} variants={variants.track} />
+              <Track
+                hidden={isLast}
+                variants={variants.track}
+                className="flex-1"
+              />
             </div>
 
             <motion.div
@@ -108,12 +116,21 @@ export function Pipeline({ steps }: { steps: PipelineStep[] }) {
   );
 }
 
-function Track({ hidden, variants }: { hidden: boolean; variants: Variants }) {
+function Track({
+  hidden,
+  variants,
+  className,
+}: {
+  hidden: boolean;
+  variants: Variants;
+  className?: string;
+}) {
   return (
     <motion.span
       variants={variants}
       className={cn(
-        "w-px flex-1 origin-top-left bg-white/15 sm:h-px sm:w-auto",
+        "w-px origin-top-left bg-white/15 sm:h-px sm:w-auto",
+        className,
         hidden && "invisible",
       )}
     />
