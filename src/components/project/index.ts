@@ -1,0 +1,11 @@
+export { ProjectNav } from "./project-nav";
+export { ProjectHeader, type ProjectMetaItem } from "./project-header";
+export { ProjectSection, Prose } from "./project-section";
+export { FeatureGrid, Feature } from "./feature-grid";
+export { TagList } from "./tag-list";
+export { TechCard, Pipeline, TechText, type PipelineStep } from "./tech-card";
+export { ProjectFooter, type ProjectCta } from "./project-footer";
+export { LookSwitcher, type Look } from "./look-switcher";
+export { Stat, StatRow } from "./stat";
+export { PhoneFrame, PhoneScreenshot } from "./phone-frame";
+export { ProjectShowcase } from "./project-showcase";

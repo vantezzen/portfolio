@@ -1,0 +1,372 @@
+[
+  {
+    "start": "2023-09-01",
+    "end": "2023-09-30",
+    "month": "2023-09",
+    "complete": false,
+    "timestamp": 1693519200000,
+    "visits": 182797,
+    "date": "2023-09-01",
+    "uniqueVisits": 147712
+  },
+  {
+    "start": "2023-10-01",
+    "end": "2023-10-31",
+    "month": "2023-10",
+    "complete": true,
+    "timestamp": 1696111200000,
+    "visits": 906680,
+    "date": "2023-10-01",
+    "uniqueVisits": 776240
+  },
+  {
+    "start": "2023-11-01",
+    "end": "2023-11-30",
+    "month": "2023-11",
+    "complete": true,
+    "timestamp": 1698793200000,
+    "visits": 1046795,
+    "date": "2023-11-01",
+    "uniqueVisits": 908950
+  },
+  {
+    "start": "2023-12-01",
+    "end": "2023-12-31",
+    "month": "2023-12",
+    "complete": true,
+    "timestamp": 1701385200000,
+    "visits": 2428285,
+    "date": "2023-12-01",
+    "uniqueVisits": 1918468
+  },
+  {
+    "start": "2024-01-01",
+    "end": "2024-01-31",
+    "month": "2024-01",
+    "complete": true,
+    "timestamp": 1704063600000,
+    "visits": 647955,
+    "date": "2024-01-01",
+    "uniqueVisits": 509815
+  },
+  {
+    "start": "2024-02-01",
+    "end": "2024-02-29",
+    "month": "2024-02",
+    "complete": true,
+    "timestamp": 1706742000000,
+    "visits": 85340,
+    "date": "2024-02-01",
+    "uniqueVisits": 66400
+  },
+  {
+    "start": "2024-03-01",
+    "end": "2024-03-31",
+    "month": "2024-03",
+    "complete": true,
+    "timestamp": 1709247600000,
+    "visits": 73801,
+    "date": "2024-03-01",
+    "uniqueVisits": 56970
+  },
+  {
+    "start": "2024-04-01",
+    "end": "2024-04-30",
+    "month": "2024-04",
+    "complete": true,
+    "timestamp": 1711922400000,
+    "visits": 91262,
+    "date": "2024-04-01",
+    "uniqueVisits": 78569
+  },
+  {
+    "start": "2024-05-01",
+    "end": "2024-05-31",
+    "month": "2024-05",
+    "complete": true,
+    "timestamp": 1714514400000,
+    "visits": 69460,
+    "date": "2024-05-01",
+    "uniqueVisits": 58972
+  },
+  {
+    "start": "2024-06-01",
+    "end": "2024-06-30",
+    "month": "2024-06",
+    "complete": true,
+    "timestamp": 1717192800000,
+    "visits": 1558992,
+    "date": "2024-06-01",
+    "uniqueVisits": 1436996
+  },
+  {
+    "start": "2024-07-01",
+    "end": "2024-07-31",
+    "month": "2024-07",
+    "complete": true,
+    "timestamp": 1719784800000,
+    "visits": 1351051,
+    "date": "2024-07-01",
+    "uniqueVisits": 1205692
+  },
+  {
+    "start": "2024-08-01",
+    "end": "2024-08-31",
+    "month": "2024-08",
+    "complete": true,
+    "timestamp": 1722463200000,
+    "visits": 937361,
+    "date": "2024-08-01",
+    "uniqueVisits": 825899
+  },
+  {
+    "start": "2024-09-01",
+    "end": "2024-09-30",
+    "month": "2024-09",
+    "complete": true,
+    "timestamp": 1725141600000,
+    "visits": 1089428,
+    "date": "2024-09-01",
+    "uniqueVisits": 951732
+  },
+  {
+    "start": "2024-10-01",
+    "end": "2024-10-31",
+    "month": "2024-10",
+    "complete": true,
+    "timestamp": 1727733600000,
+    "visits": 648469,
+    "date": "2024-10-01",
+    "uniqueVisits": 539126
+  },
+  {
+    "start": "2024-11-01",
+    "end": "2024-11-30",
+    "month": "2024-11",
+    "complete": true,
+    "timestamp": 1730415600000,
+    "visits": 802167,
+    "date": "2024-11-01",
+    "uniqueVisits": 705764
+  },
+  {
+    "start": "2024-12-01",
+    "end": "2024-12-31",
+    "month": "2024-12",
+    "complete": true,
+    "timestamp": 1733007600000,
+    "visits": 11629815,
+    "date": "2024-12-01",
+    "uniqueVisits": 10087284
+  },
+  {
+    "start": "2025-01-01",
+    "end": "2025-01-31",
+    "month": "2025-01",
+    "complete": true,
+    "timestamp": 1735686000000,
+    "visits": 2577636,
+    "date": "2025-01-01",
+    "uniqueVisits": 2212168
+  },
+  {
+    "start": "2025-02-01",
+    "end": "2025-02-28",
+    "month": "2025-02",
+    "complete": true,
+    "timestamp": 1738364400000,
+    "visits": 341114,
+    "date": "2025-02-01",
+    "uniqueVisits": 296966
+  },
+  {
+    "start": "2025-03-01",
+    "end": "2025-03-31",
+    "month": "2025-03",
+    "complete": true,
+    "timestamp": 1740783600000,
+    "visits": 209203,
+    "date": "2025-03-01",
+    "uniqueVisits": 171740
+  },
+  {
+    "start": "2025-04-01",
+    "end": "2025-04-30",
+    "month": "2025-04",
+    "complete": true,
+    "timestamp": 1743458400000,
+    "visits": 103605,
+    "date": "2025-04-01",
+    "uniqueVisits": 88287
+  },
+  {
+    "start": "2025-05-01",
+    "end": "2025-05-31",
+    "month": "2025-05",
+    "complete": true,
+    "timestamp": 1746050400000,
+    "visits": 88313,
+    "date": "2025-05-01",
+    "uniqueVisits": 77812
+  },
+  {
+    "start": "2025-06-01",
+    "end": "2025-06-30",
+    "month": "2025-06",
+    "complete": true,
+    "timestamp": 1748728800000,
+    "visits": 508678,
+    "date": "2025-06-01",
+    "uniqueVisits": 454709
+  },
+  {
+    "start": "2025-07-01",
+    "end": "2025-07-31",
+    "month": "2025-07",
+    "complete": true,
+    "timestamp": 1751320800000,
+    "visits": 171771,
+    "date": "2025-07-01",
+    "uniqueVisits": 153693
+  },
+  {
+    "start": "2025-08-01",
+    "end": "2025-08-31",
+    "month": "2025-08",
+    "complete": true,
+    "timestamp": 1753999200000,
+    "visits": 110163,
+    "date": "2025-08-01",
+    "uniqueVisits": 98558
+  },
+  {
+    "start": "2025-09-01",
+    "end": "2025-09-30",
+    "month": "2025-09",
+    "complete": true,
+    "timestamp": 1756677600000,
+    "visits": 93479,
+    "date": "2025-09-01",
+    "uniqueVisits": 83332
+  },
+  {
+    "start": "2025-10-01",
+    "end": "2025-10-31",
+    "month": "2025-10",
+    "complete": true,
+    "timestamp": 1759269600000,
+    "visits": 46063,
+    "date": "2025-10-01",
+    "uniqueVisits": 40075
+  },
+  {
+    "start": "2025-11-01",
+    "end": "2025-11-30",
+    "month": "2025-11",
+    "complete": true,
+    "timestamp": 1761951600000,
+    "visits": 158239,
+    "date": "2025-11-01",
+    "uniqueVisits": 141586
+  },
+  {
+    "start": "2025-12-01",
+    "end": "2025-12-31",
+    "month": "2025-12",
+    "complete": true,
+    "timestamp": 1764543600000,
+    "visits": 6133400,
+    "date": "2025-12-01",
+    "uniqueVisits": 5383977
+  },
+  {
+    "start": "2026-01-01",
+    "end": "2026-01-31",
+    "month": "2026-01",
+    "complete": true,
+    "timestamp": 1767222000000,
+    "visits": 483911,
+    "date": "2026-01-01",
+    "uniqueVisits": 416436
+  },
+  {
+    "start": "2026-02-01",
+    "end": "2026-02-28",
+    "month": "2026-02",
+    "complete": true,
+    "timestamp": 1769900400000,
+    "visits": 69035,
+    "date": "2026-02-01",
+    "uniqueVisits": 60045
+  },
+  {
+    "start": "2026-03-01",
+    "end": "2026-03-31",
+    "month": "2026-03",
+    "complete": true,
+    "timestamp": 1772319600000,
+    "visits": 37340,
+    "date": "2026-03-01",
+    "uniqueVisits": 32535
+  },
+  {
+    "start": "2026-04-01",
+    "end": "2026-04-30",
+    "month": "2026-04",
+    "complete": true,
+    "timestamp": 1774994400000,
+    "visits": 27828,
+    "date": "2026-04-01",
+    "uniqueVisits": 23520
+  },
+  {
+    "start": "2026-05-01",
+    "end": "2026-05-31",
+    "month": "2026-05",
+    "complete": true,
+    "timestamp": 1777586400000,
+    "visits": 29432,
+    "date": "2026-05-01",
+    "uniqueVisits": 24395
+  },
+  {
+    "start": "2026-06-01",
+    "end": "2026-06-30",
+    "month": "2026-06",
+    "complete": true,
+    "timestamp": 1780264800000,
+    "visits": 27982,
+    "date": "2026-06-01",
+    "uniqueVisits": 23441
+  },
+  {
+    "start": "2026-07-01",
+    "end": "2026-07-31",
+    "month": "2026-07",
+    "complete": true,
+    "timestamp": 1782856800000,
+    "visits": 25161,
+    "date": "2026-07-01",
+    "uniqueVisits": 21164
+  },
+  {
+    "start": "2026-08-01",
+    "end": "2026-08-31",
+    "month": "2026-08",
+    "complete": true,
+    "timestamp": 1785535200000,
+    "visits": 23288,
+    "date": "2026-08-01",
+    "uniqueVisits": 18316
+  },
+  {
+    "start": "2026-09-01",
+    "end": "2026-09-30",
+    "month": "2026-09",
+    "complete": false,
+    "timestamp": 1788213600000,
+    "visits": 11435,
+    "date": "2026-09-01",
+    "uniqueVisits": 8837
+  }
+]

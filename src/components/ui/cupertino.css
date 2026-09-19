@@ -1,0 +1,1311 @@
+@property --switch-x {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+@property --switch-w {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 39px;
+}
+@property --slider-outset {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+/*
+ * Press response written by GlassSurface on the host. Non-inherited, so buttons inside a dragged
+ * glass container do not move a second time on their own spring.
+ */
+@property --glass-pull-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --glass-pull-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --glass-stretch-x {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --glass-stretch-y {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+/* How much of the lens bend a surface shows: 1 by default, animated by hosts that bend only while moving. */
+@property --glass-bend {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+@layer base {
+  /*
+   * Tokens. Where shadcn/ui has a semantic token the iOS token derives from it, so an app's
+   * existing theme (--primary, --foreground, --border, …) drives these components; the fallbacks
+   * are the iOS system values. Tokens without a shadcn/ui counterpart (fills, tertiary label,
+   * green, orange, glass) are iOS-only.
+   */
+  :root {
+    --ios-font:
+      -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Inter", system-ui,
+      sans-serif;
+    --ios-blue: var(--primary, #0088ff);
+    --ios-green: #34c759;
+    --ios-red: var(--destructive, #ff383c);
+    --ios-orange: #ff9500;
+    --ios-label: var(--foreground, #000);
+    --ios-secondary: var(--muted-foreground, rgb(60 60 67 / 60%));
+    --ios-tertiary: rgb(60 60 67 / 30%);
+    --ios-background: var(--muted, #f2f2f7);
+    --ios-surface: var(--card, #fff);
+    --ios-fill: rgb(120 120 128 / 20%);
+    --ios-fill-solid: color-mix(in srgb, rgb(120 120 128) 20%, var(--ios-surface));
+    --ios-fill-secondary: rgb(120 120 128 / 16%);
+    --ios-fill-tertiary: rgb(120 120 128 / 12%);
+    --ios-fill-quaternary: rgb(120 120 128 / 8%);
+    --ios-separator: var(--border, rgb(60 60 67 / 29%));
+    --ios-glass-rgb: 255 255 255;
+    --glass-opaque-wash: rgb(255 255 255 / 66%);
+    --glass-regular-wash: rgb(255 255 255 / 34%);
+    --glass-clear-wash: rgb(255 255 255 / 6%);
+    --glass-rim-alpha: 1;
+    --glass-shade: rgb(0 0 0 / 6%);
+    --glass-shadow:
+      0 14px 34px -12px rgb(0 0 0 / 22%), 0 3px 8px -2px rgb(0 0 0 / 8%),
+      0 0.5px 1px rgb(0 0 0 / 6%);
+    --glass-shadow-lifted:
+      0 24px 48px -14px rgb(0 0 0 / 28%), 0 8px 16px -4px rgb(0 0 0 / 12%),
+      0 0.5px 1px rgb(0 0 0 / 6%);
+    --ios-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ios-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    /* Critically damped spring with 5% overshoot, 420ms. */
+    --ios-spring: linear(
+      0,
+      0.025,
+      0.0895,
+      0.1795,
+      0.2838,
+      0.3934,
+      0.5018,
+      0.604,
+      0.697,
+      0.7788,
+      0.8486,
+      0.9065,
+      0.9529,
+      0.9887,
+      1.0153,
+      1.0338,
+      1.0457,
+      1.0521,
+      1.0543,
+      1.0533,
+      1.05,
+      1.0453,
+      1.0397,
+      1.0337,
+      1.0278,
+      1.0222,
+      1.0171,
+      1.0126,
+      1.0087,
+      1.0055,
+      1.0029,
+      1.0008,
+      1
+    );
+    /* Playful spring with 16% overshoot, 400ms. */
+    --ios-spring-bounce: linear(
+      0,
+      0.0344,
+      0.1239,
+      0.2495,
+      0.3942,
+      0.5439,
+      0.6876,
+      0.8172,
+      0.9277,
+      1.0164,
+      1.0827,
+      1.1276,
+      1.1533,
+      1.1628,
+      1.1593,
+      1.1462,
+      1.1266,
+      1.1034,
+      1.079,
+      1.0553,
+      1.0336,
+      1.015,
+      0.9998,
+      0.9883,
+      0.9803,
+      0.9756,
+      0.9736,
+      0.9738,
+      0.9757,
+      0.9787,
+      0.9824,
+      0.9864,
+      1
+    );
+  }
+  /* iOS-only tokens for dark appearance, shared by the app theme and the forced stage theme. */
+  .dark,
+  [data-ios-theme="dark"] {
+    --ios-green: #30d158;
+    --ios-orange: #ff9f0a;
+    --ios-tertiary: rgb(235 235 245 / 30%);
+    --ios-fill: rgb(120 120 128 / 36%);
+    --ios-fill-solid: color-mix(in srgb, rgb(120 120 128) 36%, var(--ios-surface));
+    --ios-fill-secondary: rgb(120 120 128 / 32%);
+    --ios-fill-tertiary: rgb(120 120 128 / 24%);
+    --ios-fill-quaternary: rgb(120 120 128 / 18%);
+    --ios-glass-rgb: 30 30 34;
+    --glass-opaque-wash: rgb(30 30 34 / 52%);
+    --glass-regular-wash: rgb(255 255 255 / 12%);
+    --glass-clear-wash: rgb(255 255 255 / 3%);
+    --glass-rim-alpha: 0.5;
+    --glass-shade: rgb(0 0 0 / 22%);
+    --glass-shadow:
+      0 14px 34px -12px rgb(0 0 0 / 55%), 0 3px 8px -2px rgb(0 0 0 / 30%),
+      0 0.5px 1px rgb(0 0 0 / 40%);
+    --glass-shadow-lifted:
+      0 24px 48px -14px rgb(0 0 0 / 65%), 0 8px 16px -4px rgb(0 0 0 / 40%),
+      0 0.5px 1px rgb(0 0 0 / 40%);
+  }
+  /*
+   * Forced iOS themes, for stages that ignore the app theme: the shadcn-derived tokens are pinned
+   * to the iOS system values. The light stage otherwise inherits the :root defaults.
+   */
+  [data-ios-theme="dark"] {
+    --ios-blue: #0091ff;
+    --ios-red: #ff4245;
+    --ios-label: #fff;
+    --ios-secondary: rgb(235 235 245 / 60%);
+    --ios-background: #000;
+    --ios-surface: #1c1c1e;
+    --ios-separator: rgb(84 84 88 / 60%);
+  }
+  [data-ios-theme="light"] {
+    --ios-blue: #0088ff;
+    --ios-green: #34c759;
+    --ios-red: #ff383c;
+    --ios-orange: #ff9500;
+    --ios-label: #000;
+    --ios-secondary: rgb(60 60 67 / 60%);
+    --ios-tertiary: rgb(60 60 67 / 30%);
+    --ios-background: #f2f2f7;
+    --ios-surface: #fff;
+    --ios-fill: rgb(120 120 128 / 20%);
+    --ios-fill-solid: color-mix(in srgb, rgb(120 120 128) 20%, var(--ios-surface));
+    --ios-fill-secondary: rgb(120 120 128 / 16%);
+    --ios-fill-tertiary: rgb(120 120 128 / 12%);
+    --ios-fill-quaternary: rgb(120 120 128 / 8%);
+    --ios-separator: rgb(60 60 67 / 29%);
+    --ios-glass-rgb: 255 255 255;
+    --glass-opaque-wash: rgb(255 255 255 / 66%);
+    --glass-regular-wash: rgb(255 255 255 / 34%);
+    --glass-clear-wash: rgb(255 255 255 / 6%);
+    --glass-rim-alpha: 1;
+    --glass-shade: rgb(0 0 0 / 6%);
+    --glass-shadow:
+      0 14px 34px -12px rgb(0 0 0 / 22%), 0 3px 8px -2px rgb(0 0 0 / 8%),
+      0 0.5px 1px rgb(0 0 0 / 6%);
+    --glass-shadow-lifted:
+      0 24px 48px -14px rgb(0 0 0 / 28%), 0 8px 16px -4px rgb(0 0 0 / 12%),
+      0 0.5px 1px rgb(0 0 0 / 6%);
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------------------------
+   * Foundations
+   * ------------------------------------------------------------------------ */
+  .cupertino {
+    font-family: var(--ios-font);
+    letter-spacing: -0.024em;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+  .cupertino:focus-visible,
+  .cupertino :focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--ios-blue) 75%, transparent);
+    outline-offset: 3px;
+  }
+
+  /*
+   * Press response shared by every glass host. GlassSurface writes --glass-pull-* and
+   * --glass-stretch-* while the pointer is down; the host follows, stretches, and springs back.
+   */
+  .cupertino-press,
+  .cupertino-glass,
+  [data-glass-host] {
+    --glass-scale: 1;
+    translate: var(--glass-pull-x, 0px) var(--glass-pull-y, 0px);
+    scale: calc(var(--glass-scale) * var(--glass-stretch-x, 1))
+      calc(var(--glass-scale) * var(--glass-stretch-y, 1));
+    transition:
+      translate 480ms var(--ios-spring-bounce),
+      scale 480ms var(--ios-spring-bounce),
+      opacity 160ms ease,
+      background-color 160ms ease,
+      color 160ms ease,
+      box-shadow 260ms var(--ios-ease);
+  }
+  .cupertino-press {
+    touch-action: manipulation;
+  }
+  .cupertino-press:active:not(:disabled):not([data-disabled]),
+  [data-glass-host][data-glass-pressed]:not(:disabled):not([data-disabled]) {
+    --glass-scale: 1.035;
+    transition-duration: 140ms, 140ms, 160ms, 160ms, 160ms, 260ms;
+    transition-timing-function: var(--ios-ease), var(--ios-ease), ease, ease, ease, var(--ios-ease);
+  }
+  [data-glass-dragging] {
+    transition-duration: 0s, 0s, 160ms, 160ms, 160ms, 260ms;
+  }
+  /* Plain text controls dim instead. */
+  .cupertino-dim {
+    touch-action: manipulation;
+    transition: opacity 160ms ease;
+  }
+  .cupertino-dim:active:not(:disabled):not([data-disabled]) {
+    opacity: 0.35;
+    transition-duration: 40ms;
+  }
+
+  .cupertino-material {
+    position: relative;
+    isolation: isolate;
+    color: var(--ios-label);
+  }
+  .cupertino-glass[data-interactive][data-glass-pressed] {
+    --glass-scale: 1.02;
+    box-shadow: var(--glass-shadow-lifted);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Liquid Glass material
+   *
+   * Layers, bottom to top: refracted copy (lens mode) or the blurred backdrop, wash, rim, light.
+   * Consumers tune a surface with --glass-wash, --glass-blur, and --glass-saturate.
+   * ------------------------------------------------------------------------ */
+  .cupertino-glass-surface {
+    --_wash: var(--glass-wash, var(--glass-regular-wash));
+    --_blur: var(--glass-blur, 2px);
+    --_saturate: var(--glass-saturate, 1.4);
+    --_rim: var(--glass-rim-alpha);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+    contain: paint;
+    transform: translateZ(0);
+    transition: --glass-bend 260ms var(--ios-ease);
+  }
+  /*
+   * The blurred, bent backdrop. Where the reference filter runs (Blink), blur and saturation move
+   * inside the SVG filter and the filter region extends past the element, because Blink loses a
+   * reference filter combined with blur() and drops backdrop-filter under an ancestor clip-path.
+   */
+  .cupertino-glass-backdrop {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    -webkit-backdrop-filter: blur(var(--_blur)) saturate(var(--_saturate));
+    backdrop-filter: blur(var(--_blur)) saturate(var(--_saturate));
+  }
+  .cupertino-glass-backdrop[data-refraction] {
+    -webkit-backdrop-filter: var(--glass-refraction);
+    backdrop-filter: var(--glass-refraction);
+  }
+  .cupertino-glass-surface[data-variant="opaque"] {
+    --_wash: var(--glass-wash, var(--glass-opaque-wash));
+    --_blur: var(--glass-blur, 20px);
+    --_saturate: var(--glass-saturate, 1.6);
+    --_rim: calc(var(--glass-rim-alpha) * 0.75);
+  }
+  .cupertino-glass-surface[data-variant="clear"] {
+    --_wash: var(--glass-wash, var(--glass-clear-wash));
+    --_blur: var(--glass-blur, 0px);
+    --_saturate: var(--glass-saturate, 1.2);
+  }
+  /*
+   * Blink sizes the reference box of a CSS filter from the element's visual overflow, so the copy
+   * inside must be clipped here or the map stretches across the whole copy instead of the lens.
+   */
+  .cupertino-glass-refract {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    overflow: hidden;
+    contain: paint;
+  }
+  .cupertino-glass-wash {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--_wash);
+    transition: background-color 200ms ease;
+  }
+  /* Thickness: light enters at the top-left edge and leaves at the bottom-right. */
+  .cupertino-glass-wash::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(
+        160deg,
+        rgb(255 255 255 / calc(14% * var(--_rim))),
+        transparent 36%,
+        transparent 64%,
+        rgb(255 255 255 / calc(7% * var(--_rim)))
+      ),
+      radial-gradient(120% 100% at 50% 120%, var(--glass-shade), transparent 60%);
+    box-shadow: inset 0 0 14px -6px var(--glass-shade);
+  }
+  /* Until the specular image exists, hard inset hairlines stand in for the rim light. */
+  .cupertino-glass-surface:not([data-specular]) > .cupertino-glass-wash::after {
+    box-shadow:
+      inset 1px 1.5px 2px -1px rgb(255 255 255 / calc(55% * var(--_rim))),
+      inset -1px -1.5px 2px -1px rgb(255 255 255 / calc(30% * var(--_rim))),
+      inset 0 0 14px -6px var(--glass-shade);
+  }
+  /*
+   * Rim light. GlassSurface paints the generated specular image (glow, an edge band that faces the
+   * light, and a hairline) through --glass-specular; until it exists, the wash hairlines stand in.
+   */
+  .cupertino-glass-rim {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: var(--_rim);
+    background: var(--glass-specular, none) center / 100% 100% no-repeat;
+  }
+  /*
+   * Illumination from the touch point. It follows the pull while the pointer is down. Plain alpha
+   * only: a mix-blend-mode here makes Chrome isolate the surface, and the backdrop filter next to
+   * it then reads an empty group instead of the page.
+   */
+  .cupertino-glass-light {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(
+        70% 130% at var(--glass-light-x, 50%) var(--glass-light-y, 50%),
+        rgb(255 255 255 / calc(22% * var(--_rim))),
+        rgb(255 255 255 / calc(5% * var(--_rim))) 55%,
+        transparent 100%
+      ),
+      linear-gradient(rgb(255 255 255 / calc(6% * var(--_rim))), rgb(255 255 255 / 0%));
+    opacity: 0;
+    transition: opacity 320ms ease;
+  }
+  [data-glass-pressed] > .cupertino-glass-surface > .cupertino-glass-light {
+    opacity: 1;
+    transition-duration: 90ms;
+  }
+  .cupertino-glass-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  /* Copies passed through `refract` never take input and never show a focus ring. */
+  [data-glass-copy],
+  [data-glass-copy] * {
+    pointer-events: none;
+    outline: none !important;
+  }
+
+  /* Panels: menus, popovers, alerts, toasts. Opaque glass with a deeper shadow. */
+  .cupertino-panel {
+    box-shadow: var(--glass-shadow-lifted);
+  }
+  /* Prominent buttons: the wash is the accent color. */
+  .cupertino-button-prominent > .cupertino-glass-surface {
+    --glass-wash: color-mix(in srgb, var(--ios-blue) 90%, transparent);
+    --glass-blur: 6px;
+  }
+  .cupertino-button-destructive > .cupertino-glass-surface {
+    --glass-wash: color-mix(in srgb, var(--ios-red) 90%, transparent);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Text fields: glass capsules with a hairline.
+   * ------------------------------------------------------------------------ */
+  .cupertino-field {
+    --field-ring: var(--ios-blue);
+    box-shadow:
+      inset 0 0 0 0.5px var(--ios-separator),
+      inset 0 1px 2px rgb(0 0 0 / 5%);
+    transition: box-shadow 180ms ease;
+  }
+  .cupertino-field:focus-within {
+    box-shadow:
+      inset 0 0 0 0.5px color-mix(in srgb, var(--field-ring) 70%, transparent),
+      0 0 0 3px color-mix(in srgb, var(--field-ring) 16%, transparent);
+  }
+  .cupertino-field:has(:disabled) {
+    opacity: 0.4;
+  }
+  .cupertino-field:has([aria-invalid="true"]) {
+    --field-ring: var(--ios-red);
+  }
+  .cupertino-field > .cupertino-glass-surface {
+    --glass-wash: var(--ios-fill-quaternary);
+    --glass-blur: 14px;
+    --glass-saturate: 1.2;
+  }
+  /* Fields are wells, not slabs: no thickness shading, a fainter rim. */
+  .cupertino-field > .cupertino-glass-surface > .cupertino-glass-wash::after {
+    background: none;
+    box-shadow: none;
+  }
+  .cupertino-field > .cupertino-glass-surface > .cupertino-glass-rim {
+    opacity: calc(var(--_rim) * 0.5);
+  }
+  .cupertino-field:focus-within > .cupertino-glass-surface {
+    --glass-wash: rgb(var(--ios-glass-rgb) / 55%);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Stepper: the whole capsule is pulled toward the pressed side.
+   * ------------------------------------------------------------------------ */
+  .cupertino-stepper-button {
+    transition: opacity 160ms ease;
+  }
+  .cupertino-stepper-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgb(var(--ios-glass-rgb) / 30%);
+    opacity: 0;
+    transition: opacity 260ms ease;
+  }
+  .cupertino-stepper-button:active:not([data-disabled])::before {
+    opacity: 1;
+    transition-duration: 60ms;
+  }
+  .cupertino-stepper-button:active:not([data-disabled]) > svg {
+    scale: 0.86;
+  }
+  .cupertino-stepper-button > svg {
+    transition: scale 320ms var(--ios-spring-bounce);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Switch: 64×28 track, 39×24 capsule thumb, 2px inset, 21px travel. `sm` is the same capsule
+   * at three quarters. The thumb refracts a copy of the track, so the lens works in every browser.
+   * ------------------------------------------------------------------------ */
+  .cupertino-switch {
+    --switch-track: var(--ios-fill-secondary);
+    --switch-x: 0px;
+    --switch-track-w: 64px;
+    --switch-track-h: 28px;
+    --switch-w: 39px;
+    --switch-w-hover: 42px;
+    --switch-w-pressed: 47px;
+    --switch-h: 24px;
+    --glass-wash: #fff;
+    width: var(--switch-track-w);
+    height: var(--switch-track-h);
+    padding: 2px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--switch-track);
+    cursor: pointer;
+    touch-action: pan-y;
+    transition: background-color 220ms ease;
+  }
+  .cupertino-switch::after {
+    content: "";
+    position: absolute;
+    inset: -8px -4px;
+  }
+  .cupertino-switch[data-size="sm"] {
+    --switch-track-w: 48px;
+    --switch-track-h: 22px;
+    --switch-w: 29px;
+    --switch-w-hover: 31px;
+    --switch-w-pressed: 35px;
+    --switch-h: 18px;
+  }
+  .cupertino-switch[data-checked] {
+    --switch-track: var(--ios-green);
+    --switch-copy: var(--ios-green);
+    --switch-x: calc(var(--switch-track-w) - 4px - var(--switch-w));
+  }
+  .cupertino-switch[data-switch-preview="on"] {
+    --switch-track: var(--ios-green);
+    --switch-copy: var(--ios-green);
+  }
+  .cupertino-switch[data-switch-preview="off"] {
+    --switch-track: var(--ios-fill-secondary);
+    --switch-copy: transparent;
+  }
+  .cupertino-switch[data-disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .cupertino-switch-thumb {
+    position: relative;
+    isolation: isolate;
+    flex-shrink: 0;
+    width: var(--switch-w);
+    height: var(--switch-h);
+    border-radius: 999px;
+    translate: var(--switch-x) 0;
+    box-shadow:
+      0 3px 8px rgb(0 0 0 / 15%),
+      0 3px 1px rgb(0 0 0 / 6%);
+    transition:
+      --switch-x 360ms var(--ios-spring),
+      --switch-w 300ms var(--ios-spring),
+      box-shadow 200ms ease;
+    will-change: translate;
+  }
+  .cupertino-switch-thumb .cupertino-glass-wash {
+    transition: background-color 180ms ease;
+  }
+  /* Larger than the track so the lens never samples past its edge. */
+  .cupertino-switch-copy {
+    position: absolute;
+    top: -10px;
+    left: -12px;
+    width: calc(var(--switch-track-w) + 20px);
+    height: calc(var(--switch-track-h) + 16px);
+    border-radius: 999px;
+    background: var(--switch-copy, transparent);
+    translate: calc(-1 * var(--switch-x)) 0;
+    transition:
+      --switch-x 360ms var(--ios-spring),
+      background-color 220ms ease;
+  }
+  .cupertino-switch[data-switch-dragging] .cupertino-switch-thumb,
+  .cupertino-switch[data-switch-dragging] .cupertino-switch-copy {
+    transition:
+      --switch-w 300ms var(--ios-spring),
+      background-color 220ms ease;
+  }
+  .cupertino-switch:active:not([data-disabled]):not([aria-readonly="true"]),
+  .cupertino-switch[data-switch-dragging] {
+    --switch-w: var(--switch-w-pressed);
+    --glass-wash: rgb(255 255 255 / 30%);
+  }
+  .cupertino-switch:not([data-checked]):not([data-switch-preview="on"]):active:not(
+      [data-disabled]
+    ):not([aria-readonly="true"]),
+  .cupertino-switch:not([data-checked]):not([data-switch-preview="on"])[data-switch-dragging] {
+    --glass-wash: rgb(255 255 255 / 72%);
+  }
+  .cupertino-switch:active:not([data-disabled]):not([aria-readonly="true"]) .cupertino-switch-thumb,
+  .cupertino-switch[data-switch-dragging] .cupertino-switch-thumb {
+    box-shadow:
+      0 6px 14px rgb(0 0 0 / 18%),
+      0 3px 2px rgb(0 0 0 / 5%);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Slider: 6px track, 24×20 capsule thumb that grows into a lens while pressed.
+   * ------------------------------------------------------------------------ */
+  .cupertino-slider {
+    min-width: 0;
+    --slider-thumb-w: 24px;
+    --slider-thumb-h: 20px;
+    --slider-outset: 0px;
+    --slider-outset-pressed: 7px;
+    --slider-stretch: 1;
+    --slider-squash: 1;
+  }
+  .cupertino-slider-control {
+    position: relative;
+    display: flex;
+    height: 44px;
+    width: 100%;
+    align-items: center;
+    touch-action: none;
+    user-select: none;
+    container-type: inline-size;
+  }
+  .cupertino-slider-control[data-orientation="vertical"] {
+    height: 100%;
+    justify-content: center;
+    container-type: size;
+  }
+  .cupertino-slider-track {
+    position: relative;
+    height: 6px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--ios-fill);
+  }
+  .cupertino-slider-track[data-orientation="vertical"] {
+    height: 100%;
+    width: 6px;
+  }
+  .cupertino-slider-fill {
+    position: absolute;
+    border-radius: 999px;
+    background: var(--ios-blue);
+  }
+  .cupertino-slider-fill[data-orientation="horizontal"] {
+    height: 100%;
+  }
+  .cupertino-slider-fill[data-orientation="vertical"] {
+    width: 100%;
+  }
+  .cupertino-slider-thumb {
+    /*
+     * The handle grows past the thumb by the press outset plus the velocity stretch. Resizing
+     * instead of scaling keeps the refracted copy aligned with the real track.
+     */
+    --slider-outset-x: calc(
+      var(--slider-outset) * 1.15 + (var(--slider-stretch) - 1) * var(--slider-thumb-w) / 2
+    );
+    --slider-outset-y: calc(
+      var(--slider-outset) - (1 - var(--slider-squash)) * var(--slider-thumb-h) / 2
+    );
+    position: absolute;
+    width: var(--slider-thumb-w);
+    height: var(--slider-thumb-h);
+    border-radius: 999px;
+    outline: none;
+    transition: --slider-outset 320ms var(--ios-spring);
+  }
+  .cupertino-slider-thumb::after {
+    content: "";
+    position: absolute;
+    inset: -12px -8px;
+  }
+  .cupertino-slider-thumb:has(:focus-visible) {
+    outline: 3px solid color-mix(in srgb, var(--ios-blue) 75%, transparent);
+    outline-offset: 4px;
+  }
+  .cupertino-slider-handle {
+    --glass-wash: #fff;
+    position: absolute;
+    inset: calc(-1 * var(--slider-outset-y)) calc(-1 * var(--slider-outset-x));
+    isolation: isolate;
+    border-radius: inherit;
+    box-shadow:
+      0 0.5px 4px rgb(0 0 0 / 12%),
+      0 0 0 0.5px rgb(0 0 0 / 3%);
+    transition: box-shadow 220ms ease;
+    will-change: inset;
+  }
+  .cupertino-slider-handle .cupertino-glass-wash {
+    transition: background-color 160ms ease;
+  }
+  /*
+   * Aligned copy of the track and fill. The track is painted in its opaque equivalent, so the copy
+   * covers the real translucent track under the lens instead of darkening it.
+   */
+  .cupertino-slider-copy {
+    position: absolute;
+    top: 50%;
+    height: 6px;
+    width: 100cqw;
+    border-radius: 999px;
+    background: var(--ios-fill-solid);
+    translate: 0 -50%;
+    left: calc(
+      var(--slider-outset-x) - var(--slider-progress, 0) * (100cqw - var(--slider-thumb-w))
+    );
+    overflow: hidden;
+  }
+  /* The real fill ends under the thumb center, which sits thumb-w/2 + progress × (track − thumb-w) in. */
+  .cupertino-slider-copy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: calc(
+      var(--slider-fill-start, 0) * (100% - var(--slider-thumb-w)) + var(--slider-range, 0) *
+        var(--slider-thumb-w) / 2
+    );
+    right: calc(
+      (1 - var(--slider-fill-end, 0)) * (100% - var(--slider-thumb-w)) + var(--slider-thumb-w) / 2
+    );
+    border-radius: 999px;
+    background: var(--ios-blue);
+  }
+  .cupertino-slider[data-orientation="vertical"] .cupertino-slider-copy {
+    display: none;
+  }
+  .cupertino-slider:not([data-disabled]):is([data-dragging], :active) .cupertino-slider-thumb,
+  .cupertino-slider:not([data-disabled]) .cupertino-slider-thumb:active {
+    --slider-outset: var(--slider-outset-pressed);
+  }
+  .cupertino-slider:not([data-disabled]):is([data-dragging], :active) .cupertino-slider-handle,
+  .cupertino-slider:not([data-disabled]) .cupertino-slider-thumb:active .cupertino-slider-handle {
+    --glass-wash: rgb(255 255 255 / 22%);
+    box-shadow:
+      0 8px 18px rgb(0 0 0 / 16%),
+      0 1px 2px rgb(0 0 0 / 6%);
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Tab bar and segmented control indicators: one glass lens that springs
+   * between segments and follows the pointer while scrubbing. The lens refracts
+   * a copy of the segments that counter-translates with it.
+   * ------------------------------------------------------------------------ */
+  .cupertino-tab-list,
+  .cupertino-segment-list {
+    touch-action: pan-y;
+    user-select: none;
+    container-type: inline-size;
+  }
+  .cupertino-tab-indicator,
+  .cupertino-segment-indicator {
+    --indicator-x: var(--active-tab-left);
+    --indicator-inset: 4px;
+    /* The lens bends only while it moves under a drag; at rest it shows the highlighted copy plain. */
+    --glass-bend: 0;
+    position: absolute;
+    left: 0;
+    top: var(--indicator-inset);
+    height: calc(100% - var(--indicator-inset) * 2);
+    width: var(--active-tab-width);
+    translate: var(--indicator-x) 0;
+    border-radius: 999px;
+    pointer-events: none;
+    isolation: isolate;
+    z-index: 2;
+    transition:
+      translate 420ms var(--ios-spring),
+      width 420ms var(--ios-spring),
+      scale 420ms var(--ios-spring-bounce),
+      box-shadow 240ms ease;
+    will-change: translate, width;
+  }
+  .cupertino-tab-indicator {
+    --glass-wash: rgb(255 255 255 / 10%);
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 6%),
+      0 0.5px 1px rgb(0 0 0 / 4%);
+  }
+  .cupertino-segment-indicator {
+    --glass-wash: rgb(255 255 255 / 8%);
+    --indicator-inset: 2px;
+    box-shadow:
+      0 3px 8px rgb(0 0 0 / 12%),
+      0 3px 1px rgb(0 0 0 / 4%);
+  }
+  .cupertino-tab-indicator .cupertino-glass-wash,
+  .cupertino-segment-indicator .cupertino-glass-wash {
+    transition: background-color 200ms ease;
+  }
+  /* Tabs "line" variant: text tabs with a 2px underline instead of the glass pill. */
+  .cupertino-segment-list[data-variant="line"] {
+    min-height: 36px;
+    padding: 0;
+  }
+  .cupertino-segment-list[data-variant="line"] > .cupertino-segment-indicator {
+    top: auto;
+    bottom: 0;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--ios-blue);
+    box-shadow: none;
+  }
+  .cupertino-segment-list[data-variant="line"] > .cupertino-segment-trigger {
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--ios-secondary);
+  }
+  .cupertino-segment-list[data-variant="line"] > .cupertino-segment-trigger[data-active] {
+    color: var(--ios-label);
+    font-weight: 600;
+  }
+  .cupertino-tab-copy,
+  .cupertino-segment-copy {
+    position: absolute;
+    top: calc(-1 * var(--indicator-inset));
+    left: 0;
+    width: 100cqw;
+    height: calc(100% + var(--indicator-inset) * 2);
+    translate: calc(-1 * var(--indicator-x)) 0;
+    transition: translate 420ms var(--ios-spring);
+  }
+  /*
+   * The lens shows the highlighted copy; the real selected label hides underneath it. The copy is
+   * its own tab list, so these rules never match it.
+   */
+  .cupertino-tab-copy {
+    background: var(--tab-copy-fill, rgb(255 255 255 / 40%));
+  }
+  .cupertino-segment-copy {
+    background: var(--ios-surface);
+  }
+  [data-glass-copy] .cupertino-tab-trigger,
+  [data-glass-copy] .cupertino-tab-trigger[data-active] {
+    color: var(--ios-blue);
+  }
+  [data-glass-copy] .cupertino-segment-trigger,
+  [data-glass-copy] .cupertino-segment-trigger[data-active] {
+    font-weight: 600;
+    color: var(--ios-label);
+  }
+  .cupertino-tab-list:not([data-scrubbing]):not([data-glass-copy])
+    > .cupertino-tab-trigger[data-active],
+  .cupertino-segment-list:not([data-scrubbing]):not([data-glass-copy])
+    > .cupertino-segment-trigger[data-active],
+  [data-scrubbing]:not([data-glass-copy]) > .cupertino-tab-trigger[data-under-lens],
+  [data-scrubbing]:not([data-glass-copy]) > .cupertino-segment-trigger[data-under-lens] {
+    color: transparent;
+  }
+  [data-scrubbing]:not([data-glass-copy])
+    > .cupertino-tab-trigger[data-active]:not([data-under-lens]) {
+    color: var(--ios-secondary);
+  }
+  .cupertino-segment-copy .cupertino-segment-trigger::before {
+    display: none;
+  }
+  [data-scrubbing] > .cupertino-tab-indicator,
+  [data-scrubbing] > .cupertino-segment-indicator {
+    --glass-bend: 1;
+    --indicator-x: var(--drag-left);
+    width: var(--drag-width);
+    translate: var(--indicator-x) 0;
+    scale: calc(var(--drag-stretch, 1) * 1.06) calc(var(--drag-squash, 1) * 1.06);
+    transition: box-shadow 240ms ease;
+  }
+  [data-scrubbing] .cupertino-tab-copy,
+  [data-scrubbing] .cupertino-segment-copy {
+    transition: none;
+  }
+  [data-scrubbing] > .cupertino-tab-indicator {
+    --glass-wash: rgb(255 255 255 / 6%);
+    box-shadow:
+      0 10px 24px rgb(0 0 0 / 14%),
+      0 1px 2px rgb(0 0 0 / 5%);
+  }
+  [data-scrubbing] > .cupertino-segment-indicator {
+    --glass-wash: rgb(255 255 255 / 6%);
+    box-shadow:
+      0 10px 24px rgb(0 0 0 / 16%),
+      0 1px 2px rgb(0 0 0 / 5%);
+  }
+  .dark .cupertino-tab-list,
+  [data-ios-theme="dark"] .cupertino-tab-list {
+    --tab-copy-fill: rgb(255 255 255 / 14%);
+  }
+  .dark .cupertino-segment-copy,
+  [data-ios-theme="dark"] .cupertino-segment-copy {
+    background: rgb(99 99 102);
+  }
+  [data-pointer-focus] > [role="tab"]:focus-visible {
+    outline: none;
+  }
+  .cupertino-tab-list[data-orientation="vertical"],
+  .cupertino-segment-list[data-orientation="vertical"] {
+    flex-direction: column;
+  }
+  [data-orientation="vertical"] > .cupertino-tab-indicator,
+  [data-orientation="vertical"] > .cupertino-segment-indicator {
+    top: 0;
+    left: var(--indicator-inset);
+    width: calc(100% - var(--indicator-inset) * 2);
+    height: var(--active-tab-height);
+    translate: 0 var(--active-tab-top);
+  }
+  [data-orientation="vertical"] .cupertino-tab-copy,
+  [data-orientation="vertical"] .cupertino-segment-copy {
+    display: none;
+  }
+  [data-slot="tab-bar"] [role="tabpanel"][inert],
+  [data-slot="segmented-control"] [role="tabpanel"][inert] {
+    display: none;
+  }
+  /* Segment dividers hide next to the selected segment. */
+  .cupertino-segment-trigger + .cupertino-segment-trigger::before {
+    content: "";
+    position: absolute;
+    left: -0.5px;
+    top: 50%;
+    width: 1px;
+    height: 14px;
+    translate: 0 -50%;
+    background: var(--ios-separator);
+    opacity: 0.6;
+    transition: opacity 200ms ease;
+  }
+  .cupertino-segment-trigger[data-active]::before,
+  .cupertino-segment-trigger[data-active] + .cupertino-segment-trigger::before,
+  [data-scrubbing] .cupertino-segment-trigger::before {
+    opacity: 0;
+  }
+  .cupertino-segment-trigger {
+    color: var(--ios-label);
+    font-weight: 500;
+    transition:
+      color 200ms ease,
+      scale 200ms var(--ios-ease),
+      opacity 200ms ease;
+  }
+  .cupertino-segment-trigger[data-active] {
+    font-weight: 600;
+  }
+  .cupertino-segment-list:not([data-scrubbing])
+    > .cupertino-segment-trigger:active:not([data-active]) {
+    scale: 0.96;
+    opacity: 0.6;
+  }
+  .cupertino-tab-trigger {
+    color: var(--ios-secondary);
+    transition: color 220ms ease;
+  }
+  .cupertino-tab-trigger[data-active] {
+    color: var(--ios-blue);
+  }
+  .cupertino-tab-trigger svg {
+    transition: scale 320ms var(--ios-spring-bounce);
+  }
+  .cupertino-tab-trigger[data-active] svg {
+    scale: 1.06;
+  }
+  .cupertino-tab-list:not([data-scrubbing]) > .cupertino-tab-trigger:active:not([data-active]) svg {
+    scale: 0.9;
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Overlays
+   * ------------------------------------------------------------------------ */
+  /* Alert: enters slightly enlarged, leaves slightly shrunk. Geometry lives on the element. */
+  .cupertino-alert {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition:
+      transform 360ms var(--ios-spring),
+      opacity 200ms ease;
+  }
+  .cupertino-alert[data-starting-style] {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0;
+  }
+  .cupertino-alert[data-ending-style] {
+    transform: translate(-50%, -50%) scale(0.96);
+    opacity: 0;
+    transition-duration: 180ms, 160ms;
+    transition-timing-function: var(--ios-ease), ease;
+  }
+  .cupertino-alert-footer:has(> :nth-child(3)) {
+    flex-direction: column;
+  }
+  .cupertino-menu {
+    transform-origin: var(--transform-origin);
+    transition:
+      transform 320ms var(--ios-spring),
+      opacity 160ms ease;
+  }
+  .cupertino-menu[data-starting-style],
+  .cupertino-menu[data-ending-style] {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .cupertino-menu[data-ending-style] {
+    transition-duration: 160ms, 120ms;
+    transition-timing-function: var(--ios-ease), ease;
+  }
+  .cupertino-sheet {
+    transform: translateY(
+      calc(var(--drawer-snap-point-offset, 0px) + var(--drawer-swipe-movement-y, 0px))
+    );
+    transition: transform 420ms var(--ios-spring);
+  }
+  .cupertino-sheet[data-starting-style],
+  .cupertino-sheet[data-ending-style] {
+    transform: translateY(100%);
+  }
+  .cupertino-sheet[data-ending-style] {
+    transition-duration: 260ms;
+    transition-timing-function: var(--ios-ease-in-out);
+  }
+  .cupertino-sheet[data-swiping] {
+    transition: none;
+    user-select: none;
+  }
+  .cupertino-sheet-backdrop {
+    opacity: calc(1 - var(--drawer-swipe-progress, 0));
+  }
+  .cupertino-sheet > .cupertino-glass-surface {
+    --glass-wash: rgb(var(--ios-glass-rgb) / 90%);
+    --glass-blur: 16px;
+  }
+  .cupertino-action-sheet {
+    transition:
+      transform 420ms var(--ios-spring),
+      opacity 200ms ease;
+  }
+  .cupertino-action-sheet[data-starting-style],
+  .cupertino-action-sheet[data-ending-style] {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  .cupertino-action-sheet[data-ending-style] {
+    transition-duration: 200ms, 160ms;
+    transition-timing-function: var(--ios-ease), ease;
+  }
+  .cupertino-toast {
+    transition:
+      transform 420ms var(--ios-spring),
+      opacity 200ms ease;
+  }
+  .cupertino-toast[data-starting-style],
+  .cupertino-toast[data-ending-style] {
+    transform: translateY(-24px) scale(0.94);
+    opacity: 0;
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Small controls
+   * ------------------------------------------------------------------------ */
+  .cupertino-choice {
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      scale 320ms var(--ios-spring-bounce);
+  }
+  .cupertino-choice:active:not([data-disabled]) {
+    scale: 1.12;
+    transition-duration: 120ms;
+    transition-timing-function: var(--ios-ease);
+  }
+  .cupertino-choice-indicator {
+    animation: cupertino-choice-in 320ms var(--ios-spring-bounce);
+  }
+  .cupertino:focus-visible .cupertino-choice-indicator {
+    animation: none;
+  }
+  @keyframes cupertino-choice-in {
+    from {
+      opacity: 0;
+      scale: 0.4;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .cupertino-page-dot {
+    transition:
+      scale 320ms var(--ios-spring-bounce),
+      background-color 200ms ease;
+  }
+  button:active > .cupertino-page-dot {
+    scale: 1.4;
+  }
+  .cupertino-spinner {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+  .cupertino-spinner > span {
+    position: absolute;
+    left: 45%;
+    top: 5%;
+    width: 10%;
+    height: 27%;
+    border-radius: 2px;
+    background: currentColor;
+    transform-origin: 50% 167%;
+    transform: rotate(calc(var(--spoke) * 30deg));
+    animation: cupertino-spin 1s linear infinite;
+    animation-delay: calc(var(--spoke) * -1s / 12);
+  }
+  @keyframes cupertino-spin {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+   * App shell: master-detail navigation. Wide viewports show the list beside the
+   * page; narrow ones stack them and push the page in from the right.
+   * ------------------------------------------------------------------------ */
+  .cupertino-app-shell {
+    --shell-drag: 0px;
+    grid-template-columns: minmax(280px, 370px) minmax(0, 1fr);
+  }
+  /* Narrow: both panes share the cell; the page slides over the list. */
+  .cupertino-app-shell[data-mobile] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cupertino-app-shell[data-mobile] > .cupertino-app-shell-list,
+  .cupertino-app-shell[data-mobile] > .cupertino-app-shell-page {
+    grid-area: 1 / 1;
+  }
+  .cupertino-app-shell[data-mobile] > .cupertino-app-shell-list {
+    translate: 0 0;
+    transition:
+      translate 460ms var(--ios-spring),
+      opacity 460ms var(--ios-spring);
+  }
+  .cupertino-app-shell[data-mobile][data-detail] > .cupertino-app-shell-list {
+    translate: calc(-30% + var(--shell-drag) * 0.3) 0;
+    opacity: 0.55;
+  }
+  .cupertino-app-shell[data-mobile] > .cupertino-app-shell-page {
+    z-index: 1;
+    translate: 100% 0;
+    box-shadow: -12px 0 32px rgb(0 0 0 / 10%);
+    transition: translate 460ms var(--ios-spring);
+    touch-action: pan-y;
+  }
+  .cupertino-app-shell[data-mobile][data-detail] > .cupertino-app-shell-page {
+    translate: var(--shell-drag) 0;
+  }
+  @starting-style {
+    .cupertino-app-shell[data-mobile][data-detail] > .cupertino-app-shell-page {
+      translate: 100% 0;
+    }
+  }
+  .cupertino-app-shell[data-mobile] > .cupertino-app-shell-page[data-swiping],
+  .cupertino-app-shell[data-mobile]:has(> [data-swiping]) > .cupertino-app-shell-list {
+    transition: none;
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Pointer devices
+   * ------------------------------------------------------------------------ */
+  @media (hover: hover) and (pointer: fine) {
+    .cupertino-switch:hover:not([data-disabled]):not([aria-readonly="true"]):not(:active):not(
+        [data-switch-dragging]
+      ) {
+      --switch-w: var(--switch-w-hover);
+    }
+    .cupertino-slider:not([data-disabled]):not([data-dragging]) .cupertino-slider-thumb:hover {
+      --slider-outset: 2px;
+    }
+    .cupertino-glass[data-interactive]:hover {
+      box-shadow: var(--glass-shadow-lifted);
+    }
+    .cupertino-press:hover:not(:disabled):not([data-disabled]):not(:active) {
+      --glass-scale: 1.02;
+    }
+    .cupertino-dim:hover:not(:disabled):not([data-disabled]) {
+      opacity: 0.7;
+    }
+    .cupertino-tab-trigger:hover:not([data-active]),
+    .cupertino-segment-trigger:hover:not([data-active]) {
+      color: var(--ios-label);
+    }
+    .cupertino-tab-trigger:hover:not([data-active]) svg {
+      scale: 1.04;
+    }
+    .cupertino-stepper-button:hover:not([data-disabled])::before {
+      opacity: 0.5;
+    }
+    .cupertino-toolbar-button:hover {
+      background: var(--ios-fill-quaternary);
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+   * Accessibility and fallbacks
+   * ------------------------------------------------------------------------ */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .cupertino-glass-surface:not([data-lens]) > .cupertino-glass-wash {
+      background: color-mix(in srgb, var(--ios-surface) 92%, transparent);
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .cupertino-glass-backdrop {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+    .cupertino-glass-surface > .cupertino-glass-wash {
+      background: var(--ios-surface);
+    }
+    .cupertino-glass-refract,
+    .cupertino-glass-rim,
+    .cupertino-glass-light {
+      display: none;
+    }
+  }
+  @media (prefers-contrast: more) {
+    .cupertino-glass-backdrop {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+    .cupertino-glass-surface {
+      border: 1px solid var(--ios-label);
+    }
+    .cupertino-glass-surface > .cupertino-glass-wash {
+      background: var(--ios-surface);
+    }
+    .cupertino-glass-refract,
+    .cupertino-glass-rim,
+    .cupertino-glass-light {
+      display: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .cupertino-glass-surface {
+      border: 1px solid CanvasText;
+    }
+    .cupertino-glass-surface > .cupertino-glass-wash {
+      background: Canvas;
+    }
+    .cupertino-switch {
+      border: 1px solid ButtonText;
+    }
+    .cupertino-switch[data-checked],
+    .cupertino-segment-indicator,
+    .cupertino-tab-indicator {
+      background: Highlight;
+    }
+    .cupertino-switch-thumb {
+      background: ButtonText;
+    }
+    .cupertino-glass-refract,
+    .cupertino-glass-rim,
+    .cupertino-glass-light {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cupertino,
+    .cupertino *,
+    .cupertino::before,
+    .cupertino::after {
+      animation: none;
+      transition: none;
+      scroll-behavior: auto;
+    }
+    .cupertino-press,
+    .cupertino-glass,
+    [data-glass-host] {
+      translate: none;
+      scale: none;
+    }
+    .cupertino-choice:active:not([data-disabled]) {
+      scale: none;
+    }
+    .cupertino-spinner > span {
+      opacity: 0.6;
+    }
+  }
+}
