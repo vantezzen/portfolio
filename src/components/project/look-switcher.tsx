@@ -77,6 +77,7 @@ export function LookSwitcher({
             alt={look.id === shown.id ? alt : ""}
             draggable={false}
             preload={index <= 1}
+            loading="eager"
             sizes="(min-width: 1280px) 1152px, 100vw"
             className={cn(
               "absolute inset-0 size-full object-contain ease-out",
