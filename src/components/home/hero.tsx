@@ -20,7 +20,12 @@ export function Hero() {
                 className="size-9 rounded-full object-cover"
                 preload
               />
-              <h2 className="text-[15px] text-neutral-700">{site.name}</h2>
+              <div className="grid">
+                <h2 className="text-[15px] text-neutral-700">{site.name}</h2>
+                <div className="text-[12px] text-neutral-500">
+                  {site.handle}
+                </div>
+              </div>
             </div>
           </StaggerItem>
 
