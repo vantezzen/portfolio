@@ -10,9 +10,9 @@ import {
   Paperclip,
   ShieldCheck,
   Sparkles,
-  Wrench,
 } from "lucide-react";
 import { Reveal } from "@/components/motion";
+import { AssistantBlock, ToolCall, UserMessage } from "./chat";
 import { cn } from "@/lib/utils";
 
 /** Fictional account. Numbers are illustrative. */
@@ -74,12 +74,12 @@ export function SidekickDemo({ className }: { className?: string }) {
                 />
                 <Step icon={Bot} label="Started Data Analysis Agent" open>
                   <SubSteps>
-                    <SubStep code="get_campaign_metrics" args="last_30_days" />
-                    <SubStep
+                    <ToolCall code="get_campaign_metrics" args="last_30_days" />
+                    <ToolCall
                       code="get_campaign_metrics"
                       args="previous_period"
                     />
-                    <SubStep code="get_search_terms" args="conversions = 0" />
+                    <ToolCall code="get_search_terms" args="conversions = 0" />
                     <p className="pt-1 text-xs text-neutral-500">
                       Compared 12 campaigns, found 3 opportunities. Returning to
                       main agent.
@@ -140,25 +140,6 @@ export function SidekickDemo({ className }: { className?: string }) {
   );
 }
 
-function UserMessage({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="max-w-[80%] rounded-2xl rounded-br-md bg-neutral-900 px-4 py-2.5 text-sm leading-relaxed text-white">
-      {children}
-    </p>
-  );
-}
-
-function AssistantBlock({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex gap-3">
-      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700">
-        <Sparkles className="size-3.5" />
-      </span>
-      <div className="flex min-w-0 flex-1 flex-col gap-3">{children}</div>
-    </div>
-  );
-}
-
 function Steps({ children }: { children: React.ReactNode }) {
   return <ul className="flex flex-col gap-1.5">{children}</ul>;
 }
@@ -201,17 +182,6 @@ function SubSteps({ children }: { children: React.ReactNode }) {
         Data Analysis Agent
       </span>
       {children}
-    </div>
-  );
-}
-
-function SubStep({ code, args }: { code: string; args: string }) {
-  return (
-    <div className="flex items-center gap-2 font-mono text-xs text-neutral-600">
-      <Wrench className="size-3 text-neutral-400" />
-      {code}
-      <span className="text-neutral-400">({args})</span>
-      <Check className="ml-auto size-3 text-neutral-400" />
     </div>
   );
 }

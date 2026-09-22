@@ -144,3 +144,12 @@ export function TechText({ children }: { children: React.ReactNode }) {
     </p>
   );
 }
+
+/** A short code sample inside a TechCard. */
+export function TechCode({ children }: { children: string }) {
+  return (
+    <pre className="overflow-x-auto rounded-2xl bg-white/5 px-4 py-3 font-mono text-xs leading-relaxed text-neutral-300 ring-1 ring-white/10">
+      {children}
+    </pre>
+  );
+}

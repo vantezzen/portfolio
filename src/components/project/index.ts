@@ -2,7 +2,13 @@ export { ProjectNav } from "./project-nav";
 export { ProjectHeader, type ProjectMetaItem } from "./project-header";
 export { ProjectSection, Prose } from "./project-section";
 export { TagList } from "./tag-list";
-export { TechCard, Pipeline, TechText, type PipelineStep } from "./tech-card";
+export {
+  TechCard,
+  Pipeline,
+  TechText,
+  TechCode,
+  type PipelineStep,
+} from "./tech-card";
 export { ProjectFooter, type ProjectCta } from "./project-footer";
 export { LookSwitcher, type Look } from "./look-switcher";
 export { Stat, StatRow } from "./stat";

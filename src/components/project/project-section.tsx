@@ -12,7 +12,7 @@ export function ProjectSection({
   return (
     <section className="flex w-full justify-center">
       <Constrained className="gap-0">
-        <Reveal className="flex flex-col gap-5">
+        <Reveal className="flex min-w-0 flex-col gap-5">
           <h2 className="text-xl font-medium tracking-tight text-neutral-800">
             {title}
           </h2>

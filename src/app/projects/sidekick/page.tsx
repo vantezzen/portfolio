@@ -9,8 +9,10 @@ import {
   Prose,
   TagList,
   TechCard,
+  TechCode,
   TechText,
 } from "@/components/project";
+import { PageContextDemo } from "./_components/page-context-demo";
 import { SidekickDemo } from "./_components/sidekick-demo";
 
 export const metadata: Metadata = {
@@ -117,6 +119,60 @@ export default function SidekickPage() {
               "Multi-agent",
             ]}
           />
+        </TechCard>
+      </ProjectSection>
+
+      <ProjectSection title="Page context">
+        <Prose>
+          <p>
+            Sidekick knows what is on your screen. It can reference the chart or
+            table in front of you in its answers, and you can hand it a specific
+            element with a picker that works like the one in Chrome DevTools.
+          </p>
+        </Prose>
+        <PageContextDemo />
+      </ProjectSection>
+
+      <ProjectSection title="How page context works">
+        <TechCard>
+          <Pipeline
+            steps={[
+              {
+                label: "ContextElement",
+                detail:
+                  "Wraps a chart, table or settings box together with an LLM-friendly JSON version of it",
+                runsOn: "React",
+              },
+              {
+                label: "Page provider",
+                detail:
+                  "Keeps the list of registered elements and drives the picker overlay",
+                runsOn: "React context",
+              },
+              {
+                label: "Request",
+                detail:
+                  "Compressed page context is sent when submitting a message",
+                runsOn: "Eve SDK",
+              },
+              {
+                label: "get_element_context",
+                detail:
+                  "The agent fetches an element's JSON only when it needs it",
+                runsOn: "Eve tool",
+              },
+            ]}
+          />
+          <TechCode>{`<ContextElement title="ROAS daily chart" context={roasByDay}>
+  <Chart data={roasByDay} />
+</ContextElement>`}</TechCode>
+          <TechText>
+            The agent reads structured data instead of a rendered chart, which
+            is both cheaper in tokens and more accurate, and the list of titles
+            keeps the base prompt small until it actually needs an element.
+            Non-data elements like a filter selector can register the same way,
+            so the AI knows what you&apos;ve selected.
+          </TechText>
         </TechCard>
       </ProjectSection>
 
