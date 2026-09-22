@@ -476,6 +476,34 @@ export default function PrivacyPage() {
         they don’t).
       </p>
 
+      <h3>KI-Chat „BenNet“</h3>
+      <p>
+        Auf dieser Website steht ein KI-Chatbot („BenNet“) zur Verfügung, der
+        Fragen zu meiner Person, meiner Arbeit und meinen Projekten
+        beantwortet. Die Nutzung ist freiwillig. Wenn Sie den Chat verwenden,
+        werden Ihre eingegebenen Nachrichten und der bisherige
+        Gesprächsverlauf an unseren Server übermittelt und von dort über das
+        AI Gateway von{" "}
+        <Ext href="https://vercel.com/legal/privacy-policy">
+          Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA
+        </Ext>{" "}
+        an ein Sprachmodell (derzeit DeepSeek V4.1 Flash) weitergeleitet, um
+        eine Antwort zu erzeugen. Bitte geben Sie im Chat keine
+        personenbezogenen Daten ein.
+      </p>
+      <p>
+        Der Gesprächsverlauf wird nur in Ihrem Browser gehalten und von uns
+        nicht dauerhaft gespeichert. Zum Schutz vor Missbrauch wird Ihre
+        IP-Adresse kurzzeitig im Arbeitsspeicher des Servers verarbeitet, um
+        die Anzahl der Anfragen zu begrenzen. Rechtsgrundlage ist Art. 6 Abs.
+        1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung der
+        Funktion und der Missbrauchsabwehr). Es gelten ergänzend die{" "}
+        <Ext href="https://vercel.com/legal/privacy-policy">
+          Datenschutzhinweise von Vercel
+        </Ext>
+        .
+      </p>
+
       <h3>Zusatz für „minimalpedia“</h3>
       <p>
         „minimalpedia“ ist eines meiner Projekte, welches unter{" "}

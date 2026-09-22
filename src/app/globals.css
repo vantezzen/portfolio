@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Streamdown renders BenNet's replies; Tailwind needs to see its classes. */
+@source "../../node_modules/streamdown/dist/*.js";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -164,5 +167,78 @@
     }
     .legal-prose strong {
         @apply font-medium text-neutral-800;
+    }
+}
+
+/* BenNet: markdown inside a chat bubble. Unlayered so it wins over Streamdown's own utilities. */
+.bennet-prose p {
+    margin: 0;
+}
+.bennet-prose p + p {
+    margin-top: 0.5rem;
+}
+.bennet-prose ul,
+.bennet-prose ol {
+    margin: 0.25rem 0 0;
+    padding-left: 1.1rem;
+}
+.bennet-prose ul {
+    list-style: disc;
+}
+.bennet-prose ol {
+    list-style: decimal;
+}
+.bennet-prose li + li {
+    margin-top: 0.125rem;
+}
+.bennet-prose a {
+    display: inline;
+    color: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+    transition: text-decoration-color 150ms ease;
+}
+.bennet-prose a:hover {
+    text-decoration-color: currentColor;
+}
+.bennet-prose strong {
+    font-weight: 500;
+}
+.bennet-prose code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.05em 0.3em;
+    border-radius: 0.3em;
+    background: rgb(0 0 0 / 6%);
+}
+
+/* BenNet: typing indicator. Transform and opacity only. */
+@keyframes bennet-dot {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+}
+.bennet-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: var(--color-neutral-500);
+    animation: bennet-dot 1.2s ease-in-out infinite;
+    will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+    .bennet-dot {
+        animation: none;
+        opacity: 0.6;
     }
 }

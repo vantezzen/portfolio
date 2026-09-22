@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
+import { BenNet } from "@/components/bennet";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         {children}
+        <BenNet />
 
         <script
           defer
